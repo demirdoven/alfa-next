@@ -51,8 +51,6 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
             behavior: 'smooth'
         });
     }
-
-    console.log('product', product)
       
     return (
 
