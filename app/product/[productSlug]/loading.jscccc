@@ -1,0 +1,105 @@
+'use client'
+
+import Gallery from "@/components/single-product/Gallery";
+import PaymentMethods from "@/components/single-product/PaymentMethods";
+import Quantity from "@/components/single-product/Quantity";
+import Title from "@/components/single-product/Title";
+import { useEffect, useState } from "react";
+// import LoadingSimilar from "@/components/single-product/loading-parts/loadingSimilar";
+// import { getProductById } from "@/lib/woocommerce";
+
+
+export default function ProductSlug(){
+
+ 
+    // const productSlug = window.location.href;
+    // const parts = productSlug.split('-');
+    // const productID = parts[parts.length - 1];
+ 
+    let tempProd = {}
+
+    if (typeof window !== 'undefined') {
+
+        tempProd = localStorage.getItem('clickedProduct')
+        tempProd = JSON.parse(tempProd)
+    }
+
+    // console.log('tempProd', tempProd)
+    
+    const galleryImages = [
+        {
+            original: tempProd?.media,
+            thumbnail: tempProd?.media,
+        }
+    ];
+
+    return (
+        <div className="container mx-auto lg:max-w-6xl mt-6 flex flex-col gap-y-10">
+
+            <div className="single-product-top flex gap-x-8 justify-between">
+
+                <div className="single-product-gallery w-[33.333333%] max-w-[33.333333%]">
+                    
+                    <Gallery media={tempProd?.media} />
+
+                </div>
+
+                <div className="product-metas max-w-[66.666667%] flex-1 mt-4">
+                    <Title productData={tempProd} />
+
+                    <div className="mt-4">
+                        loading 
+                        {/* {
+                            catSlug == 'Reifen' && <ReifenMeta attrs={product.attributes} catSlug={catSlug} />
+                        }
+                        {
+                            catSlug == 'Felgen' && <FelgenMeta product={product} setProduct={setProduct} catSlug={catSlug} />
+                        } */}
+                    </div>
+                </div>
+
+                <div className="product-right min-w-[300px] self-start  mt-4">
+                    <div className="bg-alfa-gray-1 rounded-lg p-6">
+
+                        {/* <LoadingSimilar /> */}
+  
+                        <div className="mt-6 flex justify-between items-center ">
+                            <div className="flex flex-col">
+                                <span className="text-sm text-green-700">Auf Lager</span>
+                                <span className="text-xs text-alfa-gray-600">Lieferzeit  2-5  Werktage</span>
+                            </div>
+                            price box
+                            {/* <PriceBox product={product} /> */}
+                        </div>
+
+                        <Quantity />
+
+                        <div className="mt-8">
+                            add to cart
+                            {/* <AddToCart product={ product } miniCart={miniCart} setMiniCart={setMiniCart} /> */}
+                        </div>
+
+                    </div>
+                    <PaymentMethods classList="mt-6 px-8"/>
+                </div>
+
+            </div>
+
+            <div className="single-product-bottom mb-12">
+
+                
+                {/* <div>
+                    <ProductReviews productId={product.id} />
+                </div> */}
+
+                accordionlar
+                {/* <SingleAccordion product={product}/> */}
+            </div>
+
+
+        </div>
+    )
+}
+
+
+

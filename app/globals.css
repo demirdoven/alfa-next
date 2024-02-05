@@ -2,6 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Light_Condensed.otf");
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Condensed_Medium.otf");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Condensed_Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Black_Condensed.otf");
+  font-weight: black;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Condensed_Italic.ttf");
+  font-weight: light;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_BQ_Regular.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/fonts/Helvetica_Black_Condensed_Oblique.otf");
+  font-weight: black;
+  font-style: italic;
+}
+
+/**/
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedLight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedLightItalic.ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedRegular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedItalic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedSemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedSemiBoldItalic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedBoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans Condensed";
+  src: url("../public/fonts/opensans-condensed/OpenSans-CondensedExtraBoldItalic.ttf");
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,19 +132,142 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply font-openSansCondensed 	;
+}
+.main-menu-item > a {
+  @apply font-openSansCondensed font-bold italic text-[20px] text-[#272727];
+}
+.product-card-title {
+  @apply font-openSansCondensed text-[1rem]  font-bold   lg:text-[1.6rem]  tracking-[.02em] text-slate-900 leading-8;
+}
+nav.image-gallery-thumbnails-container {
+  display: flex;
+  align-items: flex-start;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.price-box del .amount {
+  color: #bbb;
+  font-weight: 400;
+  display: block;
+  font-size: .60em;
+  text-align: right;
+  line-height: 1;
+}
+.price-box ins {
+  text-decoration: none;
+}
+.price-box ins > span {
+  color: #dd0513;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/** LoadingLastik component ****/
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(-360deg);
+    } 
+}
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
   }
+
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.container {
+	width: '100%';
+}
+
+.loader {
+  /* width: 140px;
+  height: 140px;
+	margin: 120px auto; */
+	text-align: center;
+	color: #333;
+}
+
+.bounce {
+	/* margin-top: 30px; */
+	animation: bounce 1.5s infinite;
+}
+
+.wheel {
+	fill: #333;
+  animation: spin 2s linear infinite;
+}
+
+  /** END- LoadingLastik component ****/
+
+  .selected {
+    /* background: red; */
+  }
+  .selected * {
+      color: #dd0513;
+  }
+  li[data-tax="car"].selected svg path, 
+  li[data-tax="car"]:hover svg path, 
+  li.selected svg path:first-child, 
+  li[data-tax="car"].selected svg g path:last-child, 
+  li[data-tax="car"]:hover svg g path:last-child, 
+  li[data-tax="car"].selected *, 
+  li:hover svg g path:first-child,
+  li.selected svg g path:first-child {
+    color: #dd0513;
+    fill: #dd0513 !important;
+    fill-rule: unset !important;
+}
+
+
+
+.selected_payment_method > label {
+  @apply border-slate-800;
+}
+
+/* BMF****/
+
+.product-list-wrap.loading .product-card > div {
+  @apply opacity-20;
 }
