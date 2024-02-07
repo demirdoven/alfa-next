@@ -1,4 +1,7 @@
 'use server'
+
+import { WOOCOMMERCE_COUNTRIES_ENDPOINT } from "@/lib/constants";
+
  
 export async function getProducts(catSlug, queryPids) {
 
@@ -166,6 +169,23 @@ export async function getSingleProduct(catSlug, pid) {
     const headers   = { 'Content-Type': 'application/json' };
     
     const res = await fetch( url, {
+        headers,
+        method: 'GET',
+        next: { revalidate: 1800 },
+        // cache: 'no-store',
+        
+    });
+    const resJson = await res.json();
+    return resJson;
+}
+
+export async function getCountries() {
+
+    const url = WOOCOMMERCE_COUNTRIES_ENDPOINT;
+
+    const headers   = { 'Content-Type': 'application/json' };
+    
+    const res = await fetch( WOOCOMMERCE_COUNTRIES_ENDPOINT, {
         headers,
         method: 'GET',
         next: { revalidate: 1800 },

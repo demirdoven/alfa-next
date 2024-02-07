@@ -10,7 +10,7 @@ import Quantity from "@/components/single-product/Quantity";
 import { isEmpty, isInteger } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
-import { getProductVariations } from "@/app/actions";
+import { getCountries, getProductVariations } from "@/app/actions";
 import Image from "next/image";
 import VariationsFilter from "./VariationsFilter";
 
@@ -57,6 +57,18 @@ const SingleFelgen = ({product}) => {
         getParentVars();
 
     }, [productObj] )
+
+
+    // useEffect( ()=>{
+       
+    //     const getUlkeler = async () => {
+    //         const response = await getCountries();
+    //         console.log('getCountries', response)
+            
+    //     };
+    //     getUlkeler();
+
+    // }, [] )
 
     useEffect( ()=>{
        
@@ -127,7 +139,16 @@ const SingleFelgen = ({product}) => {
         }
         // else{
         //     setCurrVariantOb({})
+
+
+        // if no variation burasi
+
+
+
         // }
+
+        
+
 
     }, [selectedSize, selectedColor, selectedLoch, selectedZoll, variants]);
 
@@ -189,7 +210,7 @@ const SingleFelgen = ({product}) => {
                                             allZolls.sort().map( item => (
                                                 <li 
                                                     key={item}
-                                                    className={` ${selectedZoll == item ? 'bg-slate-900 text-white' : '' } ${ !isEmpty(filteredAllZolls) && ! filteredAllZolls.includes(item) ? 'opacity-20 select-none' : 'opacity-100 select-auto	' } bg-gray-200 w-[30px] h-[30px] flex items-center justify-center rounded-full text-sm cursor-pointer `}
+                                                    className={` ${selectedZoll == item ? 'bg-slate-900 text-white' : '' } ${ ! filteredAllZolls.includes(item) ? 'opacity-20 select-none' : 'opacity-100 select-auto	' } bg-gray-200 w-[30px] h-[30px] flex items-center justify-center rounded-full text-sm cursor-pointer `}
                                                     onClick={ ()=> setSelectedZoll(item) }
                                                 >
                                                     {item}
@@ -210,7 +231,7 @@ const SingleFelgen = ({product}) => {
                                             allColors.map( item => (
                                                 <li 
                                                     key={item}
-                                                    className={` ${selectedColor == item ? '  border-slate-800' : 'border-white-100' } ${ !isEmpty(filteredAllColors) && ! filteredAllColors.includes(item) ? 'opacity-20' : 'opacity-100' } p-1 border rounded-full cursor-pointer`}
+                                                    className={` ${selectedColor == item ? '  border-slate-800' : 'border-white-100' } ${ ! filteredAllColors.includes(item) ? 'opacity-20' : 'opacity-100' } p-1 border rounded-full cursor-pointer`}
                                                     onClick={ ()=> setSelectedColor(item) }
                                                 >
                                                     <Image
