@@ -4,16 +4,18 @@ import { useThemeContext } from "@/components/context/theme";
 import { useEffect, useState } from "react";
 import UserAddress from "./UserAddress";
 import CheckboxField from "./form-elements/CheckboxField";
-// import { 
-// 	handleBillingDifferentThanShipping, 
-// 	handleCreateAccount, 
-// 	handleOtherPaymentMethodCheckout, 
-// 	setStatesForCountry 
-// } from "@/lib/foksiyonlar/checkout_func";
-// import YourOrder from "./your-order";
-// import validateAndSanitizeCheckoutForm from "@/lib/validator/checkout";
-import CartDetails from "./CartDetails";
+import { 
+  handleBillingDifferentThanShipping, 
+  handleCreateAccount, 
+  handleOtherPaymentMethodCheckout, 
+  setStatesForCountry 
+} from "@/lib/functions/checkout.js";
 
+// import YourOrder from "./your-order";
+
+import validateAndSanitizeCheckoutForm from "@/lib/validator/checkout";
+// import CartDetails from "./CartDetails";
+import CartDetails from "./CartDetails_Old";
 
 // const defaultCustomerInfo = {
 // 	firstName: 'Imran',
