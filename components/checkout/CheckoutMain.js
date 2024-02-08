@@ -11,11 +11,15 @@ import {
   setStatesForCountry 
 } from "@/lib/functions/checkout.js";
 
+
 // import YourOrder from "./your-order";
 
 import validateAndSanitizeCheckoutForm from "@/lib/validator/checkout";
 // import CartDetails from "./CartDetails";
 import CartDetails from "./CartDetails_Old";
+
+import { useRouter } from 'next/navigation'
+
 
 // const defaultCustomerInfo = {
 // 	firstName: 'Imran',
@@ -49,6 +53,9 @@ const defaultCustomerInfo = {
 
 
 const CheckoutMain = ( { countriesData } ) => {
+
+    const router = useRouter()
+
 
     const initialState = {
       billing: {
@@ -121,6 +128,17 @@ const CheckoutMain = ( { countriesData } ) => {
       if ( createdOrderData.paymentUrl ) {
         // window.location.href = createdOrderData.paymentUrl;
         console.log('createdOrderData', createdOrderData);
+
+
+        const updatedUrl = `/order-received?${new URLSearchParams( { 'order_id': createdOrderData?.orderId } )}`;
+        router.push(updatedUrl, { scroll: true });
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+
+
       }
 
       setRequestError( null );
