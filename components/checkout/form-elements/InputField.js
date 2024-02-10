@@ -1,6 +1,6 @@
 import Error from '../error';
 import PropTypes from 'prop-types';
-// import Abbr from "./Abbr";
+import Abbr from "./Abbr";
 
 
 const InputField = ({ handleOnChange, inputValue, name, type, label, errors, placeholder, required, containerClassNames, isShipping }) => {

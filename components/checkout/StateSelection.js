@@ -53,6 +53,7 @@ const StateSelection = ({handleOnChange, input, states, isFetchingStates, isShip
 					// 	'bg-gray-100 bg-opacity-50 border border-gray-400 text-gray-500 appearance-none inline-block py-3 pl-3 pr-8 rounded leading-tight w-full',
 					// 	{'opacity-50': isFetchingStates}
 					// )}
+					className={'bg-gray-100 bg-opacity-50 border border-gray-400 text-gray-500 appearance-none inline-block py-3 pl-3 pr-8 rounded leading-tight w-full'}
 					id={inputId}
 				>
 					<option value="">Select a state...</option>
