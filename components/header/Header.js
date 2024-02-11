@@ -5,6 +5,7 @@ import { BiMenu } from "react-icons/bi";
 import TopBar from "./TopBar"
 import Logo from "./Logo"
 import StickyBar from "./StickyBar"
+import MobileMiniCart from "./MiniCartMobile";
 
 export default function Header( {className} ){
 

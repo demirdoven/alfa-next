@@ -4,7 +4,8 @@ import { PiHandbagBold } from "react-icons/pi";
 import { BiUser } from "react-icons/bi";
 import { useThemeContext } from "@/components/context/theme";
 import { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import MiniCartMobile from "./MiniCartMobile";
+import MiniCartDesktop from "./MiniCartDesktop";
 
 const UserSection = ( {className} ) => {
 
@@ -34,7 +35,10 @@ const UserSection = ( {className} ) => {
             <BiUser size='1.5em' />
         </div>
         
-        { miniCart && <Sidebar miniCart={miniCart} setMiniCart={setMiniCart}/> }
+        {/* { miniCart && <MiniCartDesktop miniCart={miniCart} setMiniCart={setMiniCart}/> } */}
+        <MiniCartDesktop cart={color} miniCart={miniCart} setMiniCart={setMiniCart} />
+
+        { color?.totalQty ? <MiniCartMobile cart={color} /> : null }
 
     </div>
   )
