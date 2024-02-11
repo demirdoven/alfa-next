@@ -5,6 +5,7 @@ import './globals.css'
 import Header from '@/components/header/Header'
 // import SiteFooter from '@/components/Footer/SiteFooter'
 import { ThemeContextProvider } from '@/components/context/theme'
+import { MiniCartContextProvider } from '@/components/context/miniCart'
 
 
 const lato = Lato({
@@ -41,14 +42,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={``}>
             <ThemeContextProvider>
-              <Header />
-              <main className="flex min-h-screen flex-col items-center justify-between">
-                {children}
-              </main>
+              <MiniCartContextProvider>
+                <Header />
+                <main className="flex min-h-screen flex-col items-center justify-between">
+                  {children}
+                </main>
+                
+                {/* <SiteFooter />*/}
               
-              {/* <SiteFooter />*/}
-            
-              
+                
+            </MiniCartContextProvider> 
           </ThemeContextProvider> 
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { PiHandbagBold } from "react-icons/pi";
 import { BiUser } from "react-icons/bi";
 import { useThemeContext } from "@/components/context/theme";
+import { useMiniCartContext } from "@/components/context/miniCart";
 import { useEffect, useState } from "react";
 import MiniCartMobile from "./MiniCartMobile";
 import MiniCartDesktop from "./MiniCartDesktop";
@@ -10,7 +11,8 @@ import MiniCartDesktop from "./MiniCartDesktop";
 const UserSection = ( {className} ) => {
 
   const { color, setColor} = useThemeContext();
-  const [miniCart, setMiniCart] = useState(false);
+  const { mCart, setMcart} = useMiniCartContext();
+  // const [miniCart, setMcart] = useState(false);
 
   // useEffect( ()=>{
   //   console.log('color', color)
@@ -19,7 +21,7 @@ const UserSection = ( {className} ) => {
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
-        <div onClick={() => setMiniCart(!miniCart)} className="flex gap-x-3 items-center cursor-pointer" >
+        <div onClick={() => setMcart(!mCart)} className="flex gap-x-3 items-center cursor-pointer" >
             <div className="relative">
                 <PiHandbagBold size='1.5em' />
                 { 
@@ -35,8 +37,7 @@ const UserSection = ( {className} ) => {
             <BiUser size='1.5em' />
         </div>
         
-        {/* { miniCart && <MiniCartDesktop miniCart={miniCart} setMiniCart={setMiniCart}/> } */}
-        <MiniCartDesktop cart={color} miniCart={miniCart} setMiniCart={setMiniCart} />
+        <MiniCartDesktop cart={color} mCart={mCart} setMcart={setMcart} />
 
         { color?.totalQty ? <MiniCartMobile cart={color} /> : null }
 

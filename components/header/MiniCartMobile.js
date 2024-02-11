@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react'
 import { FaAngleUp } from "react-icons/fa6";
-
+import { PiHandbagBold } from "react-icons/pi";
 
 const MiniCartMobile = ({cart}) => {
 
@@ -34,7 +34,21 @@ const MiniCartMobile = ({cart}) => {
                 </motion.div>
 
             </div>
-            <div>{cart?.totalPrice} €</div>
+
+           <div className="flex gap-x-4">
+            <div className="relative">
+                <PiHandbagBold size='1.5em' />
+                { 
+                cart?.totalQty ? 
+                  <span className="absolute w-[16px] h-[16px] flex items-center justify-center text-[10px] bg-alfa-red-1 text-white top-[-4px] right-[-6px] rounded-full ">{ cart?.totalQty }</span>
+                : null 
+                }
+                
+            </div>
+            <div className="">{ cart?.totalPrice && <span className="text-sm"> {cart?.totalPrice.toFixed(2)} €</span> } </div>
+            </div>
+          
+
         </div>
 
       

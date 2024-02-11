@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link";
 import Price from "./Price";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BuyNowButton from "./BuyNowButton";
 import { Button } from "@/components/general/Button";
 // import { Button } from "../Button";
@@ -26,6 +26,10 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 	}else{
 		brand = product?.brand.replace(" ", "-").toLowerCase();
 	}
+
+    useEffect( ()=>{
+        console.log('isAddedToCart', isAddedToCart)
+    }, [isAddedToCart])
 
     const brandLogo  = "https://cdn.alfatires.eu/logos/brands/"+brand+".webp";
     let productImage = "https://cdn.alfatires.eu/products/tires/"+product?.media+".webp";

@@ -117,10 +117,10 @@ const Hero = () => {
         <>
             <AnimatePresence>
                 <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exist={{ opacity: 0, y: 15 }}
-                    transition={{ delay: 0.15 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exist={{ opacity: 0 }}
+                    transition={{ delay: 0.10 }}
                 >
                     <div className="w-full bg-[url(/hero/Hero-Background-1.png)] bg-top bg-no-repeat bg-cover pb-4 lg:pb-0">
                         <div className="container mx-auto lg:max-w-6xl">

@@ -10,7 +10,7 @@ import { IoClose } from "react-icons/io5";
 import {motion, AnimatePresence} from 'framer-motion'
 
 
-const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
+const MiniCartDesktop = ({cart, mCart, setMcart}) => {
 
     const { color, setColor} = useThemeContext();
     const { cartItems, totalPrice, totalQty } = color || {};
@@ -22,7 +22,7 @@ const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
         event.preventDefault();
     
         if (event.target === event.currentTarget) {
-            setMiniCart(!miniCart)
+            setMcart(!mCart)
         }
     };
 
@@ -31,9 +31,9 @@ const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
         { /* <div className='fixed top-0 left-0 w-screen h-screen z-100'> */ }
                 
                 {
-                    miniCart && (
+                    mCart && (
                         <div 
-                            onClick={ ()=>{ setMiniCart(false) } } 
+                            onClick={ ()=>{ setMcart(false) } } 
                             className='fixed top-0 left-0 w-screen h-screen bg-[#0000006e] z-100'
                         >
                         
@@ -47,7 +47,7 @@ const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
                     <motion.div
                         className='fixed top-0 right-[-400px] w-64 min-w-[400px] h-screen overflow-hidden overflow-y-auto'
                         animate={{
-                            translateX: miniCart ? -400 : 0
+                            translateX: mCart ? -400 : 0
                         }}
                     >
                     <aside className="h-full px-8 py-6 bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">               
@@ -57,7 +57,7 @@ const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
                                 <div className="flex items-center justify-between">
                                     <h1 className="font-semibold text-xl">Cart</h1>
                                     <button 
-                                        onClick={ () => setMiniCart(!miniCart) }
+                                        onClick={ () => setMcart(!mCart) }
                                         className="flex items-center justify-center w-[30px] h-[30px] bg-slate-900 text-white text-xs rounded-full">
                                         <IoClose />
                                     </button>
@@ -115,7 +115,8 @@ const MiniCartDesktop = ({cart, miniCart, setMiniCart}) => {
                                                 classList="block w-full mt-8 text-center" 
                                                 innerClassList="block w-full text-center"
                                                 text="PROCEED TO CHECKOUT" 
-                                                // setMiniCart={setMiniCart}
+                                                // setMcart={setMcart}
+                                                onClick={ ()=>{ setMcart(false) } }
                                             />
 
                                         </div>

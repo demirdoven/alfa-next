@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 const BrandSlider = () => {
@@ -73,58 +74,67 @@ const BrandSlider = () => {
 
   return (
       <div className="w-full group my-8">
-        <div className=" container mx-auto lg:max-w-6xl ">
-          <div className="relative">
-            <Swiper 
-                loop={true}
-                modules={[Navigation]} 
-                className="mySwiper"
-                breakpoints={{
-                  0: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                  },
-                  450: {
-                    slidesPerView: 3,
-                    spaceBetween: 15,
-                  },
-                  700: {
-                    slidesPerView: 9,
-                    spaceBetween: 15,
-                  },
-                }}
-                navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
-                pagination={{ clickable: true, dynamicBullets: true }}
-                >
+		<AnimatePresence>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exist={{ opacity: 0 }}
+				transition={{ delay: 0.10 }}
+			>
+				<div className=" container mx-auto lg:max-w-6xl ">
+				<div className="relative">
+					<Swiper 
+						loop={true}
+						modules={[Navigation]} 
+						className="mySwiper"
+						breakpoints={{
+						0: {
+							slidesPerView: 3,
+							spaceBetween: 15,
+						},
+						450: {
+							slidesPerView: 3,
+							spaceBetween: 15,
+						},
+						700: {
+							slidesPerView: 9,
+							spaceBetween: 15,
+						},
+						}}
+						navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+						pagination={{ clickable: true, dynamicBullets: true }}
+						>
 
-              {
-                brands.map( item => (
-                  <SwiperSlide key={item.name} >
-                    <div className="w-full">
-                      <Link href={item.url}>
-                        <Image 
-							src={item.logo_src}
-							alt={item.name}
-							width={0}
-							height={0}
-							sizes="100vw"
-							style={{ width: '100%', height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </SwiperSlide>
-                ))
-              }
-            
-            </Swiper>
+					{
+						brands.map( item => (
+						<SwiperSlide key={item.name} >
+							<div className="w-full">
+							<Link href={item.url}>
+								<Image 
+									src={item.logo_src}
+									alt={item.name}
+									width={0}
+									height={0}
+									sizes="100vw"
+									style={{ width: '100%', height: 'auto' }}
+								/>
+							</Link>
+							</div>
+						</SwiperSlide>
+						))
+					}
+					
+					</Swiper>
 
-            <div className="opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
-              <button className="arrow-left arrow absolute left-[-50px] top-0"><MdArrowBackIos size={30}/></button>
-              <button className="arrow-right arrow absolute right-[-50px] top-0"><MdArrowForwardIos size={30}/></button>
-            </div>
-            
-          </div>
-        </div>
+					<div className="opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
+					<button className="arrow-left arrow absolute left-[-50px] top-0"><MdArrowBackIos size={30}/></button>
+					<button className="arrow-right arrow absolute right-[-50px] top-0"><MdArrowForwardIos size={30}/></button>
+					</div>
+					
+				</div>
+				</div>
+			</motion.div>
+		</AnimatePresence>
       </div>
   );
 };
