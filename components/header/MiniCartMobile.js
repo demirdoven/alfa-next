@@ -5,9 +5,7 @@ import { useEffect, useState } from 'react'
 import { FaAngleUp } from "react-icons/fa6";
 import { PiHandbagBold } from "react-icons/pi";
 
-const MiniCartMobile = ({cart}) => {
-
-  const [miniCartOpen, setMiniCartOpen] = useState(false)
+const MiniCartMobile = ({cart, mCart, setMcart }) => {
 
   useEffect( ()=>{
     console.log(cart)
@@ -20,14 +18,14 @@ const MiniCartMobile = ({cart}) => {
         
         <div 
           className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer"
-          onClick={ () => { setMiniCartOpen( ! miniCartOpen ) } }
+          onClick={ () => { setMcart( ! mCart ) } }
         >
             <div className="flex gap-x-3 items-center">
                 <span >Order summary</span>
 
                 <motion.div
                   animate={{
-                    rotate: miniCartOpen ? 180 : 0
+                    rotate: mCart ? 180 : 0
                   }}
                 >
                   <FaAngleUp />
@@ -54,7 +52,7 @@ const MiniCartMobile = ({cart}) => {
       
 
         <AnimatePresence initial={false}>
-          {miniCartOpen && (
+          {mCart && (
             <motion.div
               initial={{ height: 0 }}
               animate={{ height: windowHeight }}

@@ -39,7 +39,7 @@ const UserSection = ( {className} ) => {
         
         <MiniCartDesktop cart={color} mCart={mCart} setMcart={setMcart} />
 
-        { color?.totalQty ? <MiniCartMobile cart={color} /> : null }
+        { color?.totalQty ? <MiniCartMobile cart={color} mCart={mCart} setMcart={setMcart} /> : null }
 
     </div>
   )

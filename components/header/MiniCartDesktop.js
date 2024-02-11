@@ -27,7 +27,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
     };
 
     return (
-        <>
+        <div className="hidden lg:block">
         { /* <div className='fixed top-0 left-0 w-screen h-screen z-100'> */ }
                 
                 {
@@ -132,7 +132,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                 </AnimatePresence>
             
         {/* </div> */}
-        </>
+        </div>
     )
 }
 
