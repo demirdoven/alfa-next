@@ -12,6 +12,7 @@ import ProductList from './ProductList';
 import { Tags } from './filter/Tags';
 import { BsFilterLeft } from "react-icons/bs";
 import ReifenTop from './filter/FilterReifenTop';
+import FilterReifenTop from './filter/FilterReifenTop';
 
 
 const Main = ({products, catSlug, searchParams, filterData}) => {
@@ -52,15 +53,15 @@ const Main = ({products, catSlug, searchParams, filterData}) => {
   
     
     
-    
+
     return (
 
     <div className="w-full flex justify-between">
         
-        <div className="w-3/12">
-            <div className="side-filter bg-alfa-gray-1 rounded-lg p-4">
+        <div className="hidden lg:block lg:w-3/12">
+            <div className="side-filter bg-alfa-gray-2 rounded-lg p-4">
                 
-                {/* { catSlug == 'tires' &&  <ReifenTop filterData={filterData} /> } */}
+                { catSlug == 'tires' &&  <FilterReifenTop filterData={filterData} searchParams={searchParams} setProdsLoading={setProdsLoading} /> }
 
                 <div className="bg-white py-4 mt-6 rounded-lg">
                     <h1 className={`px-4 font-semibold text-2xl flex gap-x-2`}><BsFilterLeft size={32}/> FILTER</h1>
@@ -70,7 +71,7 @@ const Main = ({products, catSlug, searchParams, filterData}) => {
             </div>
         </div>
 
-        <div className='w-9/12 pl-6'>
+        <div className='w-full lg:w-9/12 lg:pl-6'>
 
             <ListingBanner catSlug={catSlug} />
 

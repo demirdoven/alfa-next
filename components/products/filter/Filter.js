@@ -8,9 +8,9 @@ const Filter = ({catSlug, filterData, searchParams, setProdsLoading}) => {
     const router = useRouter()
     const pathname = usePathname()
 
-    // useEffect( ()=>{
-    //     console.log('filterData', filterData)
-    // }, [filterData])
+    useEffect( ()=>{
+        console.log('filterData', filterData)
+    }, [filterData])
 
     const handleClick = (e) => {
 
@@ -52,13 +52,10 @@ const Filter = ({catSlug, filterData, searchParams, setProdsLoading}) => {
             behavior: 'smooth'
         });
 
-
     }
-
 
     return (
         <>
-            
             {
                 filterData.filters.filter( item => ! ['car', 'season'].includes(item) ).map( (tax) => (
 

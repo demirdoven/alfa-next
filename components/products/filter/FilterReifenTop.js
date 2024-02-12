@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import { isEmpty } from 'lodash'
 
 
 const termIcons = {
@@ -23,11 +24,10 @@ const termIcons = {
     'tout-terrain-suv-4x4' : '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51px" height="31px" viewBox="0 0 51 31" version="1.1"> <title>Fill 1</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Reifen-Listing_Desktop" transform="translate(-280.000000, -235.000000)" fill="#64676D"> <path d="M329.199188,257.928786 C329.199188,258.741407 328.547645,259.402467 327.746812,259.402467 L323.14891,259.402467 C322.838535,256.474747 320.389214,254.187258 317.422512,254.187258 C314.45581,254.187258 312.006489,256.474747 311.696115,259.402467 L296.771663,259.402467 C296.406092,256.534495 293.985405,254.311138 291.060752,254.311138 C288.133669,254.311138 285.71127,256.53824 285.348942,259.409776 L284.5075,259.411237 L284.505069,259.411237 C283.783202,259.411237 283.104466,259.126112 282.593748,258.608391 C282.0824,258.090123 281.800839,257.400742 281.800839,256.667328 L281.800839,245.927666 L296.297592,245.927666 C296.794893,245.927666 297.198011,245.51866 297.198011,245.014095 C297.198011,244.50953 296.794893,244.100525 296.297592,244.100525 L281.800839,244.100525 L281.800839,239.57095 C281.800839,238.057986 283.013974,236.827132 284.505159,236.827132 L298.728724,236.827132 L298.728724,255.829401 C298.728724,256.333966 299.131842,256.742972 299.629144,256.742972 C300.126445,256.742972 300.529563,256.333966 300.529563,255.829401 L300.529563,245.927666 L324.210594,245.927666 L324.210594,245.925839 C327.520446,246.011714 329.199188,247.958625 329.199188,251.718333 L329.199188,257.928786 Z M317.422512,264.04907 C315.239265,264.04907 313.463008,262.246869 313.463008,260.031734 C313.463008,257.8166 315.239265,256.014399 317.422512,256.014399 C319.605759,256.014399 321.382017,257.8166 321.382017,260.031734 C321.382017,262.246869 319.605759,264.04907 317.422512,264.04907 L317.422512,264.04907 Z M291.060752,264.172859 C288.877505,264.172859 287.101248,262.370749 287.101248,260.155615 C287.101248,257.940389 288.877505,256.138279 291.060752,256.138279 C293.243999,256.138279 295.020257,257.940389 295.020257,260.155615 C295.020257,262.370749 293.243999,264.172859 291.060752,264.172859 L291.060752,264.172859 Z M314.0264,240.945326 C314.522441,241.872874 315.03541,242.832032 315.806169,243.667858 C315.946095,243.81951 316.093133,243.962758 316.244494,244.100525 L300.529563,244.100525 L300.529563,236.827132 L307.462793,236.827132 C311.823974,236.827132 312.8446,238.735581 314.0264,240.945326 L314.0264,240.945326 Z M323.979907,244.094495 L320.904524,244.094495 C319.481862,244.094495 318.102869,243.484047 317.121232,242.419555 C316.508136,241.754749 316.071523,240.938291 315.609248,240.073871 C314.337315,237.695572 312.895654,234.999991 307.462793,234.999991 L284.505159,234.999991 C282.020991,234.999991 280,237.0505 280,239.57095 L280,256.667328 C280,257.889046 280.469119,259.037496 281.320915,259.900911 C282.171812,260.763505 283.302378,261.238379 284.505699,261.238379 L284.509841,261.238379 L285.400896,261.236826 C285.902339,263.944466 288.248652,265.999991 291.060752,265.999991 C293.875283,265.999991 296.223307,263.940812 296.721869,261.229608 L311.784356,261.229608 C312.33055,263.879603 314.650841,265.876211 317.422512,265.876211 C320.194183,265.876211 322.514474,263.879603 323.060669,261.229608 L327.746812,261.229608 C329.540627,261.229608 331.000027,259.748893 331.000027,257.928786 L331.000027,251.718333 C331.000027,246.873303 328.441305,244.094495 323.979907,244.094495 L323.979907,244.094495 Z" id="Fill-1"/> </g> </g> </svg>',
 }
 
-const ReifenTop = ({filterData}) => {
+const FilterReifenTop = ({filterData, searchParams, setProdsLoading}) => {
 
-    console.log(filterData)
-    // const router = useRouter()
-    // const pathname = usePathname()
+    const router = useRouter()
+    const pathname = usePathname()
 
     // const [isDotChecked, setIDotisDotChecked] = useState(false);
 
@@ -38,42 +38,52 @@ const ReifenTop = ({filterData}) => {
    
     const topAllowedTerms = ['PKW', 'Transporter', 'Offroad / SUV / 4x4', 'Summer', 'Winter', 'All Season'];
 
-    // const handleClick = (e) => {
+    const handleClick = (e) => {
 
-    //     const tax = e.target.getAttribute('data-tax');
-    //     const termid = e.target.getAttribute('data-termid');
-    //     const termSlug = e.target.getAttribute('data-slug');
-    //     const filtertax = e.target.getAttribute('data-filtertax');
+        if( e.target.classList.contains('pasif') ){
+            return false
+        }
+
+        setProdsLoading(true)
+
+        const tax = e.target.getAttribute('data-tax');
+        const termSlug = e.target.getAttribute('data-slug');
        
-    //     let cloneSearchParams = {...searchParams};
+        let cloneSearchParams = {...searchParams};
 
-    //     if( cloneSearchParams[filtertax] ){
+        // console.log('tax', tax);
+        // console.log('termSlug', termSlug);
 
-    //         let allValues = cloneSearchParams[filtertax].split(',')
+        // return false
 
-    //         if( allValues.includes(termSlug) ){
-    //             allValues = allValues.filter( item => item != termSlug )
-    //         }else{
-    //             allValues.push(termSlug)
-    //         }
+        if( cloneSearchParams[tax] ){
 
-    //         if( allValues.length == 0 ){
-    //             delete cloneSearchParams[filtertax]
-    //         }else{
-    //             cloneSearchParams[filtertax] = allValues.join(',')
-    //         }
+            let allValues = cloneSearchParams[tax].split('§')
 
-    //     }else{
-    //         cloneSearchParams[filtertax] = [termSlug]
-    //     }
+            if( allValues.includes(termSlug) ){
+                allValues = allValues.filter( item => item != termSlug )
+            }else{
+                allValues.push(termSlug)
+            }
 
-    //     // console.log('cloneSearchParams', cloneSearchParams);
+            if( allValues.length == 0 ){
+                delete cloneSearchParams[tax]
+            }else{
+                cloneSearchParams[tax] = allValues.join('§')
+            }
 
-    //     const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
-    //     // console.log(updatedUrl);
-    //     router.replace(updatedUrl, undefined, { shallow: true, scroll: false });
+        }else{
+            cloneSearchParams[tax] = [termSlug]
+        }
 
-    // }
+        
+
+        const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
+        // console.log(updatedUrl);
+        router.replace(updatedUrl, undefined, { shallow: true, scroll: false });
+
+    }
+
 
     // useEffect( () => {
 
@@ -115,39 +125,57 @@ const ReifenTop = ({filterData}) => {
     return (
     
         <>
-            {
-            topAllowedAttrs.top.map( tax => (
+            
 
-                <div key={tax} className="mt-4">
-                    <h2 className="font-bold text-md mb-2 text-alfa-black-2">{ tax.charAt(0).toUpperCase() + tax.slice(1) } </h2>
-                    <ul className={`tax-terms ${ tax == 'season' && 'flex justify-between' }`} data-tax={tax}>
+                <div className="mt-4">
+                    <h2 className="font-bold text-md mb-2 text-alfa-black-2">Car Type</h2>
+                    <ul className={`tax-terms`} data-tax={'car'}>
                     {
-                        Object.keys(filterData[tax]['f']).map( term => (
+                        // Object.keys(filterData[tax]['f']).map( term => (
+                        ['PKW', 'Transporter', 'Offroad / SUV / 4x4'].map( term => (
                          
-                            
-                            topAllowedTerms.includes(term) && (
-                                <li 
-                                    key={term} 
-                                    className={`group ${ tax == 'season' ? 'w-[31%] flex flex-col items-center justify-between gap-y-[6px] pt-4 pb-3' : 'p-4' } bg-gray-100  mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
-                                    data-tax={tax}
-                                    // data-filtertax={`filter_${tax}`}
-                                    // data-termid={term.term_id}
-                                    // data-slug={term.slug}
-                                    // onClick={ handleClick }
-                                >
-                                    <div className="pointer-events-none text-alfa-red" dangerouslySetInnerHTML={{ __html: termIcons[term] }} />
-                                    <span className="pointer-events-none text-md text-alfa-gray-5 font-medium whitespace-nowrap group-hover:text-alfa-red-1">{term}</span>
-                                </li>
-                            )
+                            <li 
+                                key={term} 
+                                className={` ${ ! isEmpty(filterData.car.f) && ! Object.keys(filterData.car.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData.car.d) && filterData.car.d.includes(term) ? 'selected' : '' }  p-4 bg-gray-100 mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
+                                data-tax={'car'}
+                                data-slug={term}
+                                onClick={ handleClick }
+                            >
+                                <div className="pointer-events-none text-alfa-red" dangerouslySetInnerHTML={{ __html: termIcons[term] }} />
+                                <span className="pointer-events-none text-md text-alfa-gray-5 font-medium whitespace-nowrap ">{term}</span>
+                            </li>
+
+                        ))
+                    }
+                    </ul>
+                </div>
+                
+                
+                <div className="mt-4">
+                    <h2 className="font-bold text-md mb-2 text-alfa-black-2">Season</h2>
+                    <ul className={`tax-terms flex justify-between`} data-tax={'season'}>
+                    {
+                        // Object.keys(filterData[tax]['f']).map( term => (
+                        ['Summer', 'Winter', 'All Season'].map( term => (
+                         
+                            <li 
+                                key={term} 
+                                className={` ${ ! isEmpty(filterData.season.f) && ! Object.keys(filterData.season.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData.season.d) && filterData.season.d.includes(term) ? 'selected' : '' }  w-[31%] flex flex-col items-center justify-between gap-y-[6px] pt-4 pb-3 bg-gray-100  mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
+                                data-tax={'season'}
+                                data-slug={term}
+                                onClick={ handleClick }
+                            >
+                                <div className="pointer-events-none text-alfa-red" dangerouslySetInnerHTML={{ __html: termIcons[term] }} />
+                                <span className="pointer-events-none text-md text-alfa-gray-5 font-medium whitespace-nowrap">{term}</span>
+                            </li>
                             
                         ))
                     }
                     </ul>
                 </div>
                 
-            ))
-            }
-{/* 
+
+            {/* 
             <div className="flex gap-2 justify-between">
                 {
                     topAllowedAttrs.bottom.map( tax => (
@@ -200,10 +228,11 @@ const ReifenTop = ({filterData}) => {
                     </div>
                 </div>
             </div> */}
+            
         </>  
         
         
   )
 }
 
-export default ReifenTop
+export default FilterReifenTop

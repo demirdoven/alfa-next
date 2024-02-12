@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import {motion, AnimatePresence} from 'framer-motion'
 import { isEmpty } from "lodash";
 import { Button } from "../general/Button";
+import Image from "next/image";
 
 const Hero = () => {
 
@@ -150,10 +151,33 @@ const Hero = () => {
                                         initial={{ opacity: 0, x: -1200 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exist={{ opacity: 0, x: -1200 }}
-                                        transition={{ delay: 0.35 }}
+                                        transition={{ delay: 0.2 }}
                                     >
-                                        <img className="" src="/hero/DE-Title-x2.png.webp" alt="" />
-                                        <img className="" src="/hero/DE-Subtext-x2.png.webp" alt="" />
+                                        <Image 
+                                            src={'/hero/DE-Title-x2.png.webp'}
+                                            alt={`aa`}
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: 'auto' }}
+                                        />
+                                        <Image 
+                                            src={'/hero/DE-Subtext-x2.png.webp'}
+                                            alt="bb"
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: 'auto' }}
+                                        />
+
+                                        <Button 
+                                            href="/checkout" 
+                                            type="dark" 
+                                            classList="inline-block mt-6" 
+                                            innerClassList="uppercase text-center"
+                                            text="See Deals" 
+                                        />
+
                                     </motion.div>
                                     <motion.div
                                         initial={{ opacity: 0, y: 85 }}
@@ -161,9 +185,20 @@ const Hero = () => {
                                         exist={{ opacity: 0, y: 85 }}
                                         transition={{ delay: 0.35 }}
                                     >
-                                        <img className="hidden lg:block lg:mt-24" src="/hero/Tires.png.webp" alt="" />
+
+                                        <Image 
+                                            className="hidden lg:block lg:mt-12"
+                                            src={'/hero/Tires.png.webp'}
+                                            alt="bb"
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: 'auto' }}
+                                        />
+
                                     </motion.div>
                                 </div>
+
 
 
                                
@@ -171,15 +206,23 @@ const Hero = () => {
                                         
                                     <motion.div
                                         animate={{
-                                            scale: [0.5, 1.4, 1.4, 1, 1],
+                                            scale: [0.5, 1.2, 1.2, 1, 1],
                                             rotate: [0, 0, 720, 720, 720],
+                                            // transition: { type: "spring", duration: 0.75 }
                                             // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                                         }}
                                     >
-                                        <img 
-                                        className="lg:h-[32rem] "
-                                        src="/hero/homepage-filter-png_optimized.png.webp" alt="" />
-
+                                         <Image 
+                                            className="lg:h-[32rem]"
+                                            src={'/hero/homepage-filter-png_optimized.png.webp'}
+                                            alt="bb"
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: '32rem' }}
+                                        />
+                                        
+                                       
                                         <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="absolute top-[40%] lg:top-[43%] left-0 w-full">
 
                                             <div className="px-12 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">

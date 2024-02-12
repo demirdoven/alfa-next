@@ -139,7 +139,7 @@ body {
   @apply font-openSansCondensed font-bold italic text-[20px] text-[#272727];
 }
 .product-card-title {
-  @apply font-openSansCondensed text-[1rem]  font-bold   lg:text-[1.6rem]  tracking-[.02em] text-slate-900 leading-8;
+  @apply font-openSansCondensed text-[1rem]  font-bold   lg:text-[1.6rem]  tracking-[.02em] text-slate-900 lg:leading-8;
 }
 nav.image-gallery-thumbnails-container {
   display: flex;
@@ -248,19 +248,21 @@ input[type="number"]::-webkit-outer-spin-button {
       color: #dd0513;
   }
   li[data-tax="car"].selected svg path, 
-  li[data-tax="car"]:hover svg path, 
+  li[data-tax="car"]:hover:not(.pasif) svg path, 
   li.selected svg path:first-child, 
   li[data-tax="car"].selected svg g path:last-child, 
-  li[data-tax="car"]:hover svg g path:last-child, 
+  li[data-tax="car"]:hover:not(.pasif) svg g path:last-child, 
   li[data-tax="car"].selected *, 
-  li:hover svg g path:first-child,
+  li:hover:not(.pasif) svg g path:first-child,
   li.selected svg g path:first-child {
     color: #dd0513;
     fill: #dd0513 !important;
     fill-rule: unset !important;
 }
-
-
+li[data-tax="car"]:hover:not(.pasif) span,
+li[data-tax="season"]:hover:not(.pasif) span {
+  @apply text-alfa-red-1
+}
 
 .selected_payment_method > label {
   @apply border-slate-800;
@@ -270,4 +272,23 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .product-list-wrap.loading .product-card > div {
   @apply opacity-20;
+}
+@media screen and ( max-width: 768px ){
+
+  bdi:before {
+    content: '';
+    width: 100%;
+    height: 14px;
+    background: #ffeb3b;
+    position: absolute;
+    left: 0px;
+    bottom: -3px;
+    z-index: 1;
+    display: block;
+  }
+  bdi span {
+    position: relative;
+    z-index: 22;
+  }
+  
 }

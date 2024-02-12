@@ -26,7 +26,7 @@ const Price = ({catSlug, pid, oldPrice}) => {
     <span className={`woocommerce-Price-amount amount relative ${ 'before:absolute before:top-0 before:left-0 before:animate-spin before:w-[30px] before:h-[30px]' } `}>
             
             
-            <div className={`flex gap-x-1 items-end ${ priceLoading ? 'opacity-30' : 'opacity-100' } `}>
+            <div className={`flex flex-col lg:flex-row gap-x-1 gap-y-1 lg:gap-y-0 items-end ${ priceLoading ? 'opacity-30' : 'opacity-100' } `}>
                 {/* {
                     priceLoading ? (
                         <svg aria-hidden="true" class="mr-1 w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-alfa-red-1" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,8 +39,9 @@ const Price = ({catSlug, pid, oldPrice}) => {
                 {/* <bdi className={`text-[24px] font-semibold leading-none ${ priceLoading ? 'opacity-30' : 'opacity-100' } `}>{ priceLoading ? oldPrice : price }
                     <span className="woocommerce-Price-currencySymbol"> €</span>
                 </bdi> */}
-                <span className='text-[16px] font-medium leading-none relative top-[-1px]'>from</span>
-                <bdi className={`text-[30px] font-semibold leading-none `}> { price || oldPrice }
+                <span className='text-sm lg:text-[16px] font-light lg:font-medium leading-none relative lg:top-[-2px]'>from</span>
+                <bdi className={`relative text-2xl lg:text-[30px] font-bold lg:font-semibold leading-none whitespace-nowrap `}> 
+                    <span>{ price || oldPrice }</span>
                     <span className="woocommerce-Price-currencySymbol "> €</span>
                 </bdi>
             </div>

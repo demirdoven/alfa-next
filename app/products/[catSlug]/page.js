@@ -142,7 +142,7 @@ export default async function catSlug( {params, searchParams} ){
     const filterData = await getDynamicFilterData()
 
     return (
-        <div className="w-full xs:px-4 lg:container mx-auto lg:max-w-6xl mt-6">
+        <div className="w-full xs:px-4 lg:container mx-auto lg:max-w-6xl mt-6 px-4">
             <Main catSlug={catSlug} filterData={filterData} searchParams={searchParams} />
         </div>
     )

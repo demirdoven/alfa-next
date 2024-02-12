@@ -60,7 +60,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
         <div 
             data-pid={product.id} 
-            className="product-card relative w-full mb-6 pt-4 pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
+            className="product-card relative w-full mb-2 lg:mb-6 pt-4 pr-4 lg:pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
             // data-title={product?.brand + ' ' + product?.model}
             // data-price={product?.details?.price}
             // data-tiresize={product?.details?.sizeTires}
@@ -70,9 +70,9 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
             <div className="flex flex-row ">
 
-                <div className="w-5/12 lg:w-3/12 relative mx-3 mt-3 py-1 flex">
+                <div className="w-3/12 lg:w-3/12 relative lg:mx-3 lg:mt-3 lg:py-1 flex self-start">
                 
-                    <div className="flex flex-col gap-y-2">
+                    <div className="flex flex-col gap-y-2 ">
                         
                         {/* { brandLogo && 
                             <div className="absolute top-0 left-0 border border-slate-600 bg-[#FFC107] rounded-md">
@@ -84,7 +84,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                         {
                             productImage && (
                                 <Image
-                                    className={`object-cover overflow-hidden relative ${ ['berlin-tires', 'syron', 'bf-goodrich', 'giti'].includes(brand) && 'mt-[-10px]'  }`}
+                                    className={`object-cover overflow-hidden relative ${ ['berlin-tires', 'syron', 'bf-goodrich', 'giti'].includes(brand) && 'lg:mt-[-10px]'  }`}
                                     src={productImage}
                                     alt="product image"
                                     width="200"
@@ -94,7 +94,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                         }
                         
                         { brandLogo && 
-                            <div className="absolute bottom-0 left-0 bg-white">
+                            <div className="relative lg:absolute bottom-0 left-0 bg-white">
                                 <Image 
                                     src={
                                         brand === 'continental'
@@ -121,29 +121,36 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
                 </div>
 
-                <div className="w-7/12 lg:w-9/12 flex flex-col lg:pl-8">
+                <div className="w-9/12 lg:w-9/12 flex justify-center flex-col lg:pl-8">
                     
-                    <div className="w-full flex flex-row pt-5">
-                        <div className="w-full lg:w-9/12  ">
+                    <div className="w-full flex flex-row lg:pt-5 pl-6 lg:pl-0">
+
+                        <div className=" w-9/12 lg:w-9/12  ">
                         
                             <Link 
                                 href={`/product/${convertToSlug(product?.brand + ' ' + product?.model + '-'+ product?.sizeTires + ' ' + product?.post_id)}`}
                                 className="my-2"
                                 scroll={true}
                             >
-                                <h5 onClick={handleClickTitle} className="product-card-title">
+                                <h5 onClick={handleClickTitle} className="product-card-title leading-tight	">
                                     {product?.brand + ' ' + product?.model}
                                 </h5>
-                                <span onClick={handleClickTitle} className="block my-2 font-100 ">{product?.sizeTires}</span>
+                                <span onClick={handleClickTitle} className="block lg:my-2 font-light text-sm ">{product?.sizeTires}</span>
                             </Link>
 
                             {/* <span className="block mt-3 text-[.75rem] lg:text-[1rem]">{product.title}</span> */}
 
-                            <ul className="flex gap-5 mt-4 text-[.75rem] lg:text-[1rem]">
+                            <ul className="flex gap-2 lg:gap-5 mt-1 lg:mt-4 text-[.75rem] lg:text-[1rem]">
                                 {
                                     product?.fuel && (
                                     <li className="flex items-center gap-1 ">
-                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/fuel-icon.webp" alt="" width="20" height="20"/>
+                                        <Image 
+                                            src="https://alfatires.eu/wp-content/themes/alfatires/img/fuel-icon.webp" 
+                                            alt="" 
+                                            width="20" 
+                                            height="20"
+                                            className="w-[14px] lg:w-[20px]"
+                                        />
                                         {product?.fuel}
                                     </li>
                                     )
@@ -151,7 +158,12 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 {
                                     product?.wet && (
                                     <li className="flex items-center gap-1 ">
-                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/rain-icon.webp" alt="" width="20" height="20"/>
+                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/rain-icon.webp" 
+                                            alt=""
+                                            width="20" 
+                                            height="20"
+                                            className="w-[14px] lg:w-[20px]"
+                                        />
                                         {product?.wet}
                                     </li>
                                     )
@@ -159,7 +171,12 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 {
                                     product?.noise && (
                                     <li className="flex items-center gap-1 ">
-                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/volume-icon.webp" alt="" width="20" height="20"/>
+                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/volume-icon.webp"
+                                            alt=""
+                                            width="20" 
+                                            height="20"
+                                            className="w-[14px] lg:w-[20px]"
+                                        />
                                         {product?.noise}
                                     </li>
                                     )
@@ -168,9 +185,21 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 
                             </ul>
 
+                            <div className="block lg:hidden mt-1">
+                                { 
+                                    season && seasonIconUrl ? 
+                                        <div className="flex items-center gap-x-1 text-[.75rem] lg:text-[1rem]">
+                                            <Image src={seasonIconUrl} alt={season} width="16" height="16"/>
+                                            <span className="font-light	text-md">{season}</span>
+                                        </div>
+                                    
+                                    : null 
+                                }
+                            </div>
+
                         </div>
                         
-                        <div className="w-full lg:w-3/12 pb-1 pr-1 flex flex-col align-center justify-end	">
+                        <div className="w-3/12 lg:w-3/12 pb-1 pr-1 flex flex-col align-center justify-center lg:justify-end">
                             
                             <span className="hidden lg:block text-[0.8rem] text-right text-green-600">In stock</span>
                             <span className="hidden lg:block text-[0.7rem] text-right text-alfa-gray-9">Delivery: 1-4 Days</span>
@@ -183,7 +212,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                             {/* <PriceBox product={product} classList="" /> */}
 
 
-                            <div className={`price-box mt-8 lg:mt-8 mb-2 flex flex-col lg:items-end gap-0 `}>
+                            <div className={`price-box lg:mt-8 lg:mb-2 flex flex-col lg:items-end gap-0 `}>
                                 
                                 <div className="">
                                     
@@ -224,10 +253,10 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
                     </div>
 
-                    <hr className="w-full my-4 opacity-50"/>
+                    <hr className="hidden lg:block w-full my-4 opacity-50"/>
 
 
-                    <div className="py-1 w-full flex justify-between items-start">
+                    <div className="hidden lg:flex py-1 w-full justify-between items-start">
                         { 
                             season && seasonIconUrl ? 
                                 <div className="flex gap-x-2 text-[.75rem] lg:text-[1rem]">
