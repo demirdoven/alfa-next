@@ -41,8 +41,6 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                     )
                 }
                
-                
-
                 <AnimatePresence>
                     <motion.div
                         className='fixed top-0 right-[-400px] w-64 min-w-[400px] h-screen overflow-hidden overflow-y-auto'

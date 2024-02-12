@@ -21,7 +21,7 @@ const UserSection = ( {className} ) => {
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
-        <div onClick={() => setMcart(!mCart)} className="flex gap-x-3 items-center cursor-pointer" >
+        <div onClick={() => setMcart(!mCart)} className="hidden lg:flex gap-x-3 items-center cursor-pointer" >
             <div className="relative">
                 <PiHandbagBold size='1.5em' />
                 { 
