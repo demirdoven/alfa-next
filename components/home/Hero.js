@@ -4,15 +4,39 @@ import Link from "next/link"
 import { useEffect, useState } from "react";
 
 import {motion, AnimatePresence} from 'framer-motion'
+import { isEmpty } from "lodash";
+import { Button } from "../general/Button";
 
 const Hero = () => {
 
-    const [heroFilterAtts, setHeroFilterAtts] = useState(null)
+    // const [heroFilterAtts, setHeroFilterAtts] = useState(null)
 
-    const [selectedValues, setSelectedValues] = useState({breite: '205', hoehe: '55', zoll: '16'});
-    const [reifenTypeValue, setReifenTypeValue] = useState('winterreifen');
+    const [selectedValues, setSelectedValues] = useState({width: '205', height: '55', zoll: '16'});
+    const [reifenTypeValue, setReifenTypeValue] = useState('Winter');
     const [btnUrl, setBtnUrl] = useState( `/products/tires?season=Winter&width=205&height=55&zoll=16&` );
 
+    const heroFilterAtts = {
+        'width' : {
+            'title' : 'Width',
+            'terms' : [65, 175, 185, 195, 205, 215, 225, 235, 245, 255, 265, 275, 285, 295, 305, 315],
+            'default' : 205
+            
+        },
+        'height' : {
+            'title' : 'Height',
+            'terms' : [40, 45, 50, 55, 60, 65, 70, 75, 80],
+            'default' : 55
+        },
+        'zoll' : {
+            'title' : 'Zoll',
+            'terms' : [14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+            'default' : 16
+        },
+        // 'season' : {
+        //     'title' : 'Season',
+        //     'terms' : ['Winter', 'Summer', 'All Season']
+        // }
+    }
 
     const handleSelectChange = (e, slug) => {
         setSelectedValues({
@@ -48,30 +72,31 @@ const Hero = () => {
 
     }
 
-    useEffect( ()=>{
+    // useEffect( ()=>{
 
-        if ( process.browser ) {
+        // if ( process.browser ) {
 
-            let homeHeroAttrsData = localStorage.getItem( 'homeHeroAttrs' );
+        //     let homeHeroAttrsData = localStorage.getItem( 'homeHeroAttrs' );
 
-            if( homeHeroAttrsData ){
+        //     if( homeHeroAttrsData ){
 
-                homeHeroAttrsData = null !== homeHeroAttrsData ? JSON.parse( homeHeroAttrsData ) : '';
-                setHeroFilterAtts(homeHeroAttrsData);
+        //         homeHeroAttrsData = null !== homeHeroAttrsData ? JSON.parse( homeHeroAttrsData ) : '';
+        //         setHeroFilterAtts(homeHeroAttrsData);
 
-            }else{
-                let url = 'https://alfatires.com/wp-json/custom/v1/attr/?attributes=reifentyp,breite,hoehe,zoll';
+        //     }else{
+        //         let url = 'https://alfatires.com/wp-json/custom/v1/attr/?attributes=reifentyp,breite,hoehe,zoll';
 
-                fetch(url)
-                .then((res) => res.json())
-                .then((data) => {
-                    setHeroFilterAtts(data)
-                    localStorage.setItem('homeHeroAttrs', JSON.stringify(data));
-                })
-            }
-        }
+        //         fetch(url)
+        //         .then((res) => res.json())
+        //         .then((data) => {
+        //             setHeroFilterAtts(data)
+        //             localStorage.setItem('homeHeroAttrs', JSON.stringify(data));
+        //         })
+        //     }
+        // }
 
-    }, [])
+        
+    // }, [] )
 
     useEffect( () => {
         setUrl();
@@ -84,6 +109,7 @@ const Hero = () => {
     function setUrl(){
         let url = new URL(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/products/tires/`);
 
+        
         Object.keys(selectedValues).forEach(function(key) {
             url.searchParams.append(key, selectedValues[key]);
         });
@@ -92,35 +118,28 @@ const Hero = () => {
 
         // console.log(url.href);
 
-        setBtnUrl(url.href.replace('breite', 'width').replace('hoehe', 'height').replace('winterreifen', 'Winter').replace('sommerreifen', 'Summer').replace('allwetterreifen', 'All%20Season') )
+        // setBtnUrl(url.href.replace('breite', 'width').replace('hoehe', 'height').replace('winterreifen', 'Winter').replace('sommerreifen', 'Summer').replace('allwetterreifen', 'All%20Season') )
+        setBtnUrl(url.href)
     }
 
-    const taxes = [
-        {
-            name: 'Breite',
-            slug: 'breite',
-            defaultTermSlug: '205',
-        },
-        {
-            name: 'Hoehe',
-            slug: 'hoehe',
-            defaultTermSlug: '55',
-        },
-        {
-            name: 'Zoll',
-            slug: 'zoll',
-            defaultTermSlug: '16',
-        }
-    ];
     
     return (
         <>
             <AnimatePresence>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exist={{ opacity: 0 }}
-                    transition={{ delay: 0.10 }}
+                    exit={{
+                        y: -20,
+                        opacity: 0,
+                        filter: "blur(5px)",
+                        transition: { ease: "easeIn", duration: 0.22 }
+                      }}
+                      initial={{ opacity: 0, y: -15 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        transition: { type: "spring", duration: 0.7 }
+                      }}
                 >
                     <div className="w-full bg-[url(/hero/Hero-Background-1.png)] bg-top bg-no-repeat bg-cover pb-4 lg:pb-0">
                         <div className="container mx-auto lg:max-w-6xl">
@@ -165,25 +184,31 @@ const Hero = () => {
 
                                             <div className="px-12 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
                                                 
-                                                    {taxes.map((tax) => (
-                                                        <div key={tax.slug} className="w-[31%] xs:text-center">
-                                                        <label className="text-xs lg:text-lg">{tax.name}</label>
+                                            { 
+                                                heroFilterAtts && ! isEmpty(heroFilterAtts) &&
+
+                                                    Object.keys(heroFilterAtts).map((taxSlug) => (
+                                                        <div key={taxSlug} className="w-[31%] xs:text-center">
+                                                        <label className="text-xs lg:text-lg">{heroFilterAtts[taxSlug].title}</label>
                                                         <select
-                                                            id={tax.slug}
-                                                            value={selectedValues[tax.slug] || tax.defaultTermSlug}
-                                                            onChange={(e) => handleSelectChange(e, tax.slug)}
+                                                            id={taxSlug}
+                                                            value={selectedValues[taxSlug] || heroFilterAtts[taxSlug].default}
+                                                            onChange={(e) => handleSelectChange(e, taxSlug)}
                                                             className="w-full text-sm lg:text-xl font-semibold py-1 lg:py-2.5 lg:px-4 bg-alfa-gray-10 rounded text-center focus:outline-0"
                                                         >
                                                             {
-                                                            heroFilterAtts && heroFilterAtts[tax.slug] ? heroFilterAtts[tax.slug].map((option) => (
-                                                            <option key={option.term_id} value={option.slug}>
-                                                                {option.name}
-                                                            </option>
-                                                            )) : <option>Alle</option>
-                                                        }
+                                                                heroFilterAtts[taxSlug].terms.map((option) => (
+                                                                <option key={option} value={option}>
+                                                                    {option}
+                                                                </option>
+                                                                ))
+                                                            }
                                                         </select>
                                                         </div>
-                                                    ))}
+                                                    )
+                                                )
+                                            
+                                            }
                                                 
                                             </div>
 
@@ -191,16 +216,16 @@ const Hero = () => {
 
                                             <div className="mt-3 px-24 w-full flex gap-x-4em justify-center text-center">
                                                 <div className="flex-1 p-2 text-left flex lg:block items-center gap-x-2">
-                                                    <label htmlFor="" className="xs:text-xs lg:text-sm font-normal mb-1 block">Reifentyp</label>
+                                                    <label htmlFor="" className="xs:text-xs lg:text-sm font-normal mb-1 block">Season</label>
                                                     <select 
                                                     value={reifenTypeValue}
                                                     onChange={(e) => handleReifenTypChange(e)}
                                                     id="reifentyp" 
                                                     className="w-auto lg:w-full text-sm font-semibold py-1 lg:py-2.5 pl-4 lg:px-4 bg-alfa-gray-10 rounded focus:outline-0">
 
-                                                        <option key={"winterreifen"} value={"winterreifen"}>Winter</option>
-                                                        <option key={"sommerreifen"} value={"sommerreifen"}>Sommer</option>
-                                                        <option key={"allwetterreifen"} value={"allwetterreifen"}>Allwetter</option>
+                                                        <option key={"Winter"} value={"Winter"}>Winter</option>
+                                                        <option key={"Summer"} value={"Summer"}>Summer</option>
+                                                        <option key={"All Season"} value={"All Season"}>All Season</option>
 
                                                     </select>
                                                 </div>
@@ -216,11 +241,14 @@ const Hero = () => {
                                                     
                                                     >REIFEN FINDEN</button> */}
 
-                                                    <Link 
-                                                        className="bg-alfa-red-1 text-white lg:text-2xl font-semibold rounded-md px-3 lg:px-4 py-2"
-                                                        href={ btnUrl ? btnUrl : '' }>
-                                                        SEARCH TIRES
-                                                    </Link>
+                                                    <Button 
+                                                        href={ btnUrl ? btnUrl : '' }
+                                                        type="dark" 
+                                                        innerClassList="block w-full text-center"
+                                                        text="SEARCH TIRES" 
+                                                        // setMcart={setMcart}
+                                                        // onClick={ ()=>{ setMcart(false) } }
+                                                    />
 
                                             </div>
 

@@ -26,6 +26,10 @@ const SingleProductReifen = ({product, catSlug}) => {
 
     useEffect( ()=>{
 
+        console.log('productData', productData)    
+    }, [productData])
+    
+    useEffect( ()=>{
         if( ! isEmpty(variationList) ){
             setProductData( variationList.find( ({ post_id }) => post_id == variationID ) )
         }      
@@ -42,7 +46,7 @@ const SingleProductReifen = ({product, catSlug}) => {
 
         if (typeof window !== 'undefined') {
             if( localStorage.getItem('clickedProduct') ){
-                localStorage.removeItem('clickedProduct')
+                // localStorage.removeItem('clickedProduct')
             }
         }
 

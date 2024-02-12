@@ -76,11 +76,11 @@ const UnsereReifenempfehlung = () => {
 
     
 
-    useEffect(() => {
+    // useEffect(() => {
           
-       console.log(products)
+    //    console.log(products)
 
-    }, [products]);
+    // }, [products]);
 
 
  

@@ -66,11 +66,13 @@ export default function CartDetails({input, handleOnChange, isOrderProcessing, r
                             <div className="woo-next-place-order-btn-wrap mt-5">
 								<button
 									disabled={ isOrderProcessing }
-									className={` ${ isOrderProcessing && 'opacity-50' } bg-alfa-red-1 text-white px-5 py-3 rounded-md w-auto xl:w-full `}
+									// className={` ${ isOrderProcessing && 'opacity-50' } bg-alfa-red-1 text-white px-5 py-3 rounded-md w-auto xl:w-full `}
+									className={`w-full bg-red-600 text-white hover:bg-red-700 border border-red-600 text-red-600 text-xl font-bold py-2 px-8 rounded-md uppercase`}
 									type="submit"
 								>
 									Place Order
 								</button>
+
 							</div>
 
 							{ isOrderProcessing && <p>Processing Order...</p> }
