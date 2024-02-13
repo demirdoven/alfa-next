@@ -5,6 +5,7 @@ export default async function catSlug( {params, searchParams} ){
 
     const catSlug = params.catSlug;
 
+    console.log(catSlug)
 
     function prepareJsonData(){
 
@@ -59,6 +60,30 @@ export default async function catSlug( {params, searchParams} ){
             datas.table     = '_product_rims'
             datas.postType  = 'post_parent'
             datas.filters   = ["zoll", "lzlk", "colortype", "brand", "model", "season", "forwinter"]
+
+            for(let filter of datas.filters) {
+                let urlSearchData = null;
+                if(searchParams[filter]){
+                    urlSearchData = searchParams[filter].split("§");
+                }
+        
+                datas[filter] = {
+                    d:urlSearchData,
+                    i:null,
+                    f:null,
+                    img:false,
+                    specific:null,
+                    query:'IN'
+                }
+            }
+
+            
+        }
+        if( catSlug == 'accessories' ){ 
+            datas.cat       = 'accesories';
+            datas.table     = '_product_lids'
+            datas.postType  = 'post_id'
+            datas.filters   = ["brand", "model", "colortype", "zoll", "lzlk"]
 
             for(let filter of datas.filters) {
                 let urlSearchData = null;

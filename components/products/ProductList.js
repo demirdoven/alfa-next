@@ -23,7 +23,12 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
             const getPrd = async () => {
             
-                const products = await getMultiProducts(catSlug, queryPids );
+                let cat = catSlug;
+                if( catSlug == 'accessories' ){
+                    cat = 'lids'
+                }
+
+                const products = await getMultiProducts(cat, queryPids );
                 setQueryProdData(products)
                 setProdsLoading(false)
                 
@@ -35,9 +40,6 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
     }, [queryPids, catSlug]);
 
     
-
-
-
     return (
         <div className={`product-list-wrap ${ prodsLoading && 'loading' } `}>
             { 

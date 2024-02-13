@@ -27,11 +27,19 @@ const Main = ({products, catSlug, searchParams, filterData}) => {
         if( ! isEmpty(queryPids) ){
 
             const getPrd = async () => {
+
+                let cat = catSlug;
+                if( catSlug == 'accessories' ){
+                    cat = 'lids'
+                }
             
-                const products = await getMultiProducts(catSlug, queryPids );
+                const products = await getMultiProducts(cat, queryPids );
                 setQueryProdData(products)
                 setProdsLoading(false)
                 
+                console.log(products)
+
+
                 let allLocal = {}
 
                 products.map( item => {

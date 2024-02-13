@@ -39,7 +39,7 @@ const Price = ({catSlug, pid, oldPrice}) => {
                 {/* <bdi className={`text-[24px] font-semibold leading-none ${ priceLoading ? 'opacity-30' : 'opacity-100' } `}>{ priceLoading ? oldPrice : price }
                     <span className="woocommerce-Price-currencySymbol"> €</span>
                 </bdi> */}
-                <span className='text-sm lg:text-[16px] font-light lg:font-medium leading-none relative lg:top-[-2px]'>from</span>
+                <span className='text-sm lg:text-[16px] font-light lg:font-medium leading-none relative lg:top-[-2px] italic'>from</span>
                 <bdi className={`relative text-2xl lg:text-[30px] font-bold lg:font-semibold leading-none whitespace-nowrap `}> 
                     <span>{ price || oldPrice }</span>
                     <span className="woocommerce-Price-currencySymbol "> €</span>

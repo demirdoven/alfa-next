@@ -148,6 +148,7 @@ const Hero = () => {
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
                                 <div className="w-full lg:w-[50%] flex flex-col items-center justify-end pt-8 lg:pt-0">
                                     <motion.div
+                                        className="w-full"
                                         initial={{ opacity: 0, x: -1200 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exist={{ opacity: 0, x: -1200 }}
@@ -180,6 +181,7 @@ const Hero = () => {
 
                                     </motion.div>
                                     <motion.div
+                                        className="w-full"
                                         initial={{ opacity: 0, y: 85 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exist={{ opacity: 0, y: 85 }}
@@ -219,7 +221,7 @@ const Hero = () => {
                                             width={0}
                                             height={0}
                                             sizes="100vw"
-                                            style={{ width: '100%', height: '32rem' }}
+                                            style={{ width: '100%', height: '30rem' }}
                                         />
                                         
                                        

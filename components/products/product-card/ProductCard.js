@@ -8,7 +8,8 @@ const ProductCard = ({catSlug, prodsLoading, product, loading, setIsAddedToCart,
         <>
             { catSlug == 'tires' && <CardTire prodsLoading={prodsLoading} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} /> }
             { catSlug == 'rims' && <CardRim product={product} loading={loading} /> }
-            
+            { catSlug == 'accessories' && <CardTire prodsLoading={prodsLoading} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} /> }
+
         </>
     )
 }
