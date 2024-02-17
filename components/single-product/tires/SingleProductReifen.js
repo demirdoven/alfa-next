@@ -116,7 +116,7 @@ const SingleProductReifen = ({product, catSlug}) => {
                         </div>
 
                         <div className="mt-6">
-                            <AddToCart qty={qty} pid={312315} />
+                            <AddToCart qty={qty} pid={variationID} />
                             {/* <AddToCart product={ product } miniCart={miniCart} setMiniCart={setMiniCart} /> */}
                         </div>
 

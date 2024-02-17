@@ -19,7 +19,7 @@ const BuyNowButton = ({pid, setIsAddedToCart, isAddedToCart}) => {
 
 
         
-        sepeteEkle( 312315, 1, setColor, setIsAddedToCart, setLoading )
+        sepeteEkle( pid, 1, setColor, setIsAddedToCart, setLoading )
 
         router.push('/checkout', { scroll: true })
 
