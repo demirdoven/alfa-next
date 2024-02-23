@@ -21,6 +21,7 @@ const HomePage = () => {
       <Entdecke />
       <Newsletter />
 
+      
 
     </div>
   )
