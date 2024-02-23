@@ -9,6 +9,7 @@ import Logo from "./Logo"
 import StickyBar from "./StickyBar"
 import MobilSideMenu from "./MobilSideMenu";
 import { useEffect, useState } from "react";
+import SearchBar from "./SearchBar";
 
 export default function Header( {className} ){
 
@@ -29,7 +30,7 @@ export default function Header( {className} ){
                         onClick={ ()=>{ setMobileMenuOpen( ! mobileMenuOpen ) } } 
                     />
                      <Logo className=""/>
-                    {/* <Search className="hidden lg:block w-2/4"/> */}
+                    <SearchBar className="hidden lg:block w-2/4"/>
 
                     <UserSection className="client-section"/>
                 </div>
