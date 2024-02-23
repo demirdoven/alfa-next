@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {memo} from 'react';
 // import cx from 'classnames';
 import Abbr from './form-elements/Abbr';
-import Error from '../../Error';
+import Error from './Error';
 
 const StateSelection = ({handleOnChange, input, states, isFetchingStates, isShipping}) => {
 	
