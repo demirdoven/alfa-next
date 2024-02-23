@@ -34,14 +34,17 @@ const itemVariants = {
   }
 };
 
-export default function TypingLayout() {
+export default function TypingLayout( {stopTyping} ) {
   return (
-    <motion.div className=" ">
+    <motion.div 
+      className="absolute top-[4px] left-0 z-1 "
+      // onClick={ ()=>{ stopTyping() } } 
+    >
       <motion.div
         variants={containerVariants}
         animate="visible"
         initial="hidden"
-        className="flex h-[40px] flex-col p-2 absolute top-0 left-0"
+        className="flex h-[50px] flex-col p-2 "
       >
         <motion.div
           variants={itemVariants}
@@ -56,7 +59,7 @@ export default function TypingLayout() {
         </motion.div>
         <motion.span
           variants={itemVariants}
-          className="inline w-full px-8 text-lg text-slate-900"
+          className="inline w-full pl-2 text-xl text-slate-900"
         >
           <AnimText delay={1} />
         </motion.span>

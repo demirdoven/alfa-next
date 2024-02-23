@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Error from "./error";
+import Error from "../../Error";
 import Image from "next/image";
 
 const PaymentModes = ( { input, handleOnChange } ) => {

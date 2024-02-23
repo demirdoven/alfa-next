@@ -1,4 +1,4 @@
-import Error from '../error';
+import Error from '../../../Error';
 import PropTypes from 'prop-types';
 import Abbr from "./Abbr";
 

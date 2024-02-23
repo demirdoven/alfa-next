@@ -9,9 +9,12 @@ export default function RedoAnimText({delay}) {
   const texts = [
     "Summer tires",
     "Berlin Tires All Season 1 295/30 ZR22 103W",
-    "All season",
-    "Continental tire",
+    "All season tires",
+    "Continental tires",
     "165/70 R13 79T",
+    "Gray rims",
+    "Rims for 16\" tire",
+    "MAM rims black",
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
