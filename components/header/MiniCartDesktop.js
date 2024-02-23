@@ -8,6 +8,7 @@ import { Button } from '../general/Button';
 import { IoClose } from "react-icons/io5";
 
 import {motion, AnimatePresence} from 'framer-motion'
+import CartItem2 from '../checkout/CartItem_Old';
 
 
 const MiniCartDesktop = ({cart, mCart, setMcart}) => {
@@ -34,7 +35,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                     mCart && (
                         <div 
                             onClick={ ()=>{ setMcart(false) } } 
-                            className='fixed top-0 left-0 w-screen h-screen bg-[#0000006e] z-100'
+                            className='fixed top-0 left-0 w-screen h-screen bg-[#0000006e] z-[999999998]'
                         >
                         
                         </div>
@@ -43,7 +44,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                
                 <AnimatePresence>
                     <motion.div
-                        className='fixed top-0 right-[-400px] w-64 min-w-[400px] h-screen overflow-hidden overflow-y-auto z-100'
+                        className='fixed top-0 right-[-400px] w-64 min-w-[400px] h-screen overflow-hidden overflow-y-auto z-[999999999]'
                         animate={{
                             translateX: mCart ? -400 : 0
                         }}
@@ -65,22 +66,26 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                                     <div className="flex flex-1 flex-col h-full">
                                         
                                         <div className="relative flex-1">
-                                            <div className="absolute inset-0 max-h-full overflow-hidden overflow-y-auto">
+                                            <div className="absolute inset-0 max-h-full overflow-hidden overflow-y-auto pr-2">
                                             
+                                            <div className="w-full bg-white">
                                                 {
-                                                    color && color !== null && color.cartItems.length ? (
+                                                    color !== null && color.cartItems.length ? (
                                                         color.cartItems.map( item => (
-                                                            <CartItemMiniCart
-                                                                key={ item.product_id }
+                                                            <CartItem2
+                                                                // key={ item.product_id }
+                                                                key={ Math.random() }
                                                                 item={ item }
-                                                                products={ cartItems }
+                                                                products={ color?.cartItems }
                                                                 setColor={setColor}
                                                                 setUpdatingProduct={setUpdatingProduct}
                                                                 setRemovingProduct={setRemovingProduct}
                                                             />
                                                         ))
-                                                    ) : <LoadingLastik classList="mt-24"/> 
+                                                    ) : ''
+                                                        // <LoadingLastik classList="mt-24"/> 
                                                 }
+                                            </div>
 
                                             </div>
                                         </div>

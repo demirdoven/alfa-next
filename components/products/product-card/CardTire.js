@@ -280,6 +280,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 setIsAddedToCart={setIsAddedToCart} 
                                 isAddedToCart={isAddedToCart} 
                             />
+
                         </div>
                     </div>
 

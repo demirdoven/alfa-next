@@ -123,7 +123,8 @@ const Hero = () => {
         setBtnUrl(url.href)
     }
 
-    
+
+
     return (
         <>
             <AnimatePresence>

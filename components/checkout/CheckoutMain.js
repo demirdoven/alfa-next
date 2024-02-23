@@ -16,7 +16,7 @@ import {
 
 import validateAndSanitizeCheckoutForm from "@/lib/validator/checkout";
 // import CartDetails from "./CartDetails";
-import CartDetails from "./CartDetails_Old";
+import CartDetails from "./CartDetails_Old.js";
 
 import { useRouter } from 'next/navigation'
 

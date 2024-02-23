@@ -13,6 +13,7 @@ import Meta from "@/components/single-product/tires/Meta";
 import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
+import AddToTempCart from "@/components/general/AddToTempCart";
 
 const SingleProductReifen = ({product, catSlug}) => {
     
@@ -59,6 +60,7 @@ const SingleProductReifen = ({product, catSlug}) => {
         return str;
     }
     
+   
 
     return (
         <div className="w-full mt-6 flex flex-col gap-y-10">
@@ -119,6 +121,9 @@ const SingleProductReifen = ({product, catSlug}) => {
                             <AddToCart qty={qty} pid={variationID} />
                             {/* <AddToCart product={ product } miniCart={miniCart} setMiniCart={setMiniCart} /> */}
                         </div>
+
+
+                        <AddToTempCart productData={productData} />
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>

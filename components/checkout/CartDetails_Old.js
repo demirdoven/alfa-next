@@ -27,7 +27,8 @@ export default function CartDetails({input, handleOnChange, isOrderProcessing, r
                                     color !== null && color.cartItems.length ? (
                                         color.cartItems.map( item => (
                                             <CartItem2
-                                                key={ item.product_id }
+                                                // key={ item.product_id }
+                                                key={ Math.random() }
                                                 item={ item }
                                                 products={ cartItems }
                                                 setColor={setColor}

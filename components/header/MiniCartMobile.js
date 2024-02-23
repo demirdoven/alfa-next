@@ -78,7 +78,8 @@ const MiniCartMobile = ({mCart, setMcart }) => {
                                     color && color !== null && color.cartItems.length ? (
                                         color.cartItems.map( item => (
                                             <CartItemMiniCart
-                                                key={ item.product_id }
+                                                // key={ item.product_id }
+                                                key={ Math.random() }
                                                 item={ item }
                                                 products={ color?.cartItems }
                                                 setColor={setColor}

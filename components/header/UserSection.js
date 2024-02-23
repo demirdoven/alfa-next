@@ -12,6 +12,7 @@ const UserSection = ( {className} ) => {
 
   const { color, setColor} = useThemeContext();
   const { mCart, setMcart} = useMiniCartContext();
+
   // const [miniCart, setMcart] = useState(false);
 
   // useEffect( ()=>{
