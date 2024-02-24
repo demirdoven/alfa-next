@@ -58,7 +58,7 @@ const Hero = () => {
         const zoll = document.getElementById('zoll');
         const reifentyp = document.getElementById('reifentyp');
 
-        let url = new URL(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/products/tires/`);
+        let url = new URL(`${process.env.NEXT_PUBLIC_WORDPRESS_URL}/products/tires/`);
 
         breite && breite.value && url.searchParams.append('width', breite.value);
         hoehe && hoehe.value && url.searchParams.append('height', hoehe.value);
@@ -108,7 +108,7 @@ const Hero = () => {
     }, [reifenTypeValue])
 
     function setUrl(){
-        let url = new URL(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/products/tires/`);
+        let url = new URL(`${process.env.NEXT_PUBLIC_WORDPRESS_URL}/products/tires/`);
 
         
         Object.keys(selectedValues).forEach(function(key) {
@@ -205,7 +205,7 @@ const Hero = () => {
 
 
                                
-                                    <div className="custom-filter w-full lg:w-[50%] relative max-w-fit pt-2 pb-6">
+                                    <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
                                     <motion.div
                                         animate={{
