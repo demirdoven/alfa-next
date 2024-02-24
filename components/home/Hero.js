@@ -58,7 +58,7 @@ const Hero = () => {
         const zoll = document.getElementById('zoll');
         const reifentyp = document.getElementById('reifentyp');
 
-        let url = new URL(`${process.env.NEXT_PUBLIC_WORDPRESS_URL}/products/tires/`);
+        let url = new URL(`${process.env.ALFA_VERCEL_DOMAIN}/products/tires/`);
 
         breite && breite.value && url.searchParams.append('width', breite.value);
         hoehe && hoehe.value && url.searchParams.append('height', hoehe.value);
@@ -108,7 +108,7 @@ const Hero = () => {
     }, [reifenTypeValue])
 
     function setUrl(){
-        let url = new URL(`${process.env.NEXT_PUBLIC_WORDPRESS_URL}/products/tires/`);
+        let url = new URL(`${process.env.ALFA_VERCEL_DOMAIN}/products/tires/`);
 
         
         Object.keys(selectedValues).forEach(function(key) {
