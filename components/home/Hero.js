@@ -217,23 +217,13 @@ const Hero = () => {
                                             // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                                         }}
                                     > */}
+                                        
                                          <Image 
-                                            className="desktop-hero-bg hidden lg:block lg:h-[32rem]"
-                                            src={'/hero/homepage-filter-png_optimized.png.webp'}
-                                            alt="bb"
-                                            width={0}
-                                            height={0}
-                                            sizes="100vw"
-                                            style={{ width: '100%', height: '30rem' }}
-                                            priority={true}
-                                        />
-                                         <Image 
-                                            className="mobile-hero-bg block lg:hidden"
+                                            className="mobile-hero-bg "
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
                                             alt="bb"
                                             width={400}
                                             height={400}
-                                            priority={true}
                                         />
                                         
                                        
