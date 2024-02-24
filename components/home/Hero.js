@@ -143,7 +143,7 @@ const Hero = () => {
                         transition: { type: "spring", duration: 0.7 }
                       }}
                 > */}
-                    <div className="w-full bg-[url(/hero/Hero-Background-1.png)] bg-top bg-no-repeat bg-cover pb-4 px-8 lg:px-0 lg:pb-0">
+                    <div className="w-full bg-[url(/hero/hero-bg.webp)] bg-top bg-no-repeat bg-cover pb-4 px-8 lg:px-0 lg:pb-0">
                         <div className="container mx-auto lg:max-w-6xl">
                             
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
