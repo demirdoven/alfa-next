@@ -32,7 +32,7 @@ export default function Header( {className} ){
                      <Logo className=""/>
                     <SearchBar className="hidden lg:block w-2/4"/>
 
-                    <UserSection className="client-section block min-w-[200px]"/>
+                    <UserSection className="client-section block lg:min-w-[200px]"/>
                 </div>
             </div>
             <MainMenu className="hidden lg:block bg-alfa-gray-1"/>

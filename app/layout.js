@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
             <ThemeContextProvider>
               <MiniCartContextProvider>
                 <Header />
-                <main className="flex min-h-screen flex-col items-center justify-between">
+                <main className="flex max-w-[100%] overflow-hidden min-h-screen flex-col items-center justify-between">
                   {children}
                 </main>
                 

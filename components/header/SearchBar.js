@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import TypingLayout from '../typing/TypingLayout'
 
-const SearchBar = () => {
+const SearchBar = ( {className} ) => {
 
     const [typingActive, setTypingActive] = useState(true)
 
@@ -16,7 +16,7 @@ const SearchBar = () => {
 
     return (
         <div 
-            className="w-[50%] m-auto relative bg-gray-50 border border-gray-300 rounded-lg "
+            className={`w-[50%] m-auto relative bg-gray-50 border border-gray-300 rounded-lg ${className}`}
         >
             <input 
                 name=""
