@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div className='w-full'>
 
-      <Hero />
+      {/* <Hero /> */}
       <BrandSlider />
       <SchnellAndEinfach />
       <UnsereReifenempfehlung />
