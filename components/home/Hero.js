@@ -127,7 +127,7 @@ const Hero = () => {
 
     return (
         <>
-            <AnimatePresence>
+            {/* <AnimatePresence>
                 <motion.div
                     exit={{
                         y: -20,
@@ -142,19 +142,19 @@ const Hero = () => {
                         filter: "blur(0px)",
                         transition: { type: "spring", duration: 0.7 }
                       }}
-                >
+                > */}
                     <div className="w-full bg-[url(/hero/Hero-Background-1.png)] bg-top bg-no-repeat bg-cover pb-4 px-8 lg:px-0 lg:pb-0">
                         <div className="container mx-auto lg:max-w-6xl">
                             
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
                                 <div className="w-full lg:w-[50%] flex flex-col items-center justify-end pt-8 lg:pt-0">
-                                    <motion.div
+                                    {/* <motion.div
                                         className="w-full"
                                         initial={{ opacity: 0, x: -1200 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exist={{ opacity: 0, x: -1200 }}
                                         transition={{ delay: 0.2 }}
-                                    >
+                                    > */}
                                         <Image 
                                             src={'/hero/DE-Title-x2.png.webp'}
                                             alt={`aa`}
@@ -180,14 +180,14 @@ const Hero = () => {
                                             text="See Deals" 
                                         />
 
-                                    </motion.div>
-                                    <motion.div
+                                    {/* </motion.div> */}
+                                    {/* <motion.div
                                         className="w-full"
                                         initial={{ opacity: 0, y: 85 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exist={{ opacity: 0, y: 85 }}
                                         transition={{ delay: 0.35 }}
-                                    >
+                                    > */}
 
                                         <Image 
                                             className="hidden lg:block lg:mt-12"
@@ -199,7 +199,7 @@ const Hero = () => {
                                             style={{ width: '100%', height: 'auto' }}
                                         />
 
-                                    </motion.div>
+                                    {/* </motion.div> */}
                                 </div>
 
 
@@ -207,14 +207,14 @@ const Hero = () => {
                                
                                     <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
-                                    <motion.div
+                                    {/* <motion.div
                                         animate={{
                                             scale: [0.5, 1.2, 1.2, 1, 1],
                                             rotate: [0, 0, 720, 720, 720],
                                             // transition: { type: "spring", duration: 0.75 }
                                             // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                                         }}
-                                    >
+                                    > */}
                                          <Image 
                                             className="desktop-hero-bg hidden lg:block lg:h-[32rem]"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
@@ -307,7 +307,7 @@ const Hero = () => {
 
                                         </form>
 
-                                    </motion.div>
+                                    {/* </motion.div> */}
                                     </div>
                                
 
@@ -315,8 +315,8 @@ const Hero = () => {
 
                         </div>
                     </div>
-                </motion.div>
-            </AnimatePresence>
+                {/* </motion.div>
+            </AnimatePresence> */}
         </>
         
     )
