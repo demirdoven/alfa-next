@@ -216,7 +216,7 @@ const Hero = () => {
                                         }}
                                     >
                                          <Image 
-                                            className="lg:h-[32rem]"
+                                            className="desktop-hero-bg hidden lg:block lg:h-[32rem]"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
                                             alt="bb"
                                             width={0}
@@ -224,11 +224,20 @@ const Hero = () => {
                                             sizes="100vw"
                                             style={{ width: '100%', height: '30rem' }}
                                         />
+                                         <Image 
+                                            className="mobile-hero-bg block lg:hidden"
+                                            src={'/hero/homepage-filter-png_optimized.png.webp'}
+                                            alt="bb"
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: 'auto' }}
+                                        />
                                         
                                        
                                         <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="absolute top-[40%] lg:top-[43%] left-0 w-full">
 
-                                            <div className="px-12 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
+                                            <div className="px-12 pt-2 lg:pt-0 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
                                                 
                                             { 
                                                 heroFilterAtts && ! isEmpty(heroFilterAtts) &&
