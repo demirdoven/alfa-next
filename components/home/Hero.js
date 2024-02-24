@@ -162,7 +162,7 @@ const Hero = () => {
                                             height={0}
                                             sizes="100vw"
                                             style={{ width: '100%', height: 'auto' }}
-                                            placeholder="blur"
+                                            priority={true}
                                         />
                                         <Image 
                                             src={'/hero/DE-Subtext-x2.png.webp'}
@@ -171,7 +171,7 @@ const Hero = () => {
                                             height={0}
                                             sizes="100vw"
                                             style={{ width: '100%', height: 'auto' }}
-                                            placeholder="blur"
+                                            priority={true}
                                         />
 
                                         <Button 
@@ -180,7 +180,6 @@ const Hero = () => {
                                             classList="inline-block mt-6" 
                                             innerClassList="uppercase text-center"
                                             text="See Deals" 
-                                            placeholder="blur"
                                         />
 
                                     {/* </motion.div> */}
