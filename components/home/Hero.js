@@ -228,10 +228,8 @@ const Hero = () => {
                                             className="mobile-hero-bg block lg:hidden"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
                                             alt="bb"
-                                            width={0}
-                                            height={0}
-                                            sizes="100vw"
-                                            style={{ width: '100%', height: 'auto' }}
+                                            width={400}
+                                            height={400}
                                         />
                                         
                                        
