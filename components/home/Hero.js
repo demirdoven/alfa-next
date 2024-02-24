@@ -209,14 +209,14 @@ const Hero = () => {
                                
                                     <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
-                                    <motion.div
+                                    {/* <motion.div
                                         animate={{
                                             scale: [0.5, 1.2, 1.2, 1, 1],
                                             rotate: [0, 0, 720, 720, 720],
                                             // transition: { type: "spring", duration: 0.75 }
                                             // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                                         }}
-                                    >
+                                    > */}
                                          <Image 
                                             className="desktop-hero-bg hidden lg:block lg:h-[32rem]"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
@@ -311,7 +311,7 @@ const Hero = () => {
 
                                         </form>
 
-                                    </motion.div>
+                                    {/* </motion.div> */}
                                     </div>
                                
 
