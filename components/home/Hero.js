@@ -162,6 +162,7 @@ const Hero = () => {
                                             height={0}
                                             sizes="100vw"
                                             style={{ width: '100%', height: 'auto' }}
+                                            placeholder="blur"
                                         />
                                         <Image 
                                             src={'/hero/DE-Subtext-x2.png.webp'}
@@ -170,6 +171,7 @@ const Hero = () => {
                                             height={0}
                                             sizes="100vw"
                                             style={{ width: '100%', height: 'auto' }}
+                                            placeholder="blur"
                                         />
 
                                         <Button 
@@ -178,6 +180,7 @@ const Hero = () => {
                                             classList="inline-block mt-6" 
                                             innerClassList="uppercase text-center"
                                             text="See Deals" 
+                                            placeholder="blur"
                                         />
 
                                     {/* </motion.div> */}
@@ -223,6 +226,7 @@ const Hero = () => {
                                             height={0}
                                             sizes="100vw"
                                             style={{ width: '100%', height: '30rem' }}
+                                            priority={true}
                                         />
                                          <Image 
                                             className="mobile-hero-bg block lg:hidden"
@@ -230,6 +234,7 @@ const Hero = () => {
                                             alt="bb"
                                             width={400}
                                             height={400}
+                                            priority={true}
                                         />
                                         
                                        
