@@ -16,7 +16,7 @@ export default function RedoAnimText({delay}) {
     "Orange color rims",
     "Rims for 16\" tire",
     "MAM rims black",
-    
+    "Best deals for my Audi A4"
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
