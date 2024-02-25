@@ -218,7 +218,7 @@ const Hero = () => {
                                         }}
                                     > */}
                                          <Image 
-                                            className="w-[400px] h-[400px] lg:block lg:w-[100%] lg:h-[32rem]"
+                                            className="w-[400px] h-auto lg:block lg:w-[100%] lg:h-[32rem]"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
                                             alt="bb"
                                             width={0}
