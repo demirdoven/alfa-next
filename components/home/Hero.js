@@ -8,9 +8,11 @@ import { isEmpty } from "lodash";
 import { Button } from "../general/Button";
 import Image from "next/image";
 
+
 const Hero = () => {
 
     // const [heroFilterAtts, setHeroFilterAtts] = useState(null)
+
 
     const [selectedValues, setSelectedValues] = useState({width: '205', height: '55', zoll: '16'});
     const [reifenTypeValue, setReifenTypeValue] = useState('Winter');
@@ -123,25 +125,49 @@ const Hero = () => {
         setBtnUrl(url.href)
     }
 
+    let mainAnimAttrs = {}
+    let lastikAnimateAttrs = {}
 
+    const isMobile = window.innerWidth < 768;
+
+    if (!isMobile) {
+
+        mainAnimAttrs = {
+            exit: {
+                y: -20,
+                opacity: 0,
+                filter: "blur(5px)",
+                transition: { ease: "easeIn", duration: 0.22 }
+            },
+            initial: { opacity: 0, y: -15 },
+            animate: {
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+                transition: { type: "spring", duration: 0.7 }
+            }
+        }
+
+        lastikAnimateAttrs = {
+            animate: {
+                scale: [0.5, 1.2, 1.2, 1, 1],
+                rotate: [0, 0, 720, 720, 720],
+                // transition: { type: "spring", duration: 0.75 }
+                // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+            }
+        }
+        
+    }
+
+    
 
     return (
         <>
             <AnimatePresence>
                 <motion.div
-                    exit={{
-                        y: -20,
-                        opacity: 0,
-                        filter: "blur(5px)",
-                        transition: { ease: "easeIn", duration: 0.22 }
-                      }}
-                      initial={{ opacity: 0, y: -15 }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                        transition: { type: "spring", duration: 0.7 }
-                      }}
+                    exit={mainAnimAttrs?.exit}
+                    initial={mainAnimAttrs?.initial}
+                    animate={mainAnimAttrs?.animate}
                 >
                     <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-0">
                         <div className="relative mx-auto lg:max-w-6xl z-50">
@@ -210,12 +236,7 @@ const Hero = () => {
                                     <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
                                     <motion.div
-                                        animate={{
-                                            scale: [0.5, 1.2, 1.2, 1, 1],
-                                            rotate: [0, 0, 720, 720, 720],
-                                            // transition: { type: "spring", duration: 0.75 }
-                                            // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                                        }}
+                                        animate={lastikAnimateAttrs?.animate}
                                     >
                                          <Image 
                                             className="w-[400px] h-auto lg:block lg:w-[100%] lg:h-[32rem]"
