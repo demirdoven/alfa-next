@@ -13,7 +13,7 @@ export default function RedoAnimText({delay}) {
     "Continental tires 16 inch",
     "Best all season tires",
     "165/70 R13 79T",
-    "Gray color rims",
+    "Orange color rims",
     "Rims for 16\" tire",
     "MAM rims black",
     
