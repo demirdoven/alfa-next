@@ -217,14 +217,22 @@ const Hero = () => {
                                             // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                                         }}
                                     > */}
-                                        
                                          <Image 
-                                            className="mobile-hero-bg "
+                                            className="w-[400px] h-[400px] lg:block lg:w-[100%] lg:h-[32rem]"
+                                            src={'/hero/homepage-filter-png_optimized.png.webp'}
+                                            alt="bb"
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            // style={{ width: '100%', height: '30rem' }}
+                                        />
+                                         {/* <Image 
+                                            className="mobile-hero-bg block lg:hidden"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}
                                             alt="bb"
                                             width={400}
                                             height={400}
-                                        />
+                                        /> */}
                                         
                                        
                                         <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="absolute top-[40%] lg:top-[43%] left-0 w-full">
