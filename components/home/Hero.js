@@ -319,7 +319,7 @@ const Hero = () => {
                         <Image 
                             src="/hero/hero-bg.webp"
                             alt="bg"
-                            sizes="100vw"
+                            sizes="1400px"
                             fill
                             style={{
                                 objectFit: 'cover',
