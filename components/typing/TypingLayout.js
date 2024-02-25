@@ -22,7 +22,7 @@ const containerVariants = {
 const itemVariants = {
   hidden: {
     opacity: 0,
-    y: 15
+    y: 0
   },
   visible: {
     opacity: 1,
