@@ -74,13 +74,13 @@ const BrandSlider = () => {
 
   return (
       <div className="w-full group my-8">
-		<AnimatePresence>
+		{/* <AnimatePresence>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exist={{ opacity: 0 }}
 				transition={{ delay: 0.10 }}
-			>
+			> */}
 				<div className=" container mx-auto lg:max-w-6xl ">
 				<div className="relative">
 					<Swiper 
@@ -133,8 +133,8 @@ const BrandSlider = () => {
 					
 				</div>
 				</div>
-			</motion.div>
-		</AnimatePresence>
+			{/* </motion.div>
+		</AnimatePresence> */}
       </div>
   );
 };

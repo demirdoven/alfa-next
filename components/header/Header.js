@@ -35,7 +35,7 @@ export default function Header( {className} ){
                     <UserSection className="client-section block lg:min-w-[200px]"/>
                 </div>
             </div>
-            <MainMenu className="hidden lg:block bg-alfa-gray-1"/>
+            <MainMenu className="hidden lg:block bg-alfa-gray-1 relative z-100"/>
             <StickyBar />
             {/* <MobilSideMenu mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} /> */}
         </header>

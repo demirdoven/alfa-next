@@ -12,18 +12,18 @@ export default function MainMenu({className}){
                         className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-1 items-center"
                         href="/products/tires"
                         >
-                        {/* <Image 
+                        <Image 
                             src="/menu-icons/tire.png" 
                             alt="tire"
                             width={0}
                             height={0}
-                            sizes="100vw"
+                            sizes="50px"
                             style={{ width: 'auto', height: '32px' }} 
-                        /> */}
+                        />
                         <span>Tires</span>
                     </Link>
 
-                    <ul className="invisible absolute z-50 flex w-auto flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
+                    <ul className="invisible absolute z-100 flex w-auto flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
                         <li>
                             <Link
                                 className="my-2 block border-b border-gray-100 py-1 text-gray-500 hover:text-black md:mx-2 uppercase"
@@ -68,14 +68,14 @@ export default function MainMenu({className}){
                         className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/products/rims"
                         >
-                        {/* <Image 
+                        <Image 
                             src="/menu-icons/zxx.png" 
                             alt="tire"
                             width={0}
                             height={0}
-                            sizes="100vw"
+                            sizes="50px"
                             style={{ width: 'auto', height: '32px' }} 
-                        /> */}
+                        />
                         <span>Rims</span>
                     </Link>
                     
@@ -87,14 +87,14 @@ export default function MainMenu({className}){
                         className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/products/accessories"
                         >
-                        {/* <Image 
+                        <Image 
                             src="/menu-icons/lid2.png" 
                             alt="tire"
                             width={0}
                             height={0}
-                            sizes="100vw"
+                            sizes="50px"
                             style={{ width: 'auto', height: '32px' }} 
-                        /> */}
+                        />
                         <span>Accessories</span>
                     </Link>
 
@@ -121,14 +121,14 @@ export default function MainMenu({className}){
                         className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/configurator"
                         >
-                        {/* <Image 
+                        <Image 
                             src="/menu-icons/settings.png" 
                             alt="tire"
                             width={0}
                             height={0}
-                            sizes="100vw"
+                            sizes="50px"
                             style={{ width: 'auto', height: '32px' }} 
-                        /> */}
+                        />
                         <span>Configurator</span>
                     </Link>
                     

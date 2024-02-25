@@ -147,7 +147,7 @@ const Hero = () => {
                         <div className="relative mx-auto lg:max-w-6xl z-50">
                             
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
-                                <div className="w-full lg:w-[50%] flex flex-col items-center justify-end pt-8 lg:pt-0">
+                                <div className="w-full lg:w-[50%] flex flex-col items-start justify-end pt-8 lg:pt-0">
                                     {/* <motion.div
                                         className="w-full"
                                         initial={{ opacity: 0, x: -1200 }}
