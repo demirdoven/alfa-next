@@ -168,6 +168,7 @@ const HeroMobile = ( {device} ) => {
                                 width={0}
                                 height={0}
                                 sizes="100vw"
+                                priority={true}
                                 // style={{ width: '100%', height: '30rem' }}
                             />
                             <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="absolute top-[40%] lg:top-[43%] left-0 w-full">
