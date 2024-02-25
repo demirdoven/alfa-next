@@ -130,7 +130,7 @@ const Hero = () => {
     return (
         <>
             <AnimatePresence>
-                <motion.div
+                {/* <motion.div
                     exit={{
                         y: -20,
                         opacity: 0,
@@ -144,7 +144,7 @@ const Hero = () => {
                         filter: "blur(0px)",
                         transition: { type: "spring", duration: 0.7 }
                       }}
-                >
+                > */}
                     <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-0">
                         <div className="relative mx-auto lg:max-w-6xl z-50">
                             
@@ -330,7 +330,7 @@ const Hero = () => {
                             priority={true}
                         />
                     </div>
-                </motion.div>
+                {/* </motion.div> */}
             </AnimatePresence>
         </>
         
