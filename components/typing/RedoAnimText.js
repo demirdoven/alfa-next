@@ -8,7 +8,7 @@ export default function RedoAnimText({delay}) {
   const textIndex = useMotionValue(0);
   const texts = [
     "Bridgestone Weather Control A005 DriveGuard Evo RFT",
-    "Which tire is better for summer?",
+    "Which tire is better for winter?",
     "Berlin Tires All Season 1 295/30 ZR22 103W",
     "Continental tires 16 inch",
     "Best all season tires",
