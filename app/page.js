@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '@/components/home/Hero'
+// import Hero from '@/components/home/Hero'
 import BrandSlider from '@/components/home/BrandSlider'
 import SchnellAndEinfach from '@/components/home/SchnellAndEinfach'
 import UnsereReifenempfehlung from '@/components/home/UnsereReifenempfehlung'
@@ -9,6 +9,8 @@ import Newsletter from '@/components/home/Newsletter'
 
 
 import { headers } from 'next/headers'
+import HeroMobile from '@/components/home/HeroMobile'
+import HeroDesktop from '@/components/home/HeroDesktop'
 
 const getDeviceType = () => {
   const headersList = headers();
@@ -21,12 +23,18 @@ const getDeviceType = () => {
 
 const HomePage = () => {
 
-  // const device = getDeviceType()
+  const device = getDeviceType()
 
   return (
     <div className='w-full'>
 
-      <Hero device={'iptal'} />
+      {
+        device == 'mobile' && <HeroMobile device={device} />
+      }
+      {
+        device == 'desktop' && <HeroDesktop device={device} />
+      }
+      {/* <Hero device={'iptal'} /> */}
       <BrandSlider />
       <SchnellAndEinfach />
       <UnsereReifenempfehlung />
