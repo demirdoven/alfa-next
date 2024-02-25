@@ -10,7 +10,7 @@ import Image from "next/image";
 
 
 
-const Hero = () => {
+const Hero = ( {device} ) => {
 
     // const [heroFilterAtts, setHeroFilterAtts] = useState(null)
 
@@ -125,7 +125,20 @@ const Hero = () => {
         setBtnUrl(url.href)
     }
 
+    let lastikAttrs = {}
 
+    if( device == 'desktop' ){
+
+        lastikAttrs = {
+            animate : {
+                scale: [0.5, 1.2, 1.2, 1, 1],
+                rotate: [0, 0, 720, 720, 720],
+                // transition: { type: "spring", duration: 0.75 }
+                // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+            }
+        }
+
+    }
 
     return (
         <>
@@ -211,14 +224,7 @@ const Hero = () => {
                                
                                     <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
-                                    <motion.div
-                                        animate={{
-                                            scale: [0.5, 1.2, 1.2, 1, 1],
-                                            rotate: [0, 0, 720, 720, 720],
-                                            // transition: { type: "spring", duration: 0.75 }
-                                            // borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                                        }}
-                                    >
+                                    <motion.div {...lastikAttrs} >
                                          <Image 
                                             className="w-[400px] h-auto lg:block lg:w-[100%] lg:h-[32rem]"
                                             src={'/hero/homepage-filter-png_optimized.png.webp'}

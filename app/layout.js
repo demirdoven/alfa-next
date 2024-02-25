@@ -7,7 +7,6 @@ import Header from '@/components/header/Header'
 import { ThemeContextProvider } from '@/components/context/theme'
 import { MiniCartContextProvider } from '@/components/context/miniCart'
 
-
 const lato = Lato({
   weight: ['100', '300', '400', '700', '900'],
   subsets: ['latin'],
@@ -30,6 +29,7 @@ const oswald = Oswald({
 //   ],
 //   variable: '--font-helvetica'
 // })
+
 
 
 export const metadata = {

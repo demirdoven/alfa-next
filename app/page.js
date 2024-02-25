@@ -8,12 +8,25 @@ import Entdecke from '@/components/home/Entdecke'
 import Newsletter from '@/components/home/Newsletter'
 
 
+import { headers } from 'next/headers'
+
+const getDeviceType = () => {
+  const headersList = headers();
+  const userAgent = headersList.get('user-agent');
+
+  return userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)
+    ? 'mobile'
+    : 'desktop';
+}
+
 const HomePage = () => {
+
+  const device = getDeviceType()
 
   return (
     <div className='w-full'>
 
-      <Hero />
+      <Hero device={device} />
       <BrandSlider />
       <SchnellAndEinfach />
       <UnsereReifenempfehlung />
