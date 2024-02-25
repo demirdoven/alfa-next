@@ -143,8 +143,8 @@ const Hero = () => {
                         transition: { type: "spring", duration: 0.7 }
                       }}
                 > */}
-                    <div className="w-full bg-[url(/hero/hero-bg.webp)] bg-top bg-no-repeat bg-cover pb-4 px-8 lg:px-0 lg:pb-0">
-                        <div className="container mx-auto lg:max-w-6xl">
+                    <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-0">
+                        <div className="relative mx-auto lg:max-w-6xl z-50">
                             
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
                                 <div className="w-full lg:w-[50%] flex flex-col items-center justify-end pt-8 lg:pt-0">
@@ -316,6 +316,17 @@ const Hero = () => {
                             </div>
 
                         </div>
+                        <Image 
+                            src="/hero/hero-bg.webp"
+                            alt="bg"
+                            sizes="100vw"
+                            fill
+                            style={{
+                                objectFit: 'cover',
+                                zIndex: 1
+                            }}
+                            priority={true}
+                        />
                     </div>
                 {/* </motion.div>
             </AnimatePresence> */}
