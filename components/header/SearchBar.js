@@ -14,7 +14,11 @@ const SearchBar = ( {className} ) => {
         setTypingActive(true) 
         document.getElementById('s').value = ''
     }
-
+    function handleKeyUp(e){
+        if( e.target.value == '' ){
+            e.target.blur()
+        }
+    }
     return (
         <div 
             className={`w-[50%] m-auto relative bg-gray-100 border-[1px] border-slate-600 rounded-lg ${className}`}
@@ -26,6 +30,7 @@ const SearchBar = ( {className} ) => {
                 className={` h-[40px] relative z-10 bg-transparent ${ typingActive ? 'opacity-0' : 'opacity-100' } text-gray-900 text-md border border-gray-300 rounded-lg block w-full p-2.5 pl-[10px] outline-0`}
                 onFocus={ ()=>{ stopTyping() } }
                 onBlur={ ()=>{ startTyping() } }
+                onKeyUp={ (e)=>{ handleKeyUp(e) } }
             />
             { typingActive ? 
             <TypingLayout stopTyping={stopTyping} /> 
