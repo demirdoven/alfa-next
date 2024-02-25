@@ -128,7 +128,11 @@ const Hero = () => {
     let mainAnimAttrs = {}
     let lastikAnimateAttrs = {}
 
-    const isMobile = window.innerWidth < 768;
+    let isMobile = false;
+
+    if (window !== undefined) {
+        isMobile = window.innerWidth < 768;
+    }
 
     if (!isMobile) {
 
