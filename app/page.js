@@ -21,12 +21,12 @@ const getDeviceType = () => {
 
 const HomePage = () => {
 
-  const device = getDeviceType()
+  // const device = getDeviceType()
 
   return (
     <div className='w-full'>
 
-      <Hero device={device} />
+      <Hero device={'iptal'} />
       <BrandSlider />
       <SchnellAndEinfach />
       <UnsereReifenempfehlung />
