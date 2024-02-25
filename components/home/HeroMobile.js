@@ -248,7 +248,7 @@ const HeroMobile = ( {device} ) => {
                 <Image 
                     src="/hero/hero-bg.webp"
                     alt="bg"
-                    sizes="1400px"
+                    sizes="100vw"
                     fill
                     style={{
                         objectFit: 'cover',

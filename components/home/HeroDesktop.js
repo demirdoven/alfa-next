@@ -220,9 +220,7 @@ const HeroDesktop = ( {device} ) => {
                                 </div>
 
 
-
-                               
-                                    <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
+                                <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                                         
                                     <motion.div {...lastikAttrs} >
                                          <Image 
@@ -318,7 +316,7 @@ const HeroDesktop = ( {device} ) => {
                                         </form>
 
                                     </motion.div>
-                                    </div>
+                                </div>
                                
 
                             </div>
@@ -327,7 +325,7 @@ const HeroDesktop = ( {device} ) => {
                         <Image 
                             src="/hero/hero-bg.webp"
                             alt="bg"
-                            sizes="1400px"
+                            sizes="100vw"
                             fill
                             style={{
                                 objectFit: 'cover',
