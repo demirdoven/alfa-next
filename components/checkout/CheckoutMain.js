@@ -190,64 +190,60 @@ const CheckoutMain = ( { countriesData } ) => {
 		<>
 			{/* { color ? ( */}
 				<form onSubmit={ handleFormSubmit } className="woo-next-checkout-form">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="grid grid-cols-12 gap-8">
                         
-						<div className="shipping-details">
-                            <h2 className="text-xl font-medium mb-4">Shipping Details</h2>
-							<UserAddress
-									states={ theShippingStates }
-									countries={ shippingCountries }
-									input={ input?.shipping }
-									handleOnChange={ ( event ) => handleOnChange( event, true, true ) }
-									isFetchingStates={ isFetchingShippingStates }
-									isShipping
-									isBillingOrShipping
-								/>
-								
-							<CheckboxField
-								name="billingDifferentThanShipping"
-								type="checkbox"
-								checked={ input?.billingDifferentThanShipping }
-								handleOnChange={ handleOnChange }
-								label="Billing different than shipping"
-								containerClassNames="mb-4 pt-4"
-							/>
+              <div className="shipping-details col-span-7 mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0 w-full self-start">
+                <h2 className="text-xl font-medium mb-4">Shipping Details</h2>
+                <UserAddress
+                    states={ theShippingStates }
+                    countries={ shippingCountries }
+                    input={ input?.shipping }
+                    handleOnChange={ ( event ) => handleOnChange( event, true, true ) }
+                    isFetchingStates={ isFetchingShippingStates }
+                    isShipping
+                    isBillingOrShipping
+                  />
+                  
+                <CheckboxField
+                  name="billingDifferentThanShipping"
+                  type="checkbox"
+                  checked={ input?.billingDifferentThanShipping }
+                  handleOnChange={ handleOnChange }
+                  label="Billing different than shipping"
+                  containerClassNames="mb-4 pt-4"
+                />
 
-							{
-								input?.billingDifferentThanShipping ? (
-									
-									<div className="billing-details">
-										<h2 className="text-xl font-medium mb-4">Billing Details</h2>
-										<UserAddress
-											states={ theBillingStates }
-											countries={ billingCountries.length ? billingCountries: shippingCountries }
-											input={ input?.billing }
-											handleOnChange={ ( event ) => handleOnChange( event, false, true ) }
-											isFetchingStates={ isFetchingBillingStates }
-											isShipping={ false }
-											isBillingOrShipping
-										/>
-									</div>
-
-								) : null
-							}
-
-                        </div>
-
-						<div className="your-orders">
-							
-							{/* <YourOrder cart={ color }/> */}
-							<CartDetails input={ input } handleOnChange={ handleOnChange } isOrderProcessing={isOrderProcessing} requestError={requestError}/>
-							
-						
-							
-
-							
-							
-						</div>
-
-
+                {
+                  input?.billingDifferentThanShipping ? (
+                    
+                    <div className="billing-details">
+                      <h2 className="text-xl font-medium mb-4">Billing Details</h2>
+                      <UserAddress
+                        states={ theBillingStates }
+                        countries={ billingCountries.length ? billingCountries: shippingCountries }
+                        input={ input?.billing }
+                        handleOnChange={ ( event ) => handleOnChange( event, false, true ) }
+                        isFetchingStates={ isFetchingBillingStates }
+                        isShipping={ false }
+                        isBillingOrShipping
+                      />
                     </div>
+
+                  ) : null
+                }
+
+              </div>
+
+              <div className="your-orders col-span-5">
+                
+                {/* <YourOrder cart={ color }/> */}
+                <CartDetails input={ input } handleOnChange={ handleOnChange } isOrderProcessing={isOrderProcessing} requestError={requestError}/>
+                
+                
+              </div>
+
+
+            </div>
 				</form>
 			{/* ) : null } */}
 		</>

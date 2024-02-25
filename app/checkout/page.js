@@ -20,7 +20,7 @@ export default async function Checkout(){
     // console.log(countries)
 	return (
 		<div className="container mx-auto lg:max-w-6xl mt-6 flex flex-col ">
-            <h1>Checkout</h1>
+            {/* <h1>Checkout</h1> */}
             <CheckoutMain countriesData={countries} />
         </div>
 
