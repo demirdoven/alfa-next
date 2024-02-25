@@ -26,7 +26,7 @@ export default function MainMenu({className}){
                     <ul className="invisible absolute z-100 flex w-auto flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
                         <li>
                             <Link
-                                className="my-2 block border-b border-gray-100 py-1 text-gray-500 hover:text-black md:mx-2 uppercase"
+                                className="my-2 block border-b border-gray-100 py-1 text-md text-gray-500 hover:text-black md:mx-2 uppercase"
                                 href={'/products/tires?season=Winter&width=205&height=55&zoll=16&'}
                             >
                                 Winter

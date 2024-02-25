@@ -59,9 +59,9 @@ export default function TypingLayout( {stopTyping} ) {
         </motion.div>
         <motion.span
           variants={itemVariants}
-          className="inline w-full pl-2 text-xl text-slate-900"
+          className="inline w-full pl-2 text-md text-slate-900"
         >
-          <AnimText delay={1} />
+          <AnimText delay={0.01} />
         </motion.span>
       </motion.div>
     </motion.div>

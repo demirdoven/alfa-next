@@ -18,7 +18,7 @@ export default function AnimText({delay}) {
     const controls = animate(count, baseText.length, {
       type: "tween",
       delay: delay,
-      duration: 1,
+      duration: 0.1,
       ease: "easeInOut",
       onComplete: () => {
         setDone(true);

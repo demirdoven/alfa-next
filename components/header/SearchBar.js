@@ -23,7 +23,7 @@ const SearchBar = ( {className} ) => {
                 id="s"
                 name=""
                 // value=""
-                className={` h-[40px] relative z-10 bg-transparent ${ typingActive ? 'opacity-0' : 'opacity-100' } text-gray-900 text-xl border border-gray-300 rounded-lg block w-full p-2.5 pl-[10px] outline-0`}
+                className={` h-[40px] relative z-10 bg-transparent ${ typingActive ? 'opacity-0' : 'opacity-100' } text-gray-900 text-md border border-gray-300 rounded-lg block w-full p-2.5 pl-[10px] outline-0`}
                 onFocus={ ()=>{ stopTyping() } }
                 onBlur={ ()=>{ startTyping() } }
             />
