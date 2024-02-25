@@ -3,7 +3,7 @@ import { getCampaign } from "@/app/actions";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function ListingBanner({catSlug}){
+export default function ListingBannerDesktop({catSlug}){
 
     // const [campaignData, setCampaignData] = useState({})
     const [bannerDesktop, setBannerDesktop] = useState(null)

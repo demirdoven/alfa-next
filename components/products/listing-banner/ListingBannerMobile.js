@@ -3,7 +3,7 @@ import { getCampaign } from "@/app/actions";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function ListingBanner({catSlug}){
+export default function ListingBannerMobile({catSlug}){
 
     // const [campaignData, setCampaignData] = useState({})
     const [bannerDesktop, setBannerDesktop] = useState(null)
@@ -19,12 +19,19 @@ export default function ListingBanner({catSlug}){
     return (
         bannerDesktop ?
             <Link href={'/'}>
-                <Image 
+                {/* <Image 
                     src={bannerDesktop} 
                     className="rounded-lg aspect-[3/1] object-cover" 
                     alt="das" 
                     width="1000" 
                     height="400" 
+                /> */}
+                <Image 
+                    src={bannerDesktop} 
+                    className="rounded-lg aspect-[3/1] object-cover" 
+                    alt="das" 
+                    width="600" 
+                    height="200" 
                 />
                 {/* <Image 
                     src={bannerDesktop}

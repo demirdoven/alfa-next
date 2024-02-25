@@ -7,7 +7,6 @@ import Vorteilsaktionen from '@/components/home/Vorteilsaktionen'
 import Entdecke from '@/components/home/Entdecke'
 import Newsletter from '@/components/home/Newsletter'
 
-
 import { headers } from 'next/headers'
 import HeroMobile from '@/components/home/HeroMobile'
 import HeroDesktop from '@/components/home/HeroDesktop'
