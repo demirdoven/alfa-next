@@ -241,7 +241,16 @@ const HeroDesktop = ( {device} ) => {
                                         /> */}
                                         
                                        
-                                        <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="absolute top-[40%] lg:top-[43%] left-0 w-full">
+                                        <motion.div
+                                            className="absolute top-[40%] lg:top-[43%] left-0 w-full"
+                                            initial={{ opacity: 0 }}
+                                            animate={{
+                                                opacity: 1,
+                                                filter: "blur(0px)",
+                                                transition: { type: "spring", duration: 3 }
+                                            }}
+                                        >
+                                        <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="">
 
                                             <div className="px-12 pt-2 lg:pt-0 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
                                                 
@@ -314,6 +323,7 @@ const HeroDesktop = ( {device} ) => {
 
                                         </form>
 
+                                    </motion.div>
                                     </motion.div>
                                 </div>
                                
