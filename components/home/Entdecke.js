@@ -31,7 +31,7 @@ const Entdecke = () => {
                                     <Link href={'/'}>
                                         <Image 
                                             src={item.image}
-                                            alt={item.title}
+                                            alt={item.title.split(' ')[0]}
                                             width={0}
                                             height={0}
                                             sizes="200vw"

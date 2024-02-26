@@ -180,7 +180,7 @@ const HeroMobile = ( {device} ) => {
 
                                         Object.keys(heroFilterAtts).map((taxSlug) => (
                                             <div key={taxSlug} className="w-[31%] xs:text-center">
-                                            <label className="text-xs lg:text-lg">{heroFilterAtts[taxSlug].title}</label>
+                                            <label className="text-xs lg:text-lg" htmlFor={taxSlug}>{heroFilterAtts[taxSlug].title}</label>
                                             <select
                                                 id={taxSlug}
                                                 value={selectedValues[taxSlug] || heroFilterAtts[taxSlug].default}
@@ -205,7 +205,7 @@ const HeroMobile = ( {device} ) => {
 
                                 <div className="mt-3 px-24 w-full flex gap-x-4em justify-center text-center">
                                     <div className="flex-1 p-2 text-left flex lg:block items-center gap-x-2">
-                                        <label htmlFor="" className="xs:text-xs lg:text-sm font-normal mb-1 block">Season</label>
+                                        <label htmlFor="reifentyp" className="xs:text-xs lg:text-sm font-normal mb-1 block">Season</label>
                                         <select 
                                         value={reifenTypeValue}
                                         onChange={(e) => handleReifenTypChange(e)}
@@ -219,7 +219,6 @@ const HeroMobile = ( {device} ) => {
                                         </select>
                                     </div>
                                     <div className="hidden lg:flex flex-1 p-2 justify-center items-end text-center">
-                                        <label htmlFor=""></label>
                                         <Link href={'/products/tires'} className="py-[0.68em] text-sm font-semibold text-alfa-gray-3 px-4 w-full bg-alfa-gray-10 rounded " >Advanced</Link>
                                     </div>
                                 </div>

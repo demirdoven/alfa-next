@@ -113,8 +113,8 @@ const Vorteilsaktionen = () => {
                     </Swiper>
 
                     <div className="opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
-                    <button className="arrow-left arrow absolute left-[-50px] top-0"><MdArrowBackIos size={30}/></button>
-                    <button className="arrow-right arrow absolute right-[-50px] top-0"><MdArrowForwardIos size={30}/></button>
+                    <button className="arrow-left arrow absolute left-[-50px] top-0" aria-label="Previous"><MdArrowBackIos size={30}/></button>
+                    <button className="arrow-right arrow absolute right-[-50px] top-0" aria-label="Next"><MdArrowForwardIos size={30}/></button>
                     </div>
                     
                 </div>
