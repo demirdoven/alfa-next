@@ -20,7 +20,7 @@ const Entdecke = () => {
     ]
 
     return (
-        <div className="w-full py-4">
+        <div className="w-full py-2.5 lg:py-5 px-4 lg:px-0 mb-12">
             <div className=" container mx-auto lg:max-w-6xl mt-6">
                 <div className="mt-6">
                     <h1 className="text-2xl text-center font-semibold">Entdecke</h1>

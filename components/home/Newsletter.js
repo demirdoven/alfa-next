@@ -5,7 +5,7 @@ import React from 'react'
 const Newsletter = () => {
 
     return (
-        <div className="w-full py-4 bg-alfa-gray-2 py-10">
+        <div className="w-full py-4 bg-alfa-gray-2 py-2 lg:py-5 px-5 lg:px-0">
             <div className=" container mx-auto lg:max-w-6xl mt-6">
                 <div className="mt-6 flex items-center">
                     <div className="sm:w-full md:w-1/2">

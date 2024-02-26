@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const SchnellAndEinfach = () => {
   return (
-    <div className="w-full bg-alfa-gray-1 py-20">
+    <div className="w-full bg-alfa-gray-1 py-7 lg:py-12 px-4 lg:px-0 mb-2">
         <div className=" container mx-auto lg:max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center gap-8">
 

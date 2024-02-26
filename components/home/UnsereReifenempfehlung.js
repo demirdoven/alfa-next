@@ -9,7 +9,7 @@ import { Navigation } from 'swiper/modules';
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { getProducts } from "@/app/actions";
-// import { Button } from "../Button";
+import { Button } from "../general/Button";
 
 
 const UnsereReifenempfehlung = () => {
@@ -76,16 +76,16 @@ const UnsereReifenempfehlung = () => {
 
     
 
-    // useEffect(() => {
+    useEffect(() => {
           
-    //    console.log(products)
+       console.log(products)
 
-    // }, [products]);
+    }, [products]);
 
 
  
     return (
-        <div className="w-full py-4">
+        <div className="w-full py-2.5 lg:py-5 px-4 lg:px-0">
             <div className=" container mx-auto lg:max-w-6xl mt-6">
                 <h1 className="text-2xl text-center font-semibold">Unsere Reifenempfehlung</h1>
                 <div className="mt-6">
@@ -116,17 +116,29 @@ const UnsereReifenempfehlung = () => {
                             {
                                 products.map( item => (
                                 <SwiperSlide key={item.id} >
-                                    <div className="border border-slate-300 rounded-xl p-4">
+                                    <div className="border border-slate-300 rounded-xl px-5 pt-5 pb-7">
 
                                         <Image 
                                             src={"https://cdn.alfatires.eu/products/tires/"+item?.details?.media+".webp"}
                                             alt={item?.details?.model}
-                                            width={200}
-                                            height={50}
+                                            className="aspect-[1/1]"
+                                            // layout="fill"
+                                            width="200"
+                                            height="200"
+                                            objectFit="cover"
                                         />
-                                        <h2 className="text-md font-semibold my-2 ml-2">{item?.details?.model}</h2>
-                                        <span className="block my-2 ml-2 text-sm">from {item?.details?.priceMin} €</span>
-                                        {/* <Button url={item.url} text={item.buttonText} /> */}
+
+                                        <h6 className="text-sm font-light mb-0 pl-2 bg-gradient-to-r from-red-800 to-transparent w-full h-full text-white ">{item?.details?.brand} </h6>
+                                        <h2 className="text-lg font-semibold ml-1">{item?.details?.model}</h2>
+                                        
+                                        <span className="block mb-4 ml-2 text-sm">from {item?.details?.priceMin} €</span>
+                                        
+                                        <Button 
+                                            url={item.url} 
+                                            text={'See Product'} 
+                                            classList={'w-full'} 
+                                            innerClassList={'w-full font-normal text-sm h-2'} 
+                                        />
                                     </div>
                                 </SwiperSlide>
                                 ))
@@ -135,8 +147,8 @@ const UnsereReifenempfehlung = () => {
                             </Swiper>
 
                             <div className="opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
-                            <button className="arrow-left arrow absolute left-[-50px] top-0" aria-label="Previous"><MdArrowBackIos size={30}/></button>
-                            <button className="arrow-right arrow absolute right-[-50px] top-0" aria-label="Next"><MdArrowForwardIos size={30}/></button>
+                                <button className="arrow-left arrow absolute left-[-50px] top-0" aria-label="Previous"><MdArrowBackIos size={30}/></button>
+                            <   button className="arrow-right arrow absolute right-[-50px] top-0" aria-label="Next"><MdArrowForwardIos size={30}/></button>
                             </div>
                             
                         </div>

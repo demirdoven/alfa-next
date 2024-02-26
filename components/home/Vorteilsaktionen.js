@@ -14,7 +14,7 @@ const Vorteilsaktionen = () => {
     const products = [
         {
             id: 1,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-Flashsale-home-1.png.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/1-de-homepage-flashsale.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -22,7 +22,7 @@ const Vorteilsaktionen = () => {
         },
         {
             id: 2,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-Homepage-everest2-40-min.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/2-de-homepage-everest2.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -30,7 +30,7 @@ const Vorteilsaktionen = () => {
         },
         {
             id: 3,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-Homepage-MegaDeals.png-1-1.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/3-de-homepage-megadeals.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -38,7 +38,7 @@ const Vorteilsaktionen = () => {
         },
         {
             id: 4,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-homepage-P4S.png-2-1.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/4-de-homepage-allseason1.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -46,7 +46,7 @@ const Vorteilsaktionen = () => {
         },
         {
             id: 5,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-Homepage-AllSeason1-1-1.png-2-1.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/5-de-homepage-p4s.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -54,7 +54,7 @@ const Vorteilsaktionen = () => {
         },
         {
             id: 6,
-            thumb: 'https://alfatires.com/wp-content/uploads/DE-dot-home.png.webp',
+            thumb: 'https://cdn.alfatires.eu/demo/6-de-homepage-dot.webp',
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
@@ -63,7 +63,7 @@ const Vorteilsaktionen = () => {
     ]
 
   return (
-    <div className="w-full py-4">
+    <div className="w-full py-2.5 lg:py-5 px-4 lg:px-0">
         <div className=" container mx-auto lg:max-w-6xl mt-6">
             <h1 className="text-2xl text-center font-semibold">Vorteilsaktionen</h1>
             <div className="mt-6">
@@ -78,11 +78,11 @@ const Vorteilsaktionen = () => {
                             spaceBetween: 10,
                         },
                         450: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 10,
                         },
                         700: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 15,
                         },
                         }}
