@@ -98,10 +98,10 @@ const Vorteilsaktionen = () => {
                                 <Image 
                                     src={item.thumb}
                                     alt={item.title}
-                                    width={0}
-                                    height={0}
-                                    sizes="100vw"
-                                    style={{ width: '100%', height: 'auto' }}
+                                    width={400}
+                                    height={400}
+                                    // sizes="400px"
+                                    // style={{ width: '100%', height: 'auto' }}
                                     className="rounded-lg"
                                 />
                             </Link>
