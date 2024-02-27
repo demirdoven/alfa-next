@@ -115,8 +115,8 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                                             <Button 
                                                 href="/checkout" 
                                                 type="dark" 
-                                                classList="block w-full mt-8 text-center" 
-                                                innerClassList="block w-full text-center"
+                                                classList="block w-full mt-8 text-center cursor-pointer" 
+                                                innerClassList="block w-full text-center cursor-pointer"
                                                 text="PROCEED TO CHECKOUT" 
                                                 // setMcart={setMcart}
                                                 onClick={ ()=>{ setMcart(false) } }

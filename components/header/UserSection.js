@@ -2,22 +2,11 @@
 
 import { PiHandbagBold } from "react-icons/pi";
 import { BiUser } from "react-icons/bi";
-import { useThemeContext } from "@/components/context/theme";
-import { useMiniCartContext } from "@/components/context/miniCart";
 import { useEffect, useState } from "react";
 import MiniCartMobile from "./MiniCartMobile";
 import MiniCartDesktop from "./MiniCartDesktop";
 
-const UserSection = ( {className} ) => {
-
-  const { color, setColor} = useThemeContext();
-  const { mCart, setMcart} = useMiniCartContext();
-
-  // const [miniCart, setMcart] = useState(false);
-
-  // useEffect( ()=>{
-  //   console.log('color', color)
-  // }, [color])
+const UserSection = ( {className, color, setColor, mCart, setMcart } ) => {
 
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>

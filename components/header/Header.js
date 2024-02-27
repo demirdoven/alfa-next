@@ -10,17 +10,20 @@ import StickyBar from "./StickyBar"
 import MobilSideMenu from "./MobilSideMenu";
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
+import { useThemeContext } from "@/components/context/theme";
 import { useMiniCartContext } from "@/components/context/miniCart";
 import { usePathname } from 'next/navigation';
 
 export default function Header( {className} ){
+    
 
     const pathname = usePathname();
+    const { color, setColor} = useThemeContext();
     const { mCart, setMcart} = useMiniCartContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+    console.log('color', color);
     useEffect(() => {
-        console.log(`Route changed to: ${pathname}`);
         setMcart( false )
       }, [pathname]);
 
@@ -41,7 +44,13 @@ export default function Header( {className} ){
                      <Logo className=""/>
                     <SearchBar className="hidden lg:block w-2/4"/>
 
-                    <UserSection className="client-section block lg:min-w-[200px]"/>
+                    <UserSection 
+                        className="client-section block lg:min-w-[200px]"
+                        mCart={mCart} 
+                        setMcart={setMcart}
+                        color={color}
+                        setColor={setColor}
+                    />
                 </div>
             </div>
             <MainMenu className="hidden lg:block bg-alfa-gray-1 relative z-100"/>
