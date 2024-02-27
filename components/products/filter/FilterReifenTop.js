@@ -80,8 +80,8 @@ const FilterReifenTop = ({filterData, searchParams, setProdsLoading}) => {
 
         const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
         // console.log(updatedUrl);
-        router.replace(updatedUrl, undefined, { shallow: true, scroll: false });
-
+        // router.replace(updatedUrl, undefined, { shallow: true, scroll: false });
+        router.push(updatedUrl, { scroll: false });
     }
 
 

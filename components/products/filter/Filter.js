@@ -45,12 +45,12 @@ const Filter = ({catSlug, filterData, searchParams, setProdsLoading}) => {
         // console.log('cloneSearchParams', cloneSearchParams);
 
         const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
-        router.push(updatedUrl, { scroll: true });
+        router.push(updatedUrl, { scroll: false });
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth'
+        // });
 
     }
 

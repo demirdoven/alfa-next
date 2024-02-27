@@ -67,10 +67,10 @@ export const Tags = ({ filterData, searchParams}) => {
 
         router.push(updatedUrl, { scroll: true });
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth'
+        // });
 
     }
 

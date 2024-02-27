@@ -133,10 +133,7 @@ const CheckoutMain = ( { countriesData } ) => {
         const updatedUrl = `/order-received?${new URLSearchParams( { 'order_id': createdOrderData?.orderId } )}`;
         router.push(updatedUrl, { scroll: true });
 
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+        
 
 
       }

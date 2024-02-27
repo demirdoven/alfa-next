@@ -50,10 +50,10 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
         localStorage.setItem('clickedProduct', JSON.stringify(product))
         
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth'
+        // });
     }
       
     return (
@@ -130,7 +130,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                             <Link 
                                 href={`/product/${convertToSlug(product?.brand + ' ' + product?.model + '-'+ product?.sizeTires + ' ' + product?.post_id)}`}
                                 className="my-2"
-                                scroll={true}
+                                // scroll={false}
                             >
                                 <h5 onClick={handleClickTitle} className="product-card-title leading-tight	">
                                     {product?.brand + ' ' + product?.model}

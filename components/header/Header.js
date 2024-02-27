@@ -12,20 +12,28 @@ import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import { useThemeContext } from "@/components/context/theme";
 import { useMiniCartContext } from "@/components/context/miniCart";
-import { usePathname } from 'next/navigation';
+import { usePathname, useParams } from 'next/navigation';
 
 export default function Header( {className} ){
     
 
     const pathname = usePathname();
+    const searchParams = useParams();
+
+
     const { color, setColor} = useThemeContext();
     const { mCart, setMcart} = useMiniCartContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    console.log('color', color);
     useEffect(() => {
         setMcart( false )
-      }, [pathname]);
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+      }, [pathname, searchParams]);
 
     useEffect( ()=>{
         console.log(mobileMenuOpen)

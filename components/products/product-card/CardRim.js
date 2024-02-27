@@ -154,10 +154,10 @@ export default function CardRim({product}){
 
         localStorage.setItem('clickedProduct', JSON.stringify(product))
         
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth'
+        // });
     }
 
     function handleChangeThumb(src) {
