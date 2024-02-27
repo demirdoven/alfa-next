@@ -10,10 +10,19 @@ import StickyBar from "./StickyBar"
 import MobilSideMenu from "./MobilSideMenu";
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
+import { useMiniCartContext } from "@/components/context/miniCart";
+import { usePathname } from 'next/navigation';
 
 export default function Header( {className} ){
 
+    const pathname = usePathname();
+    const { mCart, setMcart} = useMiniCartContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+    useEffect(() => {
+        console.log(`Route changed to: ${pathname}`);
+        setMcart( false )
+      }, [pathname]);
 
     useEffect( ()=>{
         console.log(mobileMenuOpen)

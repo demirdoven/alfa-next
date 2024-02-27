@@ -28,9 +28,7 @@ const HomePage = () => {
     <div className='w-full'>
 
       {
-        device == 'mobile' && <HeroMobile device={device} />
-      }
-      {
+        device == 'mobile' ? <HeroMobile device={device} /> :
         device == 'desktop' && <HeroDesktop device={device} />
       }
       {/* <Hero device={'iptal'} /> */}

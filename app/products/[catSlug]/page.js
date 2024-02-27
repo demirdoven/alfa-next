@@ -178,6 +178,7 @@ export default async function catSlug( {params, searchParams} ){
 
     return (
         <div className="w-full xs:px-4 lg:container mx-auto lg:max-w-6xl mt-6 px-4">
+            dasdas
             <Main catSlug={catSlug} filterData={filterData} searchParams={searchParams} device={device} />
         </div>
     )
