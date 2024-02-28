@@ -310,8 +310,8 @@ li[data-tax="season"]:hover:not(.pasif) span {
   }
 }
 .see-deals {
-  text-shadow: 0px 0px 20px #333;
   animation: bouncex 1s infinite;
-
-  
+}
+.see-deals-btn {
+  text-shadow: 0px 0px 10px #000000ad;
 }
