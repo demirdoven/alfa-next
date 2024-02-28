@@ -115,11 +115,11 @@ const HeroMobile = ( {device} ) => {
 
     return (
         <>
-            <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-0">
+            <div className="w-full relative  pb-2 px-8 lg:px-0 lg:pb-0">
                 <div className="relative mx-auto lg:max-w-6xl z-50">
                     
-                    <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
-                        <div className="w-full lg:w-[50%] flex flex-col items-start justify-end pt-8 lg:pt-0">
+                    <div className="w-full flex flex-col lg:flex-row justify-between align-center leading-1 ">
+                        <div className="w-full lg:w-[50%] flex flex-col items-start justify-end leading-[20px] pt-6 pb-[150px] ">
                             
                                 {/* <Image 
                                     src={'/hero/DE-Title-x2.png.webp'}
@@ -140,17 +140,20 @@ const HeroMobile = ( {device} ) => {
                                     priority={true}
                                 /> */}
                                 
-                                <h1 className="text-2xl font-bold">Best online shop for tires, rims & complete wheels</h1>
-                                <h2 className="mt-2">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
+                                <h1 className="text-xl font-bold">Best shop for tires, rims & wheels</h1>
+                                <h2 className="mt-1">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
 
+                                <Link
+                                    href=""
+                                    className="flex items-center gap-x-2 mt-2 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
+                                >
+                                    <span>See Deals</span>
 
-                                <Button 
-                                    href="/checkout" 
-                                    type="dark" 
-                                    classList="inline-block mt-6" 
-                                    innerClassList="uppercase text-center bg-transparent bg-gradient-to-r from-black to-transparent border-0 pl-3 pr-12 py-2 text-[14px] rounded-[3px] text-shadow-md"
-                                    text="See Deals" 
-                                />
+                                    <span className="see-deals relative top-[-2px] ">&#8594;</span>
+
+                                </Link>
+
+                                
 
                             
                                 <Image 
@@ -250,7 +253,7 @@ const HeroMobile = ( {device} ) => {
 
                 </div>
                 <Image 
-                    src="/hero/hero-bg.webp"
+                    src="/hero/0224-herobanner-mobile.webp"
                     alt="bg"
                     sizes="100vw"
                     fill
