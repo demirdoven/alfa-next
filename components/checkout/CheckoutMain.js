@@ -133,9 +133,6 @@ const CheckoutMain = ( { countriesData } ) => {
         const updatedUrl = `/order-received?${new URLSearchParams( { 'order_id': createdOrderData?.orderId } )}`;
         router.push(updatedUrl, { scroll: true });
 
-        
-
-
       }
 
       setRequestError( null );
@@ -187,9 +184,9 @@ const CheckoutMain = ( { countriesData } ) => {
 		<>
 			{/* { color ? ( */}
 				<form onSubmit={ handleFormSubmit } className="woo-next-checkout-form">
-            <div className="grid grid-cols-12 gap-8">
+            <div className="flex flex-col lg:flex-row gap-8">
                         
-              <div className="shipping-details col-span-7 mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0 w-full self-start">
+              <div className="shipping-details  lg:w-7/12 mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0 w-full self-start">
                 <h2 className="text-xl font-medium mb-4">Shipping Details</h2>
                 <UserAddress
                     states={ theShippingStates }
@@ -231,7 +228,7 @@ const CheckoutMain = ( { countriesData } ) => {
 
               </div>
 
-              <div className="your-orders col-span-5">
+              <div className="your-orders lg:w-5/12">
                 
                 {/* <YourOrder cart={ color }/> */}
                 <CartDetails input={ input } handleOnChange={ handleOnChange } isOrderProcessing={isOrderProcessing} requestError={requestError}/>

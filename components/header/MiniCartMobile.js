@@ -14,9 +14,9 @@ const MiniCartMobile = ({mCart, setMcart }) => {
   const { color, setColor} = useThemeContext();
 
 
-  useEffect( ()=>{
-    console.log(color)
-  }, [color])
+  // useEffect( ()=>{
+  //   console.log(color)
+  // }, [color])
 
   const windowHeight = ( window.innerHeight ) * 0.8 ;
 

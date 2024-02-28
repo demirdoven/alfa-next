@@ -39,7 +39,7 @@ async function BlogSinglePost({slug}){
             </Link>
         </div>
         <h1 className="text-center text-3xl m-6">{post.title.rendered}</h1>
-        <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="" />
+        {/* <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="" /> */}
         <div 
             className="alfa-gray-5 mt-6"
             dangerouslySetInnerHTML={{__html: post.content.rendered}} 

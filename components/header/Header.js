@@ -63,7 +63,7 @@ export default function Header( {className} ){
             </div>
             <MainMenu className="hidden lg:block bg-alfa-gray-1 relative z-100"/>
             <StickyBar />
-            {/* <MobilSideMenu mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} /> */}
+            <MobilSideMenu mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
         </header>
     )
 }

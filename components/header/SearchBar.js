@@ -36,7 +36,7 @@ const SearchBar = ( {className} ) => {
             <TypingLayout stopTyping={stopTyping} /> 
              : '' }
 
-<button class="absolute z-[200] w-auto h-full top-1/2 transform -translate-y-1/2 right-0 bg-slate-600 text-white hover:bg-slate-800 text-red-600 text-xl font-bold py-2 px-4 border border-slate-600 hover:border-slate-800 rounded-r-md uppercase flex items-center cursor-pointer">
+<button className="absolute z-[200] w-auto h-full top-1/2 transform -translate-y-1/2 right-0 bg-slate-600 text-white hover:bg-slate-800 text-red-600 text-xl font-bold py-2 px-4 border border-slate-600 hover:border-slate-800 rounded-r-md uppercase flex items-center cursor-pointer">
   SEARCH
 </button>
 

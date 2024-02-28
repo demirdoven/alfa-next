@@ -101,9 +101,11 @@ const MobilSideMenu = ({mobileMenuOpen, setMobileMenuOpen}) => {
             
             <AnimatePresence>
                 <motion.div
+                    initial={{ translateX: -1000, opacity: 0 }}
                     className='fixed top-0 left-[0] w-64 min-w-[300px] h-screen overflow-hidden overflow-y-auto z-[999999999]'
                     animate={{
-                        translateX: mobileMenuOpen ? 0 : -300
+                        translateX: mobileMenuOpen ? 0 : -300,
+                        opacity: 1
                     }}
                     transition={{ type: "spring", duration: 0.2, bounce: 0 }}
                 >
