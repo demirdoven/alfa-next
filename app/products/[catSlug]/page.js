@@ -21,8 +21,8 @@ export default async function catSlug( {params, searchParams} ){
 
         let datas = {
             start : 0,
-            urlAjax : 'https://alfatires.eu/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
-            urlPage : 'https://alfatires.eu/produkte/tires/',
+            urlAjax : 'https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
+            urlPage : 'https://alfatires.com/produkte/tires/',
             table : '_product_tires',
             cat : 'reifen',
             subCat: null,

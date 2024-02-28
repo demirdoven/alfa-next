@@ -10,8 +10,8 @@ export default async function catSlug( {params, searchParams} ){
 
         let datas = {
             start : 0,
-            urlAjax : 'https://alfatires.eu/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
-            urlPage : 'https://alfatires.eu/produkte/tires/',
+            urlAjax : 'https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
+            urlPage : 'https://alfatires.com/produkte/tires/',
             table : '_product_tires',
             cat : 'reifen',
             subCat: null,
@@ -115,7 +115,7 @@ export default async function catSlug( {params, searchParams} ){
             'category': dataToGo.category,
         })
 
-        const res = await fetch("https://alfatires.eu/wp-content/themes/alfatires/inc/ajax/filterProduct.php", {
+        const res = await fetch("https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php", {
             headers: {
             "accept": "application/json, text/javascript, */*; q=0.01",
             "accept-language": "en-US,en;q=0.9,tr;q=0.8,ar;q=0.7,ca;q=0.6,eo;q=0.5,pt;q=0.4",

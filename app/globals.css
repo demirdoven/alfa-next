@@ -142,7 +142,7 @@
 }
 @media screen and ( min-width: 769px ){
   .main-menu-item > a {
-    @apply font-bold italic text-[20px] text-[#272727];
+    @apply font-bold text-[18px] text-[#272727];
   }
 }
 .product-card-title {

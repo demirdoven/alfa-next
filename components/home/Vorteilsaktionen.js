@@ -18,7 +18,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
         {
             id: 2,
@@ -26,7 +26,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
         {
             id: 3,
@@ -34,7 +34,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
         {
             id: 4,
@@ -42,7 +42,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
         {
             id: 5,
@@ -50,7 +50,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
         {
             id: 6,
@@ -58,7 +58,7 @@ const Vorteilsaktionen = () => {
             title: 'MAM Felgen W4',
             priceText: 'ab 43,80 €',
             buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
+            url: 'https://alfatires.com/produkt/mam-felgen-w4/'
         },
     ]
 

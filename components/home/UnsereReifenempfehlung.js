@@ -16,51 +16,6 @@ const UnsereReifenempfehlung = () => {
 
     const [products, setProducts] = useState([]);
 
-    const xxproducts = [
-        {
-            id: 1,
-            thumb: 'https://staging.alfatires.eu/wp-content/uploads/2023/11/wheel-1.png',
-            title: 'MAM Felgen W4',
-            priceText: 'ab 43,80 €',
-            buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
-        },
-        {
-            id: 3,
-            thumb: 'https://staging.alfatires.eu/wp-content/uploads/2023/11/wheel-1.png',
-            title: 'MAM Felgen W4',
-            priceText: 'ab 43,80 €',
-            buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
-        },
-        {
-            id: 4,
-            thumb: 'https://staging.alfatires.eu/wp-content/uploads/2023/11/wheel-1.png',
-            title: 'MAM Felgen W4',
-            priceText: 'ab 43,80 €',
-            buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
-        },
-        {
-            id: 5,
-            thumb: 'https://staging.alfatires.eu/wp-content/uploads/2023/11/wheel-1.png',
-            title: 'MAM Felgen W4',
-            priceText: 'ab 43,80 €',
-            buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
-        },
-        {
-            id: 6,
-            thumb: 'https://staging.alfatires.eu/wp-content/uploads/2023/11/wheel-1.png',
-            title: 'MAM Felgen W4',
-            priceText: 'ab 43,80 €',
-            buttonText: 'Check product',
-            url: 'https://alfatires.eu/produkt/mam-felgen-w4/'
-        },
-    ]
-
-
-
     useEffect(() => {
         const pids = [32790, 17659, 538, 25046, 14114];
 

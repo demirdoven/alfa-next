@@ -145,7 +145,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                     product?.fuel && (
                                     <li className="flex items-center gap-1 ">
                                         <Image 
-                                            src="https://alfatires.eu/wp-content/themes/alfatires/img/fuel-icon.webp" 
+                                            src="https://alfatires.com/wp-content/themes/alfatires/img/fuel-icon.webp" 
                                             alt="" 
                                             width="20" 
                                             height="20"
@@ -158,7 +158,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 {
                                     product?.wet && (
                                     <li className="flex items-center gap-1 ">
-                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/rain-icon.webp" 
+                                        <Image src="https://alfatires.com/wp-content/themes/alfatires/img/rain-icon.webp" 
                                             alt=""
                                             width="20" 
                                             height="20"
@@ -171,7 +171,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 {
                                     product?.noise && (
                                     <li className="flex items-center gap-1 ">
-                                        <Image src="https://alfatires.eu/wp-content/themes/alfatires/img/volume-icon.webp"
+                                        <Image src="https://alfatires.com/wp-content/themes/alfatires/img/volume-icon.webp"
                                             alt=""
                                             width="20" 
                                             height="20"

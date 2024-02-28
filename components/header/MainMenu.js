@@ -7,9 +7,9 @@ export default function MainMenu({className}){
         <nav className={`${className} `}>
             <ul className="container mx-auto lg:max-w-6xl py-3 flex gap-x-[12px] w-full items-center justify-center">
                 
-                <li className="main-menu-item group relative cursor-pointer py-2">
+                <li className="main-menu-item group relative cursor-pointer">
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-1 items-center"
+                        className="menu-hover lg:mx-4 uppercase flex gap-x-1 items-center"
                         href="/products/tires"
                         >
                         <Image 
@@ -18,7 +18,7 @@ export default function MainMenu({className}){
                             width={0}
                             height={0}
                             sizes="50px"
-                            style={{ width: 'auto', height: '32px' }} 
+                            style={{ width: 'auto', height: '26px' }} 
                         />
                         <span>Tires</span>
                     </Link>
@@ -65,7 +65,7 @@ export default function MainMenu({className}){
                 
                 <li className="main-menu-item group relative cursor-pointer py-2">
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
+                        className="menu-hover lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/products/rims"
                         >
                         <Image 
@@ -74,7 +74,7 @@ export default function MainMenu({className}){
                             width={0}
                             height={0}
                             sizes="50px"
-                            style={{ width: 'auto', height: '32px' }} 
+                            style={{ width: 'auto', height: '26px' }} 
                         />
                         <span>Rims</span>
                     </Link>
@@ -84,7 +84,7 @@ export default function MainMenu({className}){
                 <li className="main-menu-item group relative cursor-pointer py-2">
                     
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
+                        className="menu-hover lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/products/accessories"
                         >
                         <Image 
@@ -93,7 +93,7 @@ export default function MainMenu({className}){
                             width={0}
                             height={0}
                             sizes="50px"
-                            style={{ width: 'auto', height: '32px' }} 
+                            style={{ width: 'auto', height: '26px' }} 
                         />
                         <span>Accessories</span>
                     </Link>
@@ -118,7 +118,7 @@ export default function MainMenu({className}){
                 
                 <li className="main-menu-item group relative cursor-pointer py-2">
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
+                        className="menu-hover lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/configurator"
                         >
                         <Image 
@@ -127,7 +127,7 @@ export default function MainMenu({className}){
                             width={0}
                             height={0}
                             sizes="50px"
-                            style={{ width: 'auto', height: '32px' }} 
+                            style={{ width: 'auto', height: '26px' }} 
                         />
                         <span>Configurator</span>
                     </Link>
@@ -139,7 +139,7 @@ export default function MainMenu({className}){
                 
                 <li className="main-menu-item group relative cursor-pointer py-2 uppercase">
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase"
+                        className="menu-hover lg:mx-4 uppercase"
                         href="/blog"
                         >
                         Blog
@@ -149,7 +149,7 @@ export default function MainMenu({className}){
                 <li className="main-menu-item group relative cursor-pointer py-2">
                     
                     <Link
-                        className="menu-hover my-2 py-2 lg:mx-4 uppercase flex gap-x-2 items-center"
+                        className="menu-hover lg:mx-4 uppercase flex gap-x-2 items-center"
                         href="/products/accessories"
                         >
                         <span>% Deals</span>
