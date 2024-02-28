@@ -193,7 +193,7 @@ const HeroDesktop = ( {device} ) => {
 
 
                                         <Button 
-                                            href="/checkout" 
+                                            href="/deals" 
                                             type="dark" 
                                             classList="inline-block mt-4" 
                                             innerClassList="uppercase text-center pr-4 pl-4 text-xs"

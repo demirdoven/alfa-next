@@ -114,11 +114,11 @@ const HeroMobile = ( {device} ) => {
 
     return (
         <>
-            <div className="w-full relative  pb-2 px-8 lg:px-0 lg:pb-0">
+            <div className="w-full relative pb-2 px-8 lg:px-0 lg:pb-0">
                 <div className="relative mx-auto lg:max-w-6xl z-50">
                     
                     <div className="w-full flex flex-col lg:flex-row justify-between align-center leading-1 ">
-                        <div className="w-full lg:w-[50%] flex flex-col items-start justify-end leading-[20px] pt-6 pb-[150px] ">
+                        <div className="w-full lg:w-[50%] flex flex-col items-start justify-end leading-[20px] pt-6 pb-[164px] ">
                             
                                 {/* <Image 
                                     src={'/hero/DE-Title-x2.png.webp'}
@@ -139,15 +139,14 @@ const HeroMobile = ( {device} ) => {
                                     priority={true}
                                 /> */}
                                 
-                                <h1 className="text-xl font-bold">Best shop for tires, rims & wheels</h1>
-                                <h2 className="mt-1">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
+                                <h1 className="text-2xl font-bold mt-2">Best shop for tires, rims & wheels</h1>
+                                <h2 className="text-lg leading-[22px]  mt-2">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
 
                                 <Link
                                     href="/deals"
-                                    className="flex items-center gap-x-2 mt-3 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
+                                    className="relative left-[-10px] top-1 flex items-center gap-x-2 mt-4 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
                                 >
                                     <span>See Deals</span>
-
                                     <span className="see-deals relative top-[-2px] ">&#8594;</span>
 
                                 </Link>
