@@ -27,6 +27,7 @@ export default function Header( {className} ){
 
     useEffect(() => {
         setMcart( false )
+        setMobileMenuOpen( false )
         
         window.scrollTo({
             top: 0,
