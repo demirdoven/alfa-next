@@ -7,9 +7,8 @@ import { isEmpty } from "lodash";
 import { Button } from "../general/Button";
 import Image from "next/image";
 
-
-
 const HeroMobile = ( {device} ) => {
+
 
     // const [heroFilterAtts, setHeroFilterAtts] = useState(null)
 
@@ -59,7 +58,7 @@ const HeroMobile = ( {device} ) => {
         const zoll = document.getElementById('zoll');
         const reifentyp = document.getElementById('reifentyp');
 
-        let url = new URL(`https://alfatires-headless.vercel.app/products/tires/`);
+        let url = new URL(`${pathname}`);
 
         breite && breite.value && url.searchParams.append('width', breite.value);
         hoehe && hoehe.value && url.searchParams.append('height', hoehe.value);
@@ -83,7 +82,7 @@ const HeroMobile = ( {device} ) => {
     }, [reifenTypeValue])
 
     function setUrl(){
-        let url = new URL(`https://alfatires-headless.vercel.app/products/tires/`);
+        let url = new URL(`https://alfatires.dev/products/tires/`);
 
         
         Object.keys(selectedValues).forEach(function(key) {
