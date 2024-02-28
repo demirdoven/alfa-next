@@ -121,7 +121,7 @@ const HeroMobile = ( {device} ) => {
                     <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
                         <div className="w-full lg:w-[50%] flex flex-col items-start justify-end pt-8 lg:pt-0">
                             
-                                <Image 
+                                {/* <Image 
                                     src={'/hero/DE-Title-x2.png.webp'}
                                     alt={`aa`}
                                     width={0}
@@ -138,13 +138,17 @@ const HeroMobile = ( {device} ) => {
                                     sizes="100vw"
                                     style={{ width: '100%', height: 'auto' }}
                                     priority={true}
-                                />
+                                /> */}
+                                
+                                <h1 className="text-2xl font-bold">Best online shop for tires, rims & complete wheels</h1>
+                                <h2 className="mt-2">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
+
 
                                 <Button 
                                     href="/checkout" 
                                     type="dark" 
                                     classList="inline-block mt-6" 
-                                    innerClassList="uppercase text-center"
+                                    innerClassList="uppercase text-center bg-transparent bg-gradient-to-r from-black to-transparent border-0 pl-3 pr-12 py-2 text-[14px] rounded-[3px] text-shadow-md"
                                     text="See Deals" 
                                 />
 
@@ -232,7 +236,7 @@ const HeroMobile = ( {device} ) => {
                                         <Button 
                                             href={ btnUrl ? btnUrl : '' }
                                             type="dark" 
-                                            innerClassList="block w-full text-center"
+                                            innerClassList="block w-full text-center pr-4 pl-4"
                                             text="SEARCH TIRES" 
                                             // setMcart={setMcart}
                                             // onClick={ ()=>{ setMcart(false) } }
