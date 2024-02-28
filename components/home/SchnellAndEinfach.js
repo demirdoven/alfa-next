@@ -20,8 +20,8 @@ const SchnellAndEinfach = () => {
               >
 
                 <div className="w-full lg:w-1/2">
-                    <h1 className="text-2xl font-medium">Alfa Tires <br />Schnell & Einfach</h1>
-                    <p className="mt-2 text-sm font-light">Alfatires bietet eine große Auswahl an Qualitäts- und Premium Markenreifen, Felgen und Kompletträdern. Der Reifen- und Felgenexperte legt dabei höchste Priorität auf Qualität und Service und findet garantiert das passende Produkt für dich.</p>
+                    <h1 className="text-2xl">Alfa Tires <br />Schnell & Einfach</h1>
+                    <p className="mt-2 text-sm">Alfatires bietet eine große Auswahl an Qualitäts- und Premium Markenreifen, Felgen und Kompletträdern. Der Reifen- und Felgenexperte legt dabei höchste Priorität auf Qualität und Service und findet garantiert das passende Produkt für dich.</p>
                 </div>
                 <div className="w-full lg:w-1/2">
                   <ul className="w-full flex flex-col lg:flex-row justify-between items-start gap-2">
