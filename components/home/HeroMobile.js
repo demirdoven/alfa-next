@@ -165,7 +165,7 @@ const HeroMobile = ( {device} ) => {
                         </div>
                         <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                             
-                                <Image 
+                            <Image 
                                 className="w-[400px] h-auto lg:block lg:w-[100%] lg:h-[32rem]"
                                 src={'/hero/homepage-filter-png_optimized.png.webp'}
                                 alt="bb"

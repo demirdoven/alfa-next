@@ -158,11 +158,11 @@ const HeroDesktop = ( {device} ) => {
                         transition: { type: "spring", duration: 0.7 }
                       }}
                 > */}
-                    <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-0">
+                    <div className="w-full relative pb-4 px-8 lg:px-0 lg:pb-4 lg:pt-4">
                         <div className="relative mx-auto lg:max-w-6xl z-50">
                             
                             <div className="w-full flex flex-col lg:flex-row justify-between align-center ">
-                                <div className="w-full lg:w-[50%] flex flex-col items-start justify-end pt-8 lg:pt-0">
+                                <div className="w-full lg:w-[50%] flex flex-col items-start justify-start mt-8 pt-8 lg:pt-2">
                                     <motion.div
                                         className="w-full"
                                         initial={{ opacity: 0, x: -1200 }}
@@ -170,7 +170,7 @@ const HeroDesktop = ( {device} ) => {
                                         exit={{ opacity: 0, x: -1200 }}
                                         transition={{ delay: 0.2 }}
                                     >
-                                        <Image 
+                                        {/* <Image 
                                             src={'/hero/DE-Title-x2.png.webp'}
                                             alt={`aa`}
                                             width={0}
@@ -187,18 +187,23 @@ const HeroDesktop = ( {device} ) => {
                                             sizes="100vw"
                                             style={{ width: '100%', height: 'auto' }}
                                             priority={true}
-                                        />
+                                        /> */}
+                                        
+                                        <h1 className="text-3xl font-bold">Best online shop for tires, rims & complete wheels</h1>
+                                        <h2 className="mt-1 font-light">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
+
 
                                         <Button 
                                             href="/checkout" 
                                             type="dark" 
-                                            classList="inline-block mt-6" 
-                                            innerClassList="uppercase text-center"
+                                            classList="inline-block mt-4" 
+                                            innerClassList="uppercase text-center pr-4 pl-4 text-xs"
                                             text="See Deals" 
                                         />
 
                                     </motion.div>
-                                    <motion.div
+
+                                    {/* <motion.div
                                         className="w-full"
                                         initial={{ opacity: 0, y: 85 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -216,7 +221,8 @@ const HeroDesktop = ( {device} ) => {
                                             style={{ width: '100%', height: 'auto' }}
                                         />
 
-                                    </motion.div>
+                                    </motion.div> */}
+
                                 </div>
 
 
@@ -313,7 +319,7 @@ const HeroDesktop = ( {device} ) => {
                                                     <Button 
                                                         href={ btnUrl ? btnUrl : '' }
                                                         type="dark" 
-                                                        innerClassList="block w-full text-center"
+                                                        innerClassList="block w-full text-center pr-4 pl-4"
                                                         text="SEARCH TIRES" 
                                                         // setMcart={setMcart}
                                                         // onClick={ ()=>{ setMcart(false) } }
@@ -332,7 +338,7 @@ const HeroDesktop = ( {device} ) => {
 
                         </div>
                         <Image 
-                            src="/hero/hero-bg.webp"
+                            src="/hero/0224-herobanner-desktop.webp"
                             alt="bg"
                             sizes="100vw"
                             fill

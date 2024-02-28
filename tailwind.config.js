@@ -30,10 +30,11 @@ module.exports = {
         'alfa-gray-10': '#e1e1e1',
         
       },
-      fontFamily: {
-        helvetica: ["Helvetica", "sans-serif"],
-        openSansCondensed: ["OpenSans Condensed", "sans-serif"],
-      }
+      // fontFamily: {
+      //   helvetica: ["Helvetica", "sans-serif"],
+      //   openSansCondensed: ["OpenSans Condensed", "sans-serif"],
+      //   lato: ["Lato", "sans-serif"],
+      // }
     },
   },
   plugins: [],

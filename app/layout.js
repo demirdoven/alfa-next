@@ -1,4 +1,4 @@
-import { Lato, Oswald } from 'next/font/google'
+import { Roboto_Condensed } from 'next/font/google'
 // import localFont from 'next/font/local'
 
 import './globals.css'
@@ -7,17 +7,23 @@ import Header from '@/components/header/Header'
 import { ThemeContextProvider } from '@/components/context/theme'
 import { MiniCartContextProvider } from '@/components/context/miniCart'
 
-const lato = Lato({
-  weight: ['100', '300', '400', '700', '900'],
+// const lato = Lato({
+//   weight: ['100', '300', '400', '700', '900'],
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-lato',
+// })
+// const oswald = Oswald({
+//   weight: ['200', '300', '400', '700'],
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-oswald',
+// })
+const robotoCondensed = Roboto_Condensed({
+  weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lato',
-})
-const oswald = Oswald({
-  weight: ['200', '300', '400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-oswald',
+  variable: '--font-robotoCondensed',
 })
 
 
@@ -40,7 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={``}>
+      <body className={robotoCondensed.className}>
             <ThemeContextProvider>
               <MiniCartContextProvider>
                 <Header />

@@ -131,22 +131,22 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-body {
-  @apply font-openSansCondensed 	;
-}
+/* body {
+  @apply font-lato;
+} */
 
 @media screen and ( max-width: 768px ){
   .main-menu-item > a {
-    @apply font-openSansCondensed font-bold text-[20px] text-[#272727];
+    @apply font-bold text-[20px] text-[#272727];
   }
 }
 @media screen and ( min-width: 769px ){
   .main-menu-item > a {
-    @apply font-openSansCondensed font-bold italic text-[20px] text-[#272727];
+    @apply font-bold italic text-[20px] text-[#272727];
   }
 }
 .product-card-title {
-  @apply font-openSansCondensed text-[1rem]  font-bold   lg:text-[1.6rem]  tracking-[.02em] text-slate-900 lg:leading-8;
+  @apply text-[1rem]  font-bold   lg:text-[1.6rem]  tracking-[.02em] text-slate-900 lg:leading-8;
 }
 nav.image-gallery-thumbnails-container {
   display: flex;
