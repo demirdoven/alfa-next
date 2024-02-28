@@ -167,7 +167,7 @@ const HeroDesktop = ( {device} ) => {
                                         className="w-full"
                                         initial={{ opacity: 0, x: -1200 }}
                                         animate={{ opacity: 1, x: 0 }}
-                                        exist={{ opacity: 0, x: -1200 }}
+                                        exit={{ opacity: 0, x: -1200 }}
                                         transition={{ delay: 0.2 }}
                                     >
                                         <Image 
@@ -202,7 +202,7 @@ const HeroDesktop = ( {device} ) => {
                                         className="w-full"
                                         initial={{ opacity: 0, y: 85 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        exist={{ opacity: 0, y: 85 }}
+                                        exit={{ opacity: 0, y: 85 }}
                                         transition={{ delay: 0.35 }}
                                     >
 

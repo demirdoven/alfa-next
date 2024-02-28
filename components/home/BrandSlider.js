@@ -78,7 +78,7 @@ const BrandSlider = () => {
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				exist={{ opacity: 0 }}
+				exit={{ opacity: 0 }}
 				transition={{ delay: 0.10 }}
 			>
 				<div className=" container mx-auto lg:max-w-6xl ">

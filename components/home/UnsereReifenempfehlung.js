@@ -73,16 +73,6 @@ const UnsereReifenempfehlung = () => {
         // $product_image = "https://cdn.alfatires.eu/products/tires/".$product_details->media.".webp";
 
     }, []);
-
-    
-
-    useEffect(() => {
-          
-       console.log(products)
-
-    }, [products]);
-
-
  
     return (
         <div className="w-full py-2.5 lg:py-5 px-4 lg:px-0">
@@ -115,8 +105,8 @@ const UnsereReifenempfehlung = () => {
 
                             {
                                 products.map( item => (
-                                <SwiperSlide key={item.id} >
-                                    <div className="border border-slate-300 rounded-xl px-5 pt-5 pb-7">
+                                <SwiperSlide key={item.id} className="self-stretch h-full">
+                                    <div className="border border-slate-300 rounded-xl px-5 pt-5 pb-7 h-full self-stretch	">
 
                                         <Image 
                                             src={"https://cdn.alfatires.eu/products/tires/"+item?.details?.media+".webp"}
@@ -125,7 +115,7 @@ const UnsereReifenempfehlung = () => {
                                             // layout="fill"
                                             width="200"
                                             height="200"
-                                            objectFit="cover"
+                                            // objectFit="cover"
                                         />
 
                                         <h6 className="text-sm font-light mb-0 pl-2 bg-gradient-to-r from-red-800 to-transparent w-full h-full text-white ">{item?.details?.brand} </h6>
