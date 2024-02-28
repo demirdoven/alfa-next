@@ -110,7 +110,7 @@ const HeroDesktop = ( {device} ) => {
     }, [reifenTypeValue])
 
     function setUrl(){
-        let url = new URL(`https://alfatires-headless.vercel.app/products/tires/`);
+        let url = new URL(`${window.location.href}products/tires/`);
 
         
         Object.keys(selectedValues).forEach(function(key) {

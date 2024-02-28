@@ -144,8 +144,8 @@ const HeroMobile = ( {device} ) => {
                                 <h2 className="mt-1">Large selection of quality and premium brand tires, <br/>Aluminum rims and complete wheels.</h2>
 
                                 <Link
-                                    href=""
-                                    className="flex items-center gap-x-2 mt-2 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
+                                    href="/deals"
+                                    className="flex items-center gap-x-2 mt-3 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
                                 >
                                     <span>See Deals</span>
 
