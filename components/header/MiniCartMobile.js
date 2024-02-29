@@ -112,7 +112,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
                   innerClassList="block w-full text-center"
                   text="PROCEED TO CHECKOUT" 
                   // setMcart={setMcart}
-                  onClick={ ()=>{ setMcart(false) } }
+                  // onClick={ ()=>{ setMcart(false) } }
               />
 
           </div>
