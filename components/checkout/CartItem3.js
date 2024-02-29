@@ -93,18 +93,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
         </div>
         <div className="flex flex-col w-2/12">
             <div className="qty_changer w-full">
-                <div className="flex items-center border-gray-100">
-                    <span 
-                        onClick={( event ) => handleQtyChange( event, item?.cartKey, 'decrement' )}
-                        className="block text-center leading-[1.13rem] cursor-pointer rounded-full bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-900 w-[20px] h-[20px]"> - </span>
-                    <span 
-                        className="flex items-center justify-center text-md mx-2">
-                    {item.quantity}
-                    </span>
-                    <span 
-                        onClick={( event ) => handleQtyChange( event, item?.cartKey, 'increment' )}
-                        className="block text-center leading-[1.13rem] cursor-pointer rounded-full bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-900 w-[20px] h-[20px]"> + </span>
-                </div>
+               
             </div>
         </div>
         <div className="flex flex-col  justify-center">
