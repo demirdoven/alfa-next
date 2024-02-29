@@ -80,13 +80,14 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
     <div key={item.key} className="cart-item w-full flex items-center justify-between bg-gray-100 hover:bg-gray-200 mb-2 pl-6 pr-2 py-5 rounded-md">
         <div className="flex w-5/12">
             <Link href={`/product/adsdsads`} className="w-20">
-                <Image
+                {/* <Image
                     className="max-h-24 w-auto object-contain object-top"
                     src={item.data?.images[0].src}
                     alt={'asdsa'}
                     width={30}
                     height={30}
-                />
+                /> */}
+                resim
             </Link>
             <div className="flex flex-col justify-between ml-4 flex-grow">
             <Link href={`/product/dasdasdsadasdsa`} className="font-semibold text-sm">{item.data.name}</Link>
