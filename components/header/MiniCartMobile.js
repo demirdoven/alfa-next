@@ -13,13 +13,6 @@ const MiniCartMobile = ({mCart, setMcart }) => {
 
   const { color, setColor} = useThemeContext();
 
-
-  // useEffect( ()=>{
-  //   console.log(color)
-  // }, [color])
-
-  const boxHeight = (( window.innerHeight / 2 ) - 60 );
-
   return (
     <div
       className={`block lg:hidden fixed left-0 bottom-0 ${ mCart ? 'h-[50vh]' : 'h-[60px]' } transition-height duration-300  w-screen bg-white`}
@@ -60,25 +53,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
         <div className="h-[calc(50vh-60px)] bg-white px-8 flex flex-col justify-between border-t border-t-slate-100">
 
                                           
-          <div className="relative inset-0  overflow-hidden overflow-y-auto">
-
-              {
-                  color && color !== null && color.cartItems.length ? (
-                      color.cartItems.map( item => (
-                          <CartItemMiniCart
-                              // key={ item.product_id }
-                              key={ Math.random() }
-                              item={ item }
-                              products={ color?.cartItems }
-                              setColor={setColor}
-                              // setUpdatingProduct={setUpdatingProduct}
-                              // setRemovingProduct={setRemovingProduct}
-                          />
-                      ))
-                  ) : <LoadingLastik classList="mt-24"/> 
-              }
-
-          </div>
+         test
 
           <div id="summary" className="w-full mt-4">
               <div className="rounded-lg border bg-white p-1 shadow-md md:mt-0 w-full">
