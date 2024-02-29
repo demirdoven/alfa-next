@@ -16,7 +16,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
         <div className="flex w-5/12">
            
             <div className="flex flex-col justify-between ml-4 flex-grow">
-            {item.data.name}
+            <Link href={`/product/dasdasdsadasdsa`} className="font-semibold text-sm">{item.data.name}</Link>
             {/* <span className="text-red-500 text-xs">Apple</span> */}
             </div>
         </div>
