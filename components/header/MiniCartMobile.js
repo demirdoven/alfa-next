@@ -5,13 +5,18 @@ import { useEffect, useState } from 'react'
 import { FaAngleUp } from "react-icons/fa6";
 import { PiHandbagBold } from "react-icons/pi";
 import { Button } from '../general/Button';
-import CartItemMiniCart from './CartItemMiniCart';
+// import CartItemMiniCart from './CartItemMiniCart';
 import LoadingLastik from '../general/LoadingLastik';
 import { useThemeContext } from "@/components/context/theme";
+import CartItem2 from '../checkout/CartItem_Old';
 
 const MiniCartMobile = ({mCart, setMcart }) => {
 
   const { color, setColor} = useThemeContext();
+
+  const { cartItems, totalPrice, totalQty } = color || {};
+  const [updatingProduct, setUpdatingProduct] = useState( false );
+  const [removingProduct, setRemovingProduct] = useState( false );
 
   return (
     <div
@@ -53,7 +58,29 @@ const MiniCartMobile = ({mCart, setMcart }) => {
         <div className="h-[calc(50vh-60px)] bg-white px-8 flex flex-col justify-between border-t border-t-slate-100">
 
                                           
-         test
+          <div className="relative inset-0  overflow-hidden overflow-y-auto">
+
+          {
+              color !== null && color.cartItems.length ? (
+                  color.cartItems.map( item => (
+                      <CartItem2
+                          // key={ item.product_id }
+                          key={ Math.random() }
+                          item={ item }
+                          products={ color?.cartItems }
+                          setColor={setColor}
+                          setUpdatingProduct={setUpdatingProduct}
+                          setRemovingProduct={setRemovingProduct}
+                      />
+                  ))
+              ) : ''
+                  // <LoadingLastik classList="mt-24"/> 
+          }
+
+              
+
+
+          </div>
 
           <div id="summary" className="w-full mt-4">
               <div className="rounded-lg border bg-white p-1 shadow-md md:mt-0 w-full">
