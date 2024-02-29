@@ -117,7 +117,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
             onClick={ ( event ) => handleRemoveProductClick( event, item?.key ) }
             data-key={item?.key}
             className="text-center w-1/12 font-normal text-sm hover:text-alfa-red-1" title="Remove">{<RiDeleteBin6Line />}</button>
-
+ 
 
         
     
