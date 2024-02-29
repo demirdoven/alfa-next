@@ -8,8 +8,8 @@ import { Button } from '../general/Button';
 // import CartItemMiniCart from './CartItemMiniCart';
 import LoadingLastik from '../general/LoadingLastik';
 import { useThemeContext } from "@/components/context/theme";
-import CartItem3 from '../checkout/CartItem3';
-// import CartItem2 from '../checkout/CartItem_Old';
+// import CartItem3 from '../checkout/CartItem3';
+import CartItem2 from '../checkout/CartItem_Old';
 
 const MiniCartMobile = ({mCart, setMcart }) => {
 
@@ -64,7 +64,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
           {
               color !== null && color.cartItems.length ? (
                   color.cartItems.map( (item, index) => (
-                      <CartItem3
+                      <CartItem2
                           key={ index }
                           // key={ Math.random() }
                           item={ item }
