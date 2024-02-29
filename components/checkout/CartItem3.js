@@ -94,16 +94,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
             </div>
         </div>
        
-        <div className="flex flex-col  justify-center">
-            <span className="text-center w-2/12 font-normal text-md whitespace-nowrap">{item?.line_subtotal.toFixed(2)} €</span>
-            { item.quantity > 1 && <span className="text-center w-full font-normal text-slate-900 opacity-40 text-xs whitespace-nowrap">{item.quantity} x {item?.data?.price} €</span> }
-        </div>
-        <button 
-            onClick={ ( event ) => handleRemoveProductClick( event, item?.key ) }
-            data-key={item?.key}
-            className="text-center w-1/12 font-normal text-sm hover:text-alfa-red-1" title="Remove">{<RiDeleteBin6Line />}</button>
-
-
+       
         
     
     </div>
