@@ -24,7 +24,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
       className={`block lg:hidden fixed left-0 bottom-0 ${ mCart ? 'h-[50vh]' : 'h-[60px]' } transition-height duration-300  w-screen bg-white`}
     >  
       <div 
-        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer"
+        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer "
         onClick={ () => { setMcart( ! mCart ) } }
       >
           <div className="flex gap-x-3 items-center">
