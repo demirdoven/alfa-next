@@ -12,67 +12,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 	const productImg = item?.data?.images?.[0] ?? '';
 
 
-    const handleQtyChange = ( event, cartKey, type ) => {
-		
-		if ( process.browser ) {
-			
-			event.stopPropagation();
-
-            setUpdatingProduct(true);
-
-			let newQty;
-			
-			// If the previous cart request is still updatingProduct or removingProduct, then return.
-			// if ( updatingProduct || removingProduct || ( 'decrement' === type && 1 === productCount ) ) {
-			// 	return;
-			// }
-			
-			if ( !isEmpty( type ) ) {
-				newQty = 'increment' === type ? productCount + 1 : productCount - 1;
-			} else {
-				// If the user tries to delete the count of product, set that to 1 by default ( This will not allow him to reduce it less than zero )
-				newQty = ( event.target.value ) ? parseInt( event.target.value ) : 1;
-			}
-			
-            
-			// Set the new qty in state.
-			setProductCount( newQty );
-			
-
-			if ( products.length ) {
-				// updateCart(item?.key, newQty, setCart, setUpdatingProduct);
-				sepetiGuncelle(item?.key, newQty, setColor, setUpdatingProduct );
-			}
-			
-		}
-	};
-	
-    const handleRemoveProductClick = ( event, cartKey ) => {
-		event.stopPropagation();
-		
-		// // If the component is unmounted, or still previous item update request is in process, then return.
-		// if ( !isMounted || updatingProduct ) {
-		// 	return;
-		// }
-		
-        // console.log(event);
-
-        // return false;
-		sepetUrunSil( cartKey, setColor, setRemovingProduct );
-
-        
-
-        // var wrapDiv = event.target.closest('.cart-itemm');
-        // if (wrapDiv) {
-        //   // Remove the parent "wrap" div if it exists
-        //   wrapDiv.parentNode.removeChild(wrapDiv);
-        // }
-
-        event.target.closest('.cart-item').classList.add('zero-height');
-        
-
-      
-	};
+    
 
 
     return (
@@ -102,7 +42,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
         </div>
         
 
-        
+        <input type="text" name="" value=""/>
     
     </div>
 
