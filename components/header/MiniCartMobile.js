@@ -68,10 +68,10 @@ const MiniCartMobile = ({mCart, setMcart }) => {
                           // key={ item.product_id }
                           key={ Math.random() }
                           item={ item }
-                          // products={ color?.cartItems }
-                          // setColor={setColor}
-                          // setUpdatingProduct={setUpdatingProduct}
-                          // setRemovingProduct={setRemovingProduct}
+                          products={ color.cartItems }
+                          setColor={setColor}
+                          setUpdatingProduct={setUpdatingProduct}
+                          setRemovingProduct={setRemovingProduct}
                       />
                   ))
               ) : ''

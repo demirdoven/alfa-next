@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { isEmpty } from 'lodash';
+import { sepetiGuncelle, sepetUrunSil } from '@/lib/functions';
 
-const CartItem3 = ({item }) => {
+const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingProduct }) => {
+
+    const [productCount, setProductCount] = useState( item.quantity );
+
+	const productImg = item?.data?.images?.[0] ?? '';
+
 
 
     return (
@@ -10,10 +18,14 @@ const CartItem3 = ({item }) => {
         <div className="flex w-5/12">
            
             <div className="flex flex-col justify-between ml-4 flex-grow">
-                {item.data.name}
+            <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="font-semibold text-sm">{item.data.name}</Link>
+            {/* <span className="text-red-500 text-xs">Apple</span> */}
             </div>
         </div>
-
+        
+        
+        
+    
     </div>
 
   )
