@@ -21,7 +21,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
 
   return (
     <div
-      className={`block lg:hidden fixed left-0 bottom-0 ${ mCart ? 'h-[50vh]' : 'h-[60px]' } transition-height duration-300  w-screen bg-white`}
+      className={`block lg:hidden fixed left-0 bottom-0 h-[50vh] transition-height duration-300  w-screen bg-white`}
     >  
       <div 
         className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer"
@@ -55,6 +55,9 @@ const MiniCartMobile = ({mCart, setMcart }) => {
       </div>
 
   
+     
+     {
+      mCart && (
      
         <div className="h-[calc(50vh-60px)] bg-white px-8 flex flex-col justify-between border-t border-t-slate-100">
 
@@ -120,7 +123,8 @@ const MiniCartMobile = ({mCart, setMcart }) => {
 
         </div>
 
-
+      )
+      }
           
 
       </div>

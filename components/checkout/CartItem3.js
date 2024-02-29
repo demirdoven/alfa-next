@@ -79,21 +79,34 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 
     <div key={item.key} className="cart-item w-full flex items-center justify-between bg-gray-100 hover:bg-gray-200 mb-2 pl-6 pr-2 py-5 rounded-md">
         <div className="flex w-5/12">
+            <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="w-20">
                 <Image
                     className="max-h-24 w-auto object-contain object-top"
                     src={item.data?.images[0].src}
-                    alt={'asdsa'}
+                    alt={`cscds`}
                     width={30}
                     height={30}
                 />
+            </Link>
             <div className="flex flex-col justify-between ml-4 flex-grow">
-            {item.data.name}            
-            <span className="text-red-500 text-xs">Apple</span>
+            <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="font-semibold text-sm">{item.data.name}</Link>
+            {/* <span className="text-red-500 text-xs">Apple</span> */}
             </div>
         </div>
         <div className="flex flex-col w-2/12">
             <div className="qty_changer w-full">
-               
+                <div className="flex items-center border-gray-100">
+                    <span 
+                        onClick={( event ) => handleQtyChange( event, item?.cartKey, 'decrement' )}
+                        className="block text-center leading-[1.13rem] cursor-pointer rounded-full bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-900 w-[20px] h-[20px]"> - </span>
+                    <span 
+                        className="flex items-center justify-center text-md mx-2">
+                    {item.quantity}
+                    </span>
+                    <span 
+                        onClick={( event ) => handleQtyChange( event, item?.cartKey, 'increment' )}
+                        className="block text-center leading-[1.13rem] cursor-pointer rounded-full bg-white hover:bg-slate-900 text-slate-900 hover:text-white border border-slate-900 w-[20px] h-[20px]"> + </span>
+                </div>
             </div>
         </div>
         <div className="flex flex-col  justify-center">
