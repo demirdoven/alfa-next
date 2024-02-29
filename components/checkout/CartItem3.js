@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
@@ -12,9 +14,8 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 	const productImg = item?.data?.images?.[0] ?? '';
 
 
-    const handleQtyChange = ( event, cartKey, type ) => {
+    function handleQtyChange( event, cartKey, type ){
 		
-		if ( process.browser ) {
 			
 			event.stopPropagation();
 
@@ -44,10 +45,10 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 				sepetiGuncelle(item?.key, newQty, setColor, setUpdatingProduct );
 			}
 			
-		}
+		
 	};
 	
-    const handleRemoveProductClick = ( event, cartKey ) => {
+    function handleRemoveProductClick( event, cartKey ){
 		event.stopPropagation();
 		
 		// // If the component is unmounted, or still previous item update request is in process, then return.
@@ -79,7 +80,7 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 
     <div key={item.key} className="cart-item w-full flex items-center justify-between bg-gray-100 hover:bg-gray-200 mb-2 pl-6 pr-2 py-5 rounded-md">
         <div className="flex w-5/12">
-            <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="w-20">
+            <Link href={`/product/${item?.data?.slug}`}>
                 <Image
                     className="max-h-24 w-auto object-contain object-top"
                     src={item.data?.images[0].src}
@@ -89,7 +90,9 @@ const CartItem3 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
                 />
             </Link>
             <div className="flex flex-col justify-between ml-4 flex-grow">
-            <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="font-semibold text-sm">{item.data.name}</Link>
+            <Link href={`/product/${item?.data?.slug}`} className="font-semibold text-sm">
+                {item.data.name}
+            </Link>
             {/* <span className="text-red-500 text-xs">Apple</span> */}
             </div>
         </div>
