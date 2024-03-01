@@ -50,7 +50,7 @@ const DealsMain = () => {
                             </div>
 
                             <div className="w-full lg:w-6/12 pt-4 pl-4">
-                                <h1 className="text-3xl ">{ JSON.parse(item?.de).title }</h1>
+                                <h1 className="text-3xl font-medium">{ JSON.parse(item?.de).title }</h1>
                                 <div 
                                     className="block text-lg mt-4 mb-8"
                                     dangerouslySetInnerHTML={{__html: JSON.parse(item?.de).description}} 
