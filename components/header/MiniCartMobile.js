@@ -39,7 +39,6 @@ const MiniCartMobile = ({mCart, setMcart }) => {
               </motion.div>
 
           </div>
-
           <div className="flex gap-x-4">
           <div className="relative">
               <PiHandbagBold size='1.5em' />

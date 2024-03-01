@@ -190,7 +190,7 @@ const HeroMobile = ( {device} ) => {
                                                 id={taxSlug}
                                                 value={selectedValues[taxSlug] || heroFilterAtts[taxSlug].default}
                                                 onChange={(e) => handleSelectChange(e, taxSlug)}
-                                                className="w-full text-sm lg:text-xl font-semibold py-1 lg:py-2.5 lg:px-4 bg-alfa-gray-10 rounded text-center focus:outline-0"
+                                                className="w-full text-sm lg:text-xl font-semibold py-1 lg:py-2.5 lg:px-4 bg-alfa-gray-11 rounded text-center focus:outline-0"
                                             >
                                                 {
                                                     heroFilterAtts[taxSlug].terms.map((option) => (
@@ -215,7 +215,7 @@ const HeroMobile = ( {device} ) => {
                                         value={reifenTypeValue}
                                         onChange={(e) => handleReifenTypChange(e)}
                                         id="reifentyp" 
-                                        className="w-auto lg:w-full text-sm font-semibold py-1 lg:py-2.5 pl-4 lg:px-4 bg-alfa-gray-10 rounded focus:outline-0">
+                                        className="w-auto lg:w-full text-sm font-semibold py-1 lg:py-2.5 pl-4 lg:px-4 bg-alfa-gray-11 rounded focus:outline-0">
 
                                             <option key={"Winter"} value={"Winter"}>Winter</option>
                                             <option key={"Summer"} value={"Summer"}>Summer</option>
@@ -223,9 +223,7 @@ const HeroMobile = ( {device} ) => {
 
                                         </select>
                                     </div>
-                                    <div className="hidden lg:flex flex-1 p-2 justify-center items-end text-center">
-                                        <Link href={'/products/tires'} className="py-[0.68em] text-sm font-semibold text-alfa-gray-3 px-4 w-full bg-alfa-gray-10 rounded " >Advanced</Link>
-                                    </div>
+                                   
                                 </div>
                                 <div className="mt-2 lg:mt-4 w-full flex justify-center text-center">
                                     {/* <Button url={'/products/tires'} innerClassList="text-md" text="REIFEN FINDEN" /> */}
@@ -253,7 +251,7 @@ const HeroMobile = ( {device} ) => {
                 <Image 
                     src="/hero/0224-herobanner-mobile.webp"
                     alt="bg"
-                    sizes="100vw"
+                    sizes="400px"
                     fill
                     style={{
                         objectFit: 'cover',
