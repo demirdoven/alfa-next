@@ -16,19 +16,24 @@ const DealsMain = () => {
         setCampaignsLoading(true)
 
         const getBanner = async () => {
+
             const campaigns = await getCampaigns();
             console.log('campaigns', campaigns)
             setCampaigns(campaigns)
             setCampaignsLoading(false)
         };
-        getBanner();
+
+        setTimeout(() => {
+            getBanner();
+        }, 2000);
+        
 }, [] );
 
   return (
     <div>
         <ul className="mb-24">
             {
-                campaingsLoading ? 'loading' :
+                ! campaingsLoading &&
                     campaings && ! isEmpty(campaings) && campaings.map( item => (
                         <li 
                             key={item.id}
@@ -60,6 +65,7 @@ const DealsMain = () => {
                             </div>
                         </li>
                     ))
+
             }
             
         </ul>
