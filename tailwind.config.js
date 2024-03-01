@@ -28,7 +28,7 @@ module.exports = {
         'alfa-gray-8': '#a9a9a9',
         'alfa-gray-9': '#737373',
         'alfa-gray-10': '#e1e1e1',
-        'alfa-gray-11': '#c2c2c2',
+        'alfa-gray-11': '#d3d3d3',
         
       },
       // fontFamily: {

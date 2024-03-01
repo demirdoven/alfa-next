@@ -309,7 +309,7 @@ li[data-tax="season"]:hover:not(.pasif) span {
     animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-.see-deals {
+.animate-to-right {
   animation: bouncex 0.5s infinite;
 }
 .see-deals-btn {

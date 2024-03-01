@@ -54,6 +54,22 @@ export async function getCampaign(catSlug) {
     const resJson = await res.json();
     return resJson;
 }
+export async function getCampaigns() {
+
+    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_campaigns`;
+
+    const headers   = { 'Content-Type': 'application/json' };
+    
+    const res = await fetch( url, {
+        headers,
+        method: 'GET',
+        next: { revalidate: 1800 },
+        // cache: 'no-store',
+        
+    });
+    const resJson = await res.json();
+    return resJson;
+}
 
 export async function getBlogPosts(){
 

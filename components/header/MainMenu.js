@@ -150,7 +150,7 @@ export default function MainMenu({className}){
                     
                     <Link
                         className="menu-hover lg:mx-4 uppercase flex gap-x-2 items-center"
-                        href="/products/accessories"
+                        href="/deals"
                         >
                         <span>% Deals</span>
                     </Link>
