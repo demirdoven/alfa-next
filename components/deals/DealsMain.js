@@ -29,7 +29,6 @@ const DealsMain = () => {
         <ul className="mb-24">
             {
                 campaingsLoading ? 'loading' :
-
                     campaings && ! isEmpty(campaings) && campaings.map( item => (
                         <li 
                             key={item.id}
