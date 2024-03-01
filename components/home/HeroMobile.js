@@ -248,17 +248,17 @@ const HeroMobile = ( {device} ) => {
                     </div>
 
                 </div>
-                <Image 
-                    src="/hero/0224-herobanner-mobile.webp"
-                    alt="bg"
-                    sizes="400px"
-                    fill
-                    style={{
-                        objectFit: 'cover',
-                        zIndex: 1
-                    }}
-                    priority={true}
-                />
+                <div className="herobanner-mobil-bg-wrapper">
+                    <Image 
+                        src="/hero/0224-herobanner-mobile.webp"
+                        alt="bg"
+                        sizes="400px"
+                        layout='fill'
+                        objectFit='cover'
+                        placeholder='empty'
+                        priority={true}
+                    />
+                </div>  
             </div>  
         </>
         

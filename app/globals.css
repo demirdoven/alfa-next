@@ -315,3 +315,9 @@ li[data-tax="season"]:hover:not(.pasif) span {
 .see-deals-btn {
   text-shadow: 0px 0px 10px #000000ad;
 }
+.herobanner-mobil-bg-wrapper:before {
+  content: '';
+  display: block;
+  min-height: 100%;
+  background-color: green;
+}
