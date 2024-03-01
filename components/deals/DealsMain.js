@@ -59,7 +59,6 @@ const DealsMain = () => {
                                     classList="block"
                                 />
                             </div>
-
                         </li>
                     ))
             }
@@ -68,5 +67,4 @@ const DealsMain = () => {
     </div>
   )
 }
-
 export default DealsMain
