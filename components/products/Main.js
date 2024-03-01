@@ -163,7 +163,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
 
         getBanner();
             
-    }, [] );
+    }, [catSlug, searchParams] );
 
 
     return (
