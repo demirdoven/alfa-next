@@ -26,8 +26,8 @@ const DealsMain = () => {
         setTimeout(() => {
             getBanner();
         }, 2000);
-        
-}, [] );
+            
+    }, [] );
 
   return (
     <div>

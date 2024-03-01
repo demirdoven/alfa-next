@@ -136,7 +136,7 @@ const FilterReifenTop = ({filterData, searchParams, setProdsLoading}) => {
                          
                             <li 
                                 key={term} 
-                                className={` ${ ! isEmpty(filterData.car.f) && ! Object.keys(filterData.car.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData.car.d) && filterData.car.d.includes(term) ? 'selected' : '' }  p-4 bg-gray-100 mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
+                                className={` ${ ! isEmpty(filterData?.car?.f) && ! Object.keys(filterData?.car?.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData?.car?.d) && filterData?.car?.d.includes(term) ? 'selected' : '' }  p-4 bg-gray-100 mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
                                 data-tax={'car'}
                                 data-slug={term}
                                 onClick={ handleClick }
@@ -160,7 +160,7 @@ const FilterReifenTop = ({filterData, searchParams, setProdsLoading}) => {
                          
                             <li 
                                 key={term} 
-                                className={` ${ ! isEmpty(filterData.season.f) && ! Object.keys(filterData.season.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData.season.d) && filterData.season.d.includes(term) ? 'selected' : '' }  w-[31%] flex flex-col items-center justify-between gap-y-[6px] pt-4 pb-3 bg-gray-100  mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
+                                className={` ${ ! isEmpty(filterData?.season?.f) && ! Object.keys(filterData?.season?.f).includes(term) ? 'pasif opacity-20' : '' } ${ ! isEmpty(filterData?.season?.d) && filterData?.season?.d.includes(term) ? 'selected' : '' }  w-[31%] flex flex-col items-center justify-between gap-y-[6px] pt-4 pb-3 bg-gray-100  mb-2 cursor-pointer bg-white rounded-lg flex justify-between items-center `}
                                 data-tax={'season'}
                                 data-slug={term}
                                 onClick={ handleClick }

@@ -14,7 +14,7 @@ export const Tags = ({ filterData, searchParams}) => {
 
         let arr = {};
 
-        filterData?.filters.map( filter => {
+        filterData?.filters?.map( filter => {
       
             if( ! isNil( filterData[filter]['d'] ) ){
 

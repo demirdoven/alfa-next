@@ -57,7 +57,7 @@ const Filter = ({catSlug, filterData, searchParams, setProdsLoading}) => {
     return (
         <>
             {
-                filterData.filters.filter( item => ! ['car', 'season'].includes(item) ).map( (tax) => (
+                filterData?.filters?.filter( item => ! ['car', 'season'].includes(item) ).map( (tax) => (
 
                         <div key={tax} className={`mt-5 mb-3 px-4 pt-1 pb-2 border-b`}>
                             <h2 className="font-semibold text-md mb-2 text-alfa-black-1">{ tax.charAt(0).toUpperCase() + tax.slice(1) } </h2>

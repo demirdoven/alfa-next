@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { isEmpty, isNil } from "lodash";
 // import { getProductById, getProductsByIds } from '@/lib/EuWoocommerce';
 import Link from 'next/link';
-import { getDynamicFilterData, getMultiProducts, getProducts } from '@/app/actions'
+import { getMultiProducts, getProducts } from '@/app/actions'
 import Filter from './filter/Filter';
 import ProductList from './ProductList';
 import { Tags } from './filter/Tags';
@@ -18,9 +18,8 @@ import ListingBannerDesktop from './listing-banner/ListingBannerDesktop';
 // import ListingBanner from './ListingBanner';
 
 
-const Main = ({products, catSlug, searchParams, device}) => {
+const Main = ({products, catSlug, searchParams, filterData, device}) => {
     
-    const [filterData, setfilterData] = useState({})
     const [queryPids, setQueryPids] = useState([])
     const [queryProdData, setQueryProdData] = useState([])
     const [prodsLoading, setProdsLoading] = useState(true)
@@ -63,108 +62,8 @@ const Main = ({products, catSlug, searchParams, device}) => {
     }, [filterData])
 
   
-    function prepareJsonData( catSlug ){
-
-        let datas = {
-            start : 0,
-            urlAjax : 'https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
-            urlPage : 'https://alfatires.com/produkte/tires/',
-            table : '_product_tires',
-            cat : 'reifen',
-            subCat: null,
-            postType:'post_id',
-            dot: 0,
-            sale: 0,
-            outlet: 0,
-            campaign: '',
-            language: 'en_EN',
-            filters : ["car", "season", "width", "height", "zoll", "brand", "model", "loadindex", "speedindex", "pricecat"],	
-        };
-        
-        if( catSlug == 'tires' ){
-            datas.cat       = 'reifen';
-            datas.table     = '_product_tires'
-            datas.postType  = 'post_id'
-            datas.filters   = ["car", "season", "width", "height", "zoll", "brand", "model", "loadindex", "speedindex", "pricecat"]
-            
-            for(let filter of datas.filters) {
-                let urlSearchData = null;
-                if(searchParams[filter]){
-                    urlSearchData = searchParams[filter].split("§");
-                }
-
-                datas[filter] = {
-                    d:urlSearchData,
-                    i:null,
-                    f:null,
-                    img:false,
-                    specific:null,
-                    query:'IN'
-                }
-            }
-
-            datas.car.img = true;
-            datas.season.img = true;
-            datas.loadindex.specific = 'LI';
-            datas.speedindex.specific = 'SI';
-
-            // datas.orderbyFiler = "ORDER BY `stock` DESC ";
-        }
-
-        if( catSlug == 'rims' ){ 
-            datas.cat       = 'alufelgen';
-            datas.table     = '_product_rims'
-            datas.postType  = 'post_parent'
-            datas.filters   = ["zoll", "lzlk", "colortype", "brand", "model", "season", "forwinter"]
-
-            for(let filter of datas.filters) {
-                let urlSearchData = null;
-                if(searchParams[filter]){
-                    urlSearchData = searchParams[filter].split("§");
-                }
-        
-                datas[filter] = {
-                    d:urlSearchData,
-                    i:null,
-                    f:null,
-                    img:false,
-                    specific:null,
-                    query:'IN'
-                }
-            }
-
-            
-        }
-
     
-        return { 
-            'dataJSON' : {...datas},
-            'orderby' : '',
-            'shop_view' : '',
-            'per_row' : '',
-            'category' : '',
-        }
-
-
-	}
     
-
-
-    useEffect(() => {
-
-        const getBanner = async () => {
-
-            const dataToGo = prepareJsonData( catSlug )
-            const filterData = await getDynamicFilterData( dataToGo )
-            setfilterData(filterData)
-
-            console.log('filterData', filterData)
-        };
-
-        getBanner();
-            
-    }, [] );
-
 
     return (
 
