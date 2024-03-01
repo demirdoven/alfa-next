@@ -45,8 +45,6 @@ const DealsMain = () => {
                                         className="rounded-lg"
                                     />
                                 </Link>
-
-                                
                             </div>
 
                             <div className="w-full lg:w-6/12 pt-4 pl-4">
