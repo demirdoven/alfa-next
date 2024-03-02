@@ -23,8 +23,21 @@ const MiniCartMobile = ({mCart, setMcart }) => {
     <div
       className={`block lg:hidden fixed left-0 bottom-0 ${ mCart ? 'h-[50vh]' : 'h-[60px]' } transition-height duration-300  w-screen bg-white`}
     >  
+
+            {
+                mCart && (
+                    <div 
+                        onClick={ ()=>{ setMcart(false) } } 
+                        className='fixed top-0 left-0 w-screen h-screen bg-[#0000006e] z-[101]'
+                    >
+                    
+                    </div>
+                )
+            }
+
+
       <div 
-        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer "
+        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer relative z-[102] "
         onClick={ () => { setMcart( ! mCart ) } }
       >
           <div className="flex gap-x-3 items-center">
@@ -55,69 +68,69 @@ const MiniCartMobile = ({mCart, setMcart }) => {
 
   
      
-        <div className="h-[calc(50vh-60px)] bg-white px-8 flex flex-col justify-between border-t border-t-slate-100">
+      <div className="relative z-[102] h-[calc(50vh-60px)] bg-white px-8 flex flex-col justify-between border-t border-t-slate-100">
 
-                                          
-          <div className="relative inset-0  overflow-hidden overflow-y-auto">
+                                        
+        <div className="relative inset-0  overflow-hidden overflow-y-auto">
 
-          {
-              color !== null && color.cartItems.length ? (
-                  color.cartItems.map( (item, index) => (
-                      <CartItem2
-                          key={ index }
-                          // key={ Math.random() }
-                          item={ item }
-                          products={ color.cartItems }
-                          setColor={setColor}
-                          setUpdatingProduct={setUpdatingProduct}
-                          setRemovingProduct={setRemovingProduct}
-                      />
-                  ))
-              ) : ''
-                  // <LoadingLastik classList="mt-24"/> 
-          }
+        {
+            color !== null && color.cartItems.length ? (
+                color.cartItems.map( (item, index) => (
+                    <CartItem2
+                        key={ index }
+                        // key={ Math.random() }
+                        item={ item }
+                        products={ color.cartItems }
+                        setColor={setColor}
+                        setUpdatingProduct={setUpdatingProduct}
+                        setRemovingProduct={setRemovingProduct}
+                    />
+                ))
+            ) : ''
+                // <LoadingLastik classList="mt-24"/> 
+        }
 
-              
-
-
-          </div>
-
-          <div id="summary" className="w-full mt-4">
-              <div className="rounded-lg border bg-white p-1 shadow-md md:mt-0 w-full">
-                  <div className="p-2">
-                      <div className="mb-2 flex justify-between">
-                          <p className="text-gray-700">Subtotal</p>
-                          <p className="text-gray-700">{color?.totalPrice?.toFixed(2)} €</p>
-                      </div>
-                      <div className="flex justify-between">
-                          <p className="text-gray-700">Shipping</p>
-                          <p className="text-gray-700">{'0'} €</p>
-                      </div>
-                      <hr className="my-2" />
-                      <div className="flex justify-between">
-                          <p className="text-lg font-bold">Total</p>
-                          <div className="">
-                              <p className="mb-1 text-lg text-right font-bold">{color?.totalPrice?.toFixed(2)} €</p>
-                              <p className="text-xs text-right text-gray-700">(incl. {(color?.totalPrice * 0.19 / 1.19).toFixed(2)} € VAT)</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <Button 
-                  href="/checkout" 
-                  type="dark" 
-                  classList="block w-full mt-2 mb-2 text-center" 
-                  innerClassList="block w-full text-center"
-                  text="PROCEED TO CHECKOUT" 
-                  // setMcart={setMcart}
-                  // onClick={ ()=>{ setMcart(false) } }
-              />
-
-          </div>
+            
 
 
         </div>
+
+        <div id="summary" className="w-full mt-4">
+            <div className="rounded-lg border bg-white p-1 shadow-md md:mt-0 w-full">
+                <div className="p-2">
+                    <div className="mb-2 flex justify-between">
+                        <p className="text-gray-700">Subtotal</p>
+                        <p className="text-gray-700">{color?.totalPrice?.toFixed(2)} €</p>
+                    </div>
+                    <div className="flex justify-between">
+                        <p className="text-gray-700">Shipping</p>
+                        <p className="text-gray-700">{'0'} €</p>
+                    </div>
+                    <hr className="my-2" />
+                    <div className="flex justify-between">
+                        <p className="text-lg font-bold">Total</p>
+                        <div className="">
+                            <p className="mb-1 text-lg text-right font-bold">{color?.totalPrice?.toFixed(2)} €</p>
+                            <p className="text-xs text-right text-gray-700">(incl. {(color?.totalPrice * 0.19 / 1.19).toFixed(2)} € VAT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Button 
+                href="/checkout" 
+                type="dark" 
+                classList="block w-full mt-2 mb-2 text-center" 
+                innerClassList="block w-full text-center"
+                text="PROCEED TO CHECKOUT" 
+                // setMcart={setMcart}
+                // onClick={ ()=>{ setMcart(false) } }
+            />
+
+        </div>
+
+
+      </div>
 
 
           
