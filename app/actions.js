@@ -95,6 +95,53 @@ export async function getBlogPosts(){
   
 }
 
+
+export async function postlariGetir(cat){
+
+    // let url = `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed`;
+    let url = `https://alfatires.com/wp-json/wp/v2/posts?category_slug=${cat}&_embed=1&per_page=100`;
+
+    const headers   = { 'Content-Type': 'application/json' };
+  
+    const res = await fetch(url, {
+        headers,
+        method: 'GET',
+        // next: { revalidate: 2 },
+        // cache: 'no-store',
+        
+    });
+  
+    const resJson = await res.json();
+    // const allPosts = resJson.data.posts;
+    return resJson;
+  
+}
+
+export async function postuGetir(postId){
+
+   await new Promise( resolve => setTimeout(resolve, 3000) )
+
+
+    // let url = `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed`;
+    let url = `https://alfatires.com/wp-json/wp/v2/posts/${postId}?_embed=1`;
+
+    const headers   = { 'Content-Type': 'application/json' };
+  
+    const res = await fetch(url, {
+        headers,
+        method: 'GET',
+        // next: { revalidate: 2 },
+        // cache: 'no-store',
+        
+    });
+  
+    const resJson = await res.json();
+    // const allPosts = resJson.data.posts;
+  
+    return resJson;
+  
+}
+
 export async function getProductVariations(productId) {
 
     // const productId = 3609;

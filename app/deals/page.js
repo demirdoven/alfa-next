@@ -18,7 +18,7 @@ export default async function Deals( {searchParams} ){
                         campaigns && ! isEmpty(campaigns) && campaigns.map( item => (
                             <li 
                                 key={item.id}
-                                className="flex flex-col lg:flex-row justify-between gap-x-4 mb-4 p-4 pb-8 lg:p-8 shadow-lg rounded-lg">
+                                className="flex flex-col lg:flex-row justify-between gap-x-4 mb-6 lg:mb-4 p-0 lg:p-8 pb-8 lg:p-8 lg:shadow-lg rounded-lg">
 
                                 <div className="w-full lg:w-6/12">
                                     <Link href={`/`}>
@@ -32,10 +32,10 @@ export default async function Deals( {searchParams} ){
                                     </Link>
                                 </div>
 
-                                <div className="w-full lg:w-6/12 pt-4 pl-4">
+                                <div className="w-full lg:w-6/12 mt-2 lg:pt-4 pl-4">
                                     <h1 className="text-3xl font-medium">{ JSON.parse(item?.de).title }</h1>
                                     <div 
-                                        className="block text-lg mt-4 mb-8"
+                                        className="block text-lg mt-2 lg:mt-4 mb-4 lg:mb-8"
                                         dangerouslySetInnerHTML={{__html: JSON.parse(item?.de).description}} 
                                     />
                                     <Button

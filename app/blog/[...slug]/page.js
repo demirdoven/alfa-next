@@ -6,6 +6,7 @@ const page = (props) => {
 
     const slugs = props.params.slug;
     
+
     return (
         <>
             {slugs.length == 1 &&

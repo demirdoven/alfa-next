@@ -1,26 +1,7 @@
 import Link from "next/link";
 import { Button } from "../general/Button";
+import { postlariGetir } from "@/app/actions";
 
-async function postlariGetir(cat){
-
-    // let url = `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed`;
-    let url = `https://alfatires.com/wp-json/wp/v2/posts?category_slug=${cat}&_embed=1&per_page=100`;
-
-    const headers   = { 'Content-Type': 'application/json' };
-  
-    const res = await fetch(url, {
-        headers,
-        method: 'GET',
-        // next: { revalidate: 2 },
-        // cache: 'no-store',
-        
-    });
-  
-    const resJson = await res.json();
-    // const allPosts = resJson.data.posts;
-    return resJson;
-  
-}
 
 export default async function BlogCat({cat}){
 

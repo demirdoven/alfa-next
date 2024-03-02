@@ -144,7 +144,7 @@ const HeroMobile = ( {device} ) => {
 
                                 <Link
                                     href="/deals"
-                                    className="see-deals-btn relative left-[-20px] top-[9px] flex items-center gap-x-3 mt-4 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
+                                    className="see-deals-btn relative left-[0px] top-[9px] flex items-center gap-x-3 p-4 mt-4 text-xl text-white drop-shadow-lg font-semibold uppercase self-end"
                                 >
                                     <span>See Deals</span>
                                     <span className="animate-to-right relative top-[-2px] ">&#8594;</span>
