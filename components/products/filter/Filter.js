@@ -9,7 +9,7 @@ const Filter = ({catSlug, filterData, searchParams, setProdsLoading}) => {
     const pathname = usePathname()
 
     useEffect( ()=>{
-        console.log('filterData', filterData)
+        // console.log('filterData', filterData)
     }, [filterData])
 
     const handleClick = (e) => {

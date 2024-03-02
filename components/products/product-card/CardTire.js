@@ -28,7 +28,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 	}
 
     useEffect( ()=>{
-        console.log('isAddedToCart', isAddedToCart)
+        // console.log('isAddedToCart', isAddedToCart)
     }, [isAddedToCart])
 
     const brandLogo  = "https://cdn.alfatires.eu/logos/brands/"+brand+".webp";

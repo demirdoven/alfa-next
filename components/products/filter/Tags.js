@@ -1,6 +1,6 @@
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { isNil } from 'lodash'
+import { isEmpty, isNil } from 'lodash'
 import { MdOutlineClose } from "react-icons/md";
 
 export const Tags = ({ filterData, searchParams}) => {
@@ -42,28 +42,24 @@ export const Tags = ({ filterData, searchParams}) => {
 
             let allValues = cloneSearchParams[tax].split('§')
 
-            if( allValues.includes(termSlug) ){
-                allValues = allValues.filter( item => item != termSlug )
-            }else{
-                allValues.push(termSlug)
-            }
+            // if( allValues.includes(termSlug) ){
+                allValues = allValues.filter( item => item.toString() != termSlug.toString() )
+                console.log('allValues', allValues)
+            // }else{
+            //     allValues.push(termSlug)
+            // }
 
-            if( allValues.length == 0 ){
+            if( isEmpty( allValues ) ){
                 delete cloneSearchParams[tax]
             }else{
                 cloneSearchParams[tax] = allValues.join('§')
             }
 
-        }else{
-            cloneSearchParams[tax] = [termSlug]
         }
-
-
 
         const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
 
         console.log('cloneSearchParams', updatedUrl);
-
 
         router.push(updatedUrl, { scroll: true });
 
@@ -96,25 +92,27 @@ export const Tags = ({ filterData, searchParams}) => {
 
     return (
         <ul className="flex gap-2 flex-wrap">
-            {/* {
-                filteredKeys.length > 0 && 
-                    <li 
-                        className="whitespace-nowrap font-semibold list-none bg-white border border-alfa-gray-7 py-1 px-2 text-xs rounded-md cursor-pointer hover:bg-alfa-gray-3 hover:text-white"
-                        onClick={handleClearAll}
-                    >
-                        Clear all filters
-                    </li>
-            */}
             
-            {
-                Object.keys(tags).map( term => (
+                {/* {
+                    ! isEmpty(tags) && (
+                        <li 
+                            className="whitespace-nowrap font-semibold list-none bg-white border border-alfa-gray-7 py-1 px-2 text-xs rounded-md cursor-pointer hover:bg-alfa-gray-3 hover:text-white"
+                            onClick={handleClearAll}
+                        >
+                            Clear all filters
+                        </li>
+                    )
+                } */}
+
+                {
+                    Object.keys(tags).map( term => (
                     
                     <li 
                         key={term} 
                         className="flex items-center gap-x-1 whitespace-nowrap list-none bg-white border border-alfa-gray-7 py-1 px-2 text-sm text-alfa-gray-5 font-medium rounded-md cursor-pointer hover:bg-alfa-gray-3 hover:text-white"
                         data-tax={tags[term]}
                         data-slug={term}
-                        // onClick={handleClick}
+                        onClick={handleClick}
                     >
                         { term } <MdOutlineClose />
 

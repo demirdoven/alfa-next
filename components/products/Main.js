@@ -41,7 +41,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
                 setQueryProdData(products)
                 setProdsLoading(false)
                 
-                console.log(products)
+                // console.log(products)
 
 
                 let allLocal = {}
@@ -158,7 +158,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
             const filterData = await getDynamicFilterData( dataToGo )
             setfilterData(filterData)
 
-            console.log('filterData', filterData)
+            // console.log('filterData', filterData)
         };
 
         getBanner();
