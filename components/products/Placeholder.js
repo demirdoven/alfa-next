@@ -22,6 +22,7 @@ const Placeholder = ({catSlug}) => {
                                       <div className=' w-full '>
                                           <div className="bg-gray-200 h-3 w-4/12 mb-2  rounded-lg"></div>
                                           <div className="bg-gray-200 h-3 w-4/12 mb-2  rounded-lg"></div>
+                                          <div className="bg-gray-200 h-3 w-4/12 mb-2  rounded-lg"></div>
                                       </div>
                                   </div>
           

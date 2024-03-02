@@ -319,3 +319,19 @@ export async function getDynamicFilterData( dataToGo ){
     // console.log('filter data', data)
     return data;
 }
+
+export async function searchTextInTires( ara ){
+
+    const headers   = { 'Content-Type': 'application/json' };
+    
+    const res = await fetch( `https://alfatires.com/wp-json/rl_js/v1/rl_js_search_text_in_tires_db?ara=conti`, {
+        headers,
+        method: 'GET',
+        next: { revalidate: 1800 },
+        // cache: 'no-store',
+        
+    });
+    const resJson = await res.json();
+    return resJson;
+
+}

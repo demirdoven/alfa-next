@@ -1,11 +1,14 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TypingLayout from '../typing/TypingLayout'
+import { searchTextInTires } from '@/app/actions'
 
 const SearchBar = ( {className} ) => {
 
     const [typingActive, setTypingActive] = useState(true)
+    const [aranacak, setAranacak] = useState('')
+    const [aramaSonuclari, setAramaSonuclari] = useState([])
 
     function stopTyping(){
         setTypingActive(false) 
@@ -17,8 +20,33 @@ const SearchBar = ( {className} ) => {
     function handleKeyUp(e){
         if( e.target.value == '' ){
             e.target.blur()
+        }else{
+            const str = e.target.value;
+            // console.log(str)
+            setAranacak(str)
         }
+
     }
+
+    useEffect( ()=>{
+
+        // bu simdilik iptal
+
+        // if( aranacak != '' ){
+
+        //     const arasana = async () => {
+        //         const sonuclar = await searchTextInTires( aranacak );
+        //         setAramaSonuclari(sonuclar)
+        //         console.log('sonuclar', sonuclar)
+        //     };
+        //     arasana();
+
+        // }
+
+        
+    }, [aranacak] )
+
+
     return (
         <div 
             className={`w-[50%] m-auto relative bg-gray-100 border-[1px] border-slate-600 rounded-lg ${className}`}
@@ -36,9 +64,9 @@ const SearchBar = ( {className} ) => {
             <TypingLayout stopTyping={stopTyping} /> 
              : '' }
 
-<button className="absolute z-[200] w-auto h-full top-1/2 transform -translate-y-1/2 right-0 bg-slate-600 text-white hover:bg-slate-800 text-red-600 text-xl font-bold py-2 px-4 border border-slate-600 hover:border-slate-800 rounded-r-md uppercase flex items-center cursor-pointer">
-  SEARCH
-</button>
+            <button className="absolute z-[200] w-auto h-full top-1/2 transform -translate-y-1/2 right-0 bg-slate-600 text-white hover:bg-slate-800 text-red-600 text-xl font-bold py-2 px-4 border border-slate-600 hover:border-slate-800 rounded-r-md uppercase flex items-center cursor-pointer">
+            SEARCH
+            </button>
 
         </div>
     )
