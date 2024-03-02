@@ -37,7 +37,7 @@ const MiniCartMobile = ({mCart, setMcart }) => {
 
 
       <div 
-        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_10px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 font-semibold cursor-pointer relative z-[102] "
+        className="w-full h-[60px] bg-white border-t border-t-slate-100 shadow-[0_0_35px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 font-semibold cursor-pointer relative z-[102] "
         onClick={ () => { setMcart( ! mCart ) } }
       >
           <div className="flex gap-x-3 items-center">
