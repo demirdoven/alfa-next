@@ -199,6 +199,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
 
         getBanner();
             
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [catSlug, searchParams] );
 
 

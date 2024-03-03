@@ -55,7 +55,7 @@ export async function getCampaign(catSlug) {
     const res = await fetch( url, {
         headers,
         method: 'GET',
-        next: { revalidate: 0 },
+        next: { revalidate: 1800 },
         // cache: 'no-store',
         
     });
@@ -326,7 +326,7 @@ export async function getDynamicFilterData( dataToGo ){
          },
     });
 
-    
+
     const data = await res.json()
 
     return data;
