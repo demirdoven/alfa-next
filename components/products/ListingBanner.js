@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function ListingBanner({catSlug}){
-
+    
     // const [campaignData, setCampaignData] = useState({})
     const [bannerDesktop, setBannerDesktop] = useState(null)
 
@@ -14,6 +14,8 @@ export default function ListingBanner({catSlug}){
                 setBannerDesktop(campaign?.banner?.desktop)
             };
             getBanner();
+
+            
     }, [catSlug] );
 
     return (

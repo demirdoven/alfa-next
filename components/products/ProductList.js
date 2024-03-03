@@ -11,9 +11,6 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
     let loading = false;
 
-
-
-
     useEffect(() => {
 
         if( ! isEmpty(queryPids) ){
@@ -47,6 +44,7 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
                     queryProdData.map( product => (
                         <ProductCard key={product.id} prodsLoading={prodsLoading} catSlug={catSlug} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} />
                     ))  
+                    
             }
         </div>
     )

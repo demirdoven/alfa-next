@@ -40,14 +40,22 @@ export async function getProductPrice(catSlug, pid) {
 
 export async function getCampaign(catSlug) {
 
-    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_campaign?catSlug=${catSlug}`;
+
+    let cat = catSlug
+
+    if( catSlug == 'accessories' ){
+        cat = 'lids'
+    }
+
+
+    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_campaign?catSlug=${cat}`;
 
     const headers   = { 'Content-Type': 'application/json' };
     
     const res = await fetch( url, {
         headers,
         method: 'GET',
-        next: { revalidate: 1800 },
+        next: { revalidate: 0 },
         // cache: 'no-store',
         
     });
@@ -106,7 +114,7 @@ export async function postlariGetir(cat){
     const res = await fetch(url, {
         headers,
         method: 'GET',
-        // next: { revalidate: 2 },
+        next: { revalidate: 1800 },
         // cache: 'no-store',
         
     });

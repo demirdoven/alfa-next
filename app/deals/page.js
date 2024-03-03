@@ -33,9 +33,9 @@ export default async function Deals( {searchParams} ){
                                 </div>
 
                                 <div className="w-full lg:w-6/12 mt-2 lg:pt-4 pl-4">
-                                    <h1 className="text-3xl font-medium">{ JSON.parse(item?.de).title }</h1>
+                                    <h1 className="text-xl lg:text-3xl font-semibold lg:font-medium mt-1 lg:mt-0">{ JSON.parse(item?.de).title }</h1>
                                     <div 
-                                        className="block text-lg mt-2 lg:mt-4 mb-4 lg:mb-8"
+                                        className="block text-md lg:text-lg mt-2 lg:mt-4 mb-5 lg:mb-8 leading-[20px]"
                                         dangerouslySetInnerHTML={{__html: JSON.parse(item?.de).description}} 
                                     />
                                     <Button

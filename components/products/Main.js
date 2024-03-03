@@ -121,8 +121,9 @@ const Main = ({products, catSlug, searchParams, device}) => {
         if( catSlug == 'rims' ){ 
             datas.cat       = 'alufelgen';
             datas.table     = '_product_rims'
-            datas.postType  = 'post_id'
-            datas.filters   = ["forwinter", "season", "brand", "model", "zoll", "lzlk", "colortype" ]
+            datas.postType  = 'post_parent'
+            // datas.filters   = ["forwinter", "season", "brand", "model", "zoll", "lzlk", "colortype" ]
+            datas.filters   = ["season", "brand", "model", "zoll", "lzlk", "colortype" ]
 
             for(let filter of datas.filters) {
                 let urlSearchData = null;
@@ -236,7 +237,9 @@ const Main = ({products, catSlug, searchParams, device}) => {
                 
 
             </div>
-
+            {
+                catSlug == 'rims' && <div className='mb-8 '>buraya felgen list</div>
+            }
             <ProductList catSlug={catSlug} queryProdData={queryProdData} prodsLoading={prodsLoading} setProdsLoading={setProdsLoading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} />
         </div>
     </div>

@@ -30,7 +30,7 @@ const BuyNowButton = ({pid, setIsAddedToCart, isAddedToCart}) => {
 
     }
 
-
+    
     return (
         <button 
             onClick={ ()=>{ handlerBuyNow() } }

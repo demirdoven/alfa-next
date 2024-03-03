@@ -14,6 +14,9 @@ export default function ListingBannerDesktop({catSlug}){
                 setBannerDesktop(campaign?.banner?.desktop)
             };
             getBanner();
+
+            console.log(catSlug)
+            
     }, [catSlug] );
 
     return (

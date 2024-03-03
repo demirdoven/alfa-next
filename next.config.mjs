@@ -38,7 +38,11 @@ const nextConfig = {
             pathname: '**',
           },
         ],
-      },
+    },
+    productionBrowserSourceMaps: false,
+    compiler: {
+      removeConsole: true,
+    },
 };
 
 export default nextConfig;
