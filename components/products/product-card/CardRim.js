@@ -87,7 +87,7 @@ export default function CardRim({product}){
             let colorPairs = [];
     
     
-            vars.map( variant => {
+            vars?.map( variant => {
                 
                 const colorAttr = variant?.attributes.find( attr => attr.slug == "pa_color" )
                 if( ! colors.includes( colorAttr?.option ) ){

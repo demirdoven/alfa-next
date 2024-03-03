@@ -1,13 +1,15 @@
 import React from 'react'
 import CardTire from './CardTire'
 import CardRim from './CardRim'
+import Placeholder from '../Placeholder'
 
 const ProductCard = ({catSlug, prodsLoading, product, loading, setIsAddedToCart, isAddedToCart}) => {
     
     return (
         <>
             { catSlug == 'tires' && <CardTire prodsLoading={prodsLoading} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} /> }
-            { catSlug == 'rims' && <CardRim product={product} loading={loading} /> }
+            {/* { catSlug == 'rims' && <CardRim product={product} loading={loading} /> } */}
+            { catSlug == 'rims' && <Placeholder /> }
             { catSlug == 'accessories' && <CardTire prodsLoading={prodsLoading} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} /> }
 
         </>

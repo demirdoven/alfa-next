@@ -11,9 +11,6 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
     let loading = false;
 
-    useEffect( ()=>{
-        // console.log('fff', queryProdData)
-    }, [queryProdData])
 
 
 
@@ -30,6 +27,8 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
                 const products = await getMultiProducts(cat, queryPids );
                 setQueryProdData(products)
+
+                console.log('products', products)
                 setProdsLoading(false)
                 
             };

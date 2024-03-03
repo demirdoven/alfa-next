@@ -312,7 +312,10 @@ export async function getDynamicFilterData( dataToGo ){
         },
         body: gidecek,
         method: "POST",
-        next: { revalidate: 0 },
+        next: { 
+            // revalidate: 0,
+            cache: 'no-store',
+         },
     });
 
     const data = await res.json()

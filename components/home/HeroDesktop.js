@@ -255,84 +255,83 @@ const HeroDesktop = ( {device} ) => {
                                                 transition: { type: "spring", duration: 3 }
                                             }}
                                         >
-                                        <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="">
+                                            <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" className="">
 
-                                            <div className="px-12 pt-2 lg:pt-0 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
-                                                
-                                            { 
-                                                heroFilterAtts && ! isEmpty(heroFilterAtts) &&
-
-                                                    Object.keys(heroFilterAtts).map((taxSlug) => (
-                                                        <div key={taxSlug} className="w-[31%] xs:text-center">
-                                                        <label className="text-xs lg:text-lg" htmlFor={taxSlug} >{heroFilterAtts[taxSlug].title}</label>
-                                                        <select
-                                                            id={taxSlug}
-                                                            value={selectedValues[taxSlug] || heroFilterAtts[taxSlug].default}
-                                                            onChange={(e) => handleSelectChange(e, taxSlug)}
-                                                            className="w-full text-sm lg:text-xl font-semibold py-1 lg:py-2.5 lg:px-4 bg-alfa-gray-11 rounded text-center focus:outline-0"
-                                                        >
-                                                            {
-                                                                heroFilterAtts[taxSlug].terms.map((option) => (
-                                                                <option key={option} value={option}>
-                                                                    {option}
-                                                                </option>
-                                                                ))
-                                                            }
-                                                        </select>
-                                                        </div>
-                                                    )
-                                                )
-                                            
-                                            }
-                                                
-                                            </div>
-
-                                        
-
-                                            <div className="mt-3 px-24 w-full flex gap-x-4em justify-center text-center">
-                                                <div className="flex-1 p-2 text-left flex lg:block items-center gap-x-2">
-                                                    <label htmlFor="reifentyp" className="xs:text-xs lg:text-sm font-normal mb-1 block">Season</label>
-                                                    <select 
-                                                    value={reifenTypeValue}
-                                                    onChange={(e) => handleReifenTypChange(e)}
-                                                    id="reifentyp" 
-                                                    className="w-auto lg:w-full text-sm font-semibold py-1 lg:py-2.5 pl-4 lg:px-4 bg-alfa-gray-11 rounded focus:outline-0">
-
-                                                        <option key={"Winter"} value={"Winter"}>Winter</option>
-                                                        <option key={"Summer"} value={"Summer"}>Summer</option>
-                                                        <option key={"All Season"} value={"All Season"}>All Season</option>
-
-                                                    </select>
-                                                </div>
-                                                <div className="hidden lg:flex flex-1 p-2 justify-center items-end text-center">
-                                                    <Link href={'/products/tires'} className="py-[0.68em] text-sm font-semibold text-alfa-gray-3 px-4 w-full bg-alfa-gray-11 rounded " >Advanced</Link>
-                                                </div>
-                                            </div>
-                                            <div className="mt-2 lg:mt-4 w-full flex justify-center text-center">
-                                                {/* <Button url={'/products/tires'} innerClassList="text-md" text="REIFEN FINDEN" /> */}
-                                                {/* <button
-                                                    // onClick={(event)=>handleHeroFilterButton(event)}
+                                                <div className="px-12 pt-2 lg:pt-0 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
                                                     
-                                                    >REIFEN FINDEN</button> */}
+                                                { 
+                                                    heroFilterAtts && ! isEmpty(heroFilterAtts) &&
 
-                                                    <Button 
-                                                        href={ btnUrl ? btnUrl : '' }
-                                                        type="dark" 
-                                                        innerClassList="block w-full text-center pr-4 pl-4"
-                                                        text="SEARCH TIRES" 
-                                                        // setMcart={setMcart}
-                                                        // onClick={ ()=>{ setMcart(false) } }
-                                                    />
+                                                        Object.keys(heroFilterAtts).map((taxSlug) => (
+                                                            <div key={taxSlug} className="w-[31%] xs:text-center">
+                                                            <label className="text-xs lg:text-lg" htmlFor={taxSlug} >{heroFilterAtts[taxSlug].title}</label>
+                                                            <select
+                                                                id={taxSlug}
+                                                                value={selectedValues[taxSlug] || heroFilterAtts[taxSlug].default}
+                                                                onChange={(e) => handleSelectChange(e, taxSlug)}
+                                                                className="w-full text-sm lg:text-xl font-semibold py-1 lg:py-2.5 lg:px-4 bg-alfa-gray-11 rounded text-center focus:outline-0"
+                                                            >
+                                                                {
+                                                                    heroFilterAtts[taxSlug].terms.map((option) => (
+                                                                    <option key={option} value={option}>
+                                                                        {option}
+                                                                    </option>
+                                                                    ))
+                                                                }
+                                                            </select>
+                                                            </div>
+                                                        )
+                                                    )
+                                                
+                                                }
+                                                    
+                                                </div>
 
-                                            </div>
+                                            
 
-                                        </form>
+                                                <div className="mt-3 px-24 w-full flex gap-x-4em justify-center text-center">
+                                                    <div className="flex-1 p-2 text-left flex lg:block items-center gap-x-2">
+                                                        <label htmlFor="reifentyp" className="xs:text-xs lg:text-sm font-normal mb-1 block">Season</label>
+                                                        <select 
+                                                        value={reifenTypeValue}
+                                                        onChange={(e) => handleReifenTypChange(e)}
+                                                        id="reifentyp" 
+                                                        className="w-auto lg:w-full text-sm font-semibold py-1 lg:py-2.5 pl-4 lg:px-4 bg-alfa-gray-11 rounded focus:outline-0">
 
-                                    </motion.div>
+                                                            <option key={"Winter"} value={"Winter"}>Winter</option>
+                                                            <option key={"Summer"} value={"Summer"}>Summer</option>
+                                                            <option key={"All Season"} value={"All Season"}>All Season</option>
+
+                                                        </select>
+                                                    </div>
+                                                    <div className="hidden lg:flex flex-1 p-2 justify-center items-end text-center">
+                                                        <Link href={'/products/tires'} className="py-[0.68em] text-sm font-semibold text-alfa-gray-3 px-4 w-full bg-alfa-gray-11 rounded " >Advanced</Link>
+                                                    </div>
+                                                </div>
+                                                <div className="mt-2 lg:mt-4 w-full flex justify-center text-center">
+                                                    {/* <Button url={'/products/tires'} innerClassList="text-md" text="REIFEN FINDEN" /> */}
+                                                    {/* <button
+                                                        // onClick={(event)=>handleHeroFilterButton(event)}
+                                                        
+                                                        >REIFEN FINDEN</button> */}
+
+                                                        <Button 
+                                                            href={ btnUrl ? btnUrl : '' }
+                                                            type="dark" 
+                                                            innerClassList="block w-full text-center pr-4 pl-4"
+                                                            text="SEARCH TIRES" 
+                                                            // setMcart={setMcart}
+                                                            // onClick={ ()=>{ setMcart(false) } }
+                                                        />
+
+                                                </div>
+
+                                            </form>
+
+                                        </motion.div>
                                     </motion.div>
                                 </div>
                                
-
                             </div>
 
                         </div>

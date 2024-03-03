@@ -40,6 +40,9 @@ const Main = ({products, catSlug, searchParams, device}) => {
                 const products = await getMultiProducts(cat, queryPids );
                 setQueryProdData(products)
                 setProdsLoading(false)
+
+                console.log('queryPids', queryPids)
+                console.log('products', products)
                 
                 // console.log(products)
 
@@ -56,6 +59,9 @@ const Main = ({products, catSlug, searchParams, device}) => {
 
         }
 
+
+        // console.log('queryPids', queryPids)
+    
     }, [queryPids, catSlug]);
 
     useEffect( ()=>{
@@ -77,7 +83,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
             sale: 0,
             outlet: 0,
             campaign: '',
-            language: 'en_EN',
+            language: 'de_DE',
             filters : ["car", "season", "width", "height", "zoll", "brand", "model", "loadindex", "speedindex", "pricecat"],	
         };
         
@@ -108,14 +114,43 @@ const Main = ({products, catSlug, searchParams, device}) => {
             datas.loadindex.specific = 'LI';
             datas.speedindex.specific = 'SI';
 
-            // datas.orderbyFiler = "ORDER BY `stock` DESC ";
+            datas.orderby = "";
+            datas.orderbyFiler = "ORDER BY `price` ";
         }
 
         if( catSlug == 'rims' ){ 
             datas.cat       = 'alufelgen';
             datas.table     = '_product_rims'
-            datas.postType  = 'post_parent'
-            datas.filters   = ["zoll", "lzlk", "colortype", "brand", "model", "season", "forwinter"]
+            datas.postType  = 'post_id'
+            datas.filters   = ["forwinter", "season", "brand", "model", "zoll", "lzlk", "colortype" ]
+
+            for(let filter of datas.filters) {
+                let urlSearchData = null;
+                if(searchParams[filter]){
+                    urlSearchData = searchParams[filter].split("§");
+                }
+        
+                datas[filter] = {
+                    d:urlSearchData,
+                    i:null,
+                    f:null,
+                    img:false,
+                    specific:null,
+                    query:'IN'
+                }
+            }
+
+            
+        }
+
+        if( catSlug == 'accessories' ){ 
+            datas.cat       = "accesories";
+            datas.table     = "_product_lids"
+            datas.postType  = "post_id"
+            datas.filters   = ["brand", "model", "colortype", "zoll", "lzlk"]
+            datas.orderbyFiler = "ORDER BY `price` "
+            datas.subCat = "lids"
+
 
             for(let filter of datas.filters) {
                 let urlSearchData = null;
@@ -158,7 +193,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
             const filterData = await getDynamicFilterData( dataToGo )
             setfilterData(filterData)
 
-            // console.log('filterData', filterData)
+            console.log('filterData', filterData)
         };
 
         getBanner();
