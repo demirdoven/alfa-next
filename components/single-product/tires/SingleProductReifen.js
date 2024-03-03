@@ -13,7 +13,7 @@ import Meta from "@/components/single-product/tires/Meta";
 import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
-import AddToTempCart from "@/components/general/AddToTempCart";
+// import AddToTempCart from "@/components/general/AddToTempCart";
 
 const SingleProductReifen = ({product, catSlug}) => {
     
@@ -123,7 +123,7 @@ const SingleProductReifen = ({product, catSlug}) => {
                         </div>
 
 
-                        <AddToTempCart productData={productData} />
+                        {/* <AddToTempCart productData={productData} /> */}
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>
