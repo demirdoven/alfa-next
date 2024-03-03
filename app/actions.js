@@ -327,7 +327,7 @@ export async function getDynamicFilterData( dataToGo ){
     });
 
     const data = await res.json()
-    // console.log('filter data', data)
+
     return data;
 }
 
