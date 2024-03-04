@@ -109,7 +109,7 @@ const MobilSideMenu = ({mobileMenuOpen, setMobileMenuOpen}) => {
                     }}
                     transition={{ type: "spring", duration: 0.2, bounce: 0 }}
                 >
-                    <aside className="h-full bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">               
+                    <aside className="h-full bg-white border-r rtl:border-r-0 rtl:border-l">               
                         
                         <ul className=''>
                             {menuItems.map(item => (

@@ -49,7 +49,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                             translateX: mCart ? -400 : 0
                         }}
                     >
-                    <aside className="h-full px-8 py-6 bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">               
+                    <aside className="h-full px-8 py-6 bg-white border-r rtl:border-r-0 rtl:border-l">               
                         
                     <div className="flex flex-col w-full h-full">               
                                             
