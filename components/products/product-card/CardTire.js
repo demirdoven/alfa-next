@@ -60,7 +60,7 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
 
         <div 
             data-pid={product.id} 
-            className="product-card relative w-full mb-2 lg:mb-6 pt-4 pr-4 lg:pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
+            className="product-card relative w-full mb-4 lg:mb-6 pt-4 pr-4 lg:pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
             // data-title={product?.brand + ' ' + product?.model}
             // data-price={product?.details?.price}
             // data-tiresize={product?.details?.sizeTires}
@@ -256,10 +256,10 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                     <hr className="hidden lg:block w-full my-4 opacity-50"/>
 
 
-                    <div className="hidden lg:flex py-1 w-full justify-between items-start">
+                    <div className="flex lg:mt-2 py-1 w-full justify-end lg:justify-between items-start">
                         { 
                             season && seasonIconUrl ? 
-                                <div className="flex gap-x-2 text-[.75rem] lg:text-[1rem]">
+                                <div className="hidden lg:flex gap-x-2 text-[.75rem] lg:text-[1rem]">
                                     <Image src={seasonIconUrl} alt={season} width="24" height="19"/>
                                     <span className="font-light	text-md">{season}</span>
                                 </div>
@@ -272,14 +272,15 @@ export default function CardTire({product, setIsAddedToCart, isAddedToCart }){
                                 href={`/product/${convertToSlug(product?.brand + ' ' + product?.model + ' ' + product?.sizeTires + '-'+product?.post_id)}`}
                                 text={'Details'} 
                                 type="light"
-                                classList="mr-2 uppercase"
+                                classList="lg:mb-4 mr-1 lg:mr-2 uppercase "
+                                innerClassList="text-[14px] lg:text-xl pl-4 pr-4 lg:pl-8 lg:pr-8"
                                 onClick={handleClickTitle} 
                             />
-                            <BuyNowButton 
+                            {/* <BuyNowButton 
                                 pid={product.id} 
                                 setIsAddedToCart={setIsAddedToCart} 
                                 isAddedToCart={isAddedToCart} 
-                            />
+                            /> */}
 
                         </div>
                     </div>

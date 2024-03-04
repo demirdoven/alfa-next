@@ -37,7 +37,7 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
     
     return (
-        <div className={`product-list-wrap ${ prodsLoading && 'loading' } `}>
+        <div className={`product-list-wrap ${ prodsLoading && 'loading' } mt-4`}>
             { 
                 isEmpty(queryProdData) ? <Placeholder /> :
 

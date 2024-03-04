@@ -220,7 +220,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
             </div>
         </div>
 
-        <div className='w-full lg:w-9/12 lg:pl-6'>
+        <div className='w-full lg:w-9/12 lg:pl-6 mb-24'>
 
             {/* <ListingBanner catSlug={catSlug} /> */}
 

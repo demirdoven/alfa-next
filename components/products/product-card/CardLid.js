@@ -61,7 +61,7 @@ export default function CardLid({product, setIsAddedToCart, isAddedToCart }){
 
         <div 
             data-pid={product.id} 
-            className="product-card relative w-full mb-2 lg:mb-6 pt-4 pr-4 lg:pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
+            className="product-card relative w-full mb-4 lg:mb-6 pt-4 pr-4 lg:pr-6 pb-4 pl-5 overflow-hidden rounded-lg border-2 border-gray-200 bg-white hover:shadow-lg"
             // data-title={product?.brand + ' ' + product?.model}
             // data-price={product?.details?.price}
             // data-tiresize={product?.details?.sizeTires}
