@@ -39,10 +39,10 @@ const nextConfig = {
           },
         ],
     },
-    productionBrowserSourceMaps: false,
-    compiler: {
-      removeConsole: true,
-    },
+    // productionBrowserSourceMaps: false,
+    // compiler: {
+    //   removeConsole: true,
+    // },
 };
 
 export default nextConfig;
