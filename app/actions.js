@@ -90,8 +90,8 @@ export async function getBlogPosts(){
     const res = await fetch(url, {
         headers,
         method: 'GET',
-        next: { revalidate: 3600 },
-        // cache: 'no-store',
+        // next: { revalidate: 3600 },
+        cache: 'no-store',
         
     });
   
