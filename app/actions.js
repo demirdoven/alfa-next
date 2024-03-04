@@ -46,8 +46,7 @@ export async function getCampaign(catSlug) {
     if( catSlug == 'accessories' ){
         cat = 'lids'
     }
-
-
+ 
     const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_campaign?catSlug=${cat}`;
 
     const headers   = { 'Content-Type': 'application/json' };
