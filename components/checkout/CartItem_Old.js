@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { isEmpty } from 'lodash';
 import { sepetiGuncelle, sepetUrunSil } from '@/lib/functions';
+import Image from 'next/image';
 
 const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingProduct }) => {
 
@@ -79,7 +80,13 @@ const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
     <div key={item.key} className="cart-item w-full flex items-center justify-between bg-gray-100 hover:bg-gray-200 mb-2 pl-6 pr-2 py-5 rounded-md">
         <div className="flex w-5/12">
             <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="w-20">
-                <img className="max-h-24 w-auto object-contain object-top" src={item.data?.images[0].src.replace('http://alfatires.local', 'https://alfatires.com')} alt="dasda" />
+                <Image
+                    className="max-h-24 w-auto object-contain object-top" 
+                    src={item.data?.images[0].src.replace('http://alfatires.local', 'https://alfatires.com')} 
+                    width={50}
+                    height={50}
+                    alt="dasda" 
+                />
             </Link>
             <div className="flex flex-col justify-between ml-4 flex-grow">
             <Link href={`http://localhost:3000/product/${item?.data?.slug}`} className="font-semibold text-sm">{item.data.name}</Link>

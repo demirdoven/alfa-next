@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "../general/Button";
 import { postlariGetir } from "@/app/actions";
+import Image from "next/image";
 
 
 export default async function BlogCat({cat}){
@@ -18,7 +19,14 @@ export default async function BlogCat({cat}){
                         <li key={post.id} className="basis-1/1 lg:basis-1/3 p-4 ">
                             <div className="h-full border-2 border-gray-200 bg-white hover:shadow-lg rounded-sm">
                                 <Link href={`/blog/${post._embedded['wp:term'][0][0].slug}/${post.slug}-${post.id}`} className="post-image aspect-video	">
-                                    <img className="aspect-video object-cover" src={post._embedded['wp:featuredmedia']['0'].source_url} alt="" />
+                                    
+                                    <Image
+                                        src={post._embedded['wp:featuredmedia']['0'].source_url}
+                                        width={400}
+                                        height={200}
+                                        alt="" 
+                                        className="aspect-video object-cover"
+                                    />
                                 </Link>
 
                                 <div className="relative">
