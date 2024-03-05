@@ -70,8 +70,8 @@ export async function getCampaigns() {
     const res = await fetch( url, {
         headers,
         method: 'GET',
-        next: { revalidate: 1800 },
-        // cache: 'no-store',
+        // next: { revalidate: 1800 },
+        cache: 'no-store',
         
     });
     const resJson = await res.json();
