@@ -70,8 +70,8 @@ export async function getCampaigns() {
     const res = await fetch( url, {
         headers,
         method: 'GET',
-        // next: { revalidate: 1800 },
-        cache: 'no-store',
+        next: { revalidate: 1800 },
+        // cache: 'no-store',
         
     });
     const resJson = await res.json();
@@ -90,8 +90,8 @@ export async function getBlogPosts(){
     const res = await fetch(url, {
         headers,
         method: 'GET',
-        // next: { revalidate: 3600 },
-        cache: 'no-store',
+        next: { revalidate: 1800 },
+        // cache: 'no-store',
         
     });
   
@@ -137,7 +137,7 @@ export async function postuGetir(postId){
     const res = await fetch(url, {
         headers,
         method: 'GET',
-        // next: { revalidate: 2 },
+        next: { revalidate: 100 },
         // cache: 'no-store',
         
     });
@@ -320,8 +320,8 @@ export async function getDynamicFilterData( dataToGo ){
         body: gidecek,
         method: "POST",
         next: { 
-            // revalidate: 0,
-            cache: 'no-store',
+            revalidate: 0,
+            // cache: 'no-store',
          },
     });
 
