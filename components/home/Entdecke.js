@@ -32,9 +32,8 @@ const Entdecke = () => {
                                         <Image 
                                             src={item.image}
                                             alt={item.title.split(' ')[0]}
-                                            width={0}
-                                            height={0}
-                                            sizes="200vw"
+                                            width={400}
+                                            height={400}
                                             style={{ width: '100%', height: 'auto' }}
                                             className="rounded-tl-xl rounded-tr-xl"
                                         />
