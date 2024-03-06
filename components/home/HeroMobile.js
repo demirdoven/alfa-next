@@ -181,7 +181,7 @@ const HeroMobile = ( {device} ) => {
                                         initial={{ opacity: 0, x: -1200 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -1200 }}
-                                        transition={{ delay: 1 }}
+                                        transition={{ delay: 0.2 }}
                                     >
                                 <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" >
 
