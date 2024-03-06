@@ -177,12 +177,12 @@ const HeroMobile = ( {device} ) => {
                                 // style={{ width: '100%', height: '30rem' }}
                             />
                             <motion.div
-                                        className="absolute top-[40%] lg:top-[43%] left-0 w-full"
-                                        initial={{ opacity: 0, x: -1200 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: -1200 }}
-                                        transition={{ delay: 0.2 }}
-                                    >
+                                className="absolute top-[40%] lg:top-[43%] left-0 w-full"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1}}
+                                exit={{ opacity: 0 }}
+                                transition={{ delay: 1 }}
+                            >
                                 <form action="/products/tires?season=Winter&width=205&height=55&zoll=16&" >
 
                                     <div className="px-12 pt-2 lg:pt-0 w-full flex gap-x-[6%] lg:gap-x-[2%] justify-between text-left">
