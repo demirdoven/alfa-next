@@ -14,7 +14,7 @@ import CartItem2 from '../checkout/CartItem_Old';
 const MiniCartDesktop = ({cart, mCart, setMcart}) => {
 
     const { color, setColor} = useThemeContext();
-    const { cartItems, totalPrice, totalQty } = color || {};
+    const { cartItems, totalPrice, totalQty, totalTax } = color || {};
     const [updatingProduct, setUpdatingProduct] = useState( false );
     const [removingProduct, setRemovingProduct] = useState( false );
 
@@ -106,7 +106,7 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                                                         <p className="text-lg font-bold">Total</p>
                                                         <div className="">
                                                             <p className="mb-1 text-lg text-right font-bold">{totalPrice?.toFixed(2)} €</p>
-                                                            <p className="text-xs text-right text-gray-700">(incl. {(totalPrice * 0.19 / 1.19).toFixed(2)} € VAT)</p>
+                                                            <p className="text-xs text-right text-gray-700">(incl. {totalTax?.toFixed(2)} € VAT)</p>
                                                         </div>
                                                     </div>
                                                 </div>

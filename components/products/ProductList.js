@@ -11,37 +11,38 @@ const ProductList = ({ids, setQueryProdData, catSlug, queryProdData, setProdsLoa
 
     let loading = false;
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if( ! isEmpty(queryPids) ){
+    //     if( ! isEmpty(queryPids) ){
 
-            const getPrd = async () => {
+    //         const getPrd = async () => {
             
-                let cat = catSlug;
-                if( catSlug == 'accessories' ){
-                    cat = 'lids'
-                }
+    //             let cat = catSlug;
+    //             if( catSlug == 'accessories' ){
+    //                 cat = 'lids'
+    //             }
 
-                const products = await getMultiProducts(cat, queryPids );
-                setQueryProdData(products)
+    //             const products = await getMultiProducts(cat, queryPids );
+    //             setQueryProdData(products)
 
-                console.log('products', products)
-                setProdsLoading(false)
+    //             console.log('products', products)
+    //             setProdsLoading(false)
                 
-            };
-            getPrd();
+    //         };
+    //         getPrd();
 
-        }
+    //     }
 
-    }, [queryPids, catSlug]);
+    // }, [queryPids, catSlug]);
 
     
+    // return ''
     return (
         <div className={`product-list-wrap ${ prodsLoading && 'loading' } mt-4`}>
             { 
                 isEmpty(queryProdData) ? <Placeholder /> :
 
-                    queryProdData.map( product => (
+                    queryProdData && queryProdData.length > 0 && queryProdData?.map( product => (
                         <ProductCard key={product.id} prodsLoading={prodsLoading} catSlug={catSlug} product={product} loading={loading} setIsAddedToCart={setIsAddedToCart} isAddedToCart={isAddedToCart} />
                     ))  
                     

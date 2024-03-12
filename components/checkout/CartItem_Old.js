@@ -110,7 +110,7 @@ const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
             </div>
         </div>
         <div className="flex flex-col  justify-center">
-            <span className="text-center w-2/12 font-normal text-md whitespace-nowrap">{item?.line_subtotal.toFixed(2)} €</span>
+            <span className="text-center w-2/12 font-normal text-md whitespace-nowrap">{ (( item?.line_subtotal ) + (item?.line_subtotal_tax)).toFixed(2)} €</span>
             { item.quantity > 1 && <span className="text-center w-full font-normal text-slate-900 opacity-40 text-xs whitespace-nowrap">{item.quantity} x {item?.data?.price} €</span> }
         </div>
         <button 

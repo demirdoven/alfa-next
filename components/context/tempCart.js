@@ -8,34 +8,13 @@ export const TempCartContextProvider = ({ children }) => {
 
     const [tempCart, setTempCart] = useState(null);
 
-    	/**
-	 * This will be called once on initial load ( component mount ).
-	 *
-	 * Sets the cart data from localStorage to `cart` in the context.
-	 */
-	useEffect( () => {
+ 
+    useEffect( () => {
 		
-		// if ( process.browser ) {
 		if (typeof window !== "undefined") {
-			let cartData = localStorage.getItem( 'next-cart' );
+			let cartData = localStorage.getItem('tcrt');
 			// cartData = null !== cartData ? JSON.parse( cartData ) : '';
-			
-            let urunler = [];
-            
-            cartData?.cartItems.map( item => {
-
-                urunler.push({
-                    product_id: item?.product_id,
-                    variation_id: item?.variation_id,
-                    quantity: item?.quantity,
-                    title: item?.name,
-                    img: item?.data?.images[0].src
-                })
-               
-            })
-
-            localStorage.setItem('temp-cart', JSON.stringify(urunler));
-
+			setTempCart( JSON.parse( cartData ) );
 		}
 		
 	}, [] );
@@ -49,17 +28,17 @@ export const TempCartContextProvider = ({ children }) => {
 	 */
 	useEffect( () => {
 
-		// if ( process.browser ) {
 		if (typeof window !== "undefined") {
-			if( color != null ){
-				localStorage.setItem('next-cart', JSON.stringify(color));
+			if( tempCart != null ){
+				localStorage.setItem('tcrt', JSON.stringify(tempCart));
 			}
 		}
-	}, [ color ] );
+
+	}, [ tempCart ] );
 
 
     return (
-        <TempCartContext.Provider value={{ color, setColor }}>
+        <TempCartContext.Provider value={{ tempCart, setTempCart }}>
             {children}
         </TempCartContext.Provider>
     )

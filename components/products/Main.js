@@ -49,7 +49,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
 
                 let allLocal = {}
 
-                products.map( item => {
+                products?.map( item => {
                     allLocal[item.post_id] = item
                 })
                 localStorage.setItem('allLocal', JSON.stringify(allLocal))

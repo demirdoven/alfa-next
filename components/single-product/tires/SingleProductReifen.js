@@ -13,6 +13,8 @@ import Meta from "@/components/single-product/tires/Meta";
 import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
+import AddToTempCart from "@/components/general/AddToTempCart";
+import { getProductPrice } from "@/app/actions";
 // import AddToTempCart from "@/components/general/AddToTempCart";
 
 const SingleProductReifen = ({product, catSlug}) => {
@@ -24,16 +26,20 @@ const SingleProductReifen = ({product, catSlug}) => {
     const [productData, setProductData] = useState(product)
     const [variationList, setVariationList] = useState([])
     const [qty, setQty] = useState(1)
+    const [salePrice, setSalePrice] = useState(product?.price)
 
     useEffect( ()=>{
 
-        console.log('productData', productData)    
+        console.log('productData', productData)
+
     }, [productData])
     
     useEffect( ()=>{
         if( ! isEmpty(variationList) ){
             setProductData( variationList.find( ({ post_id }) => post_id == variationID ) )
-        }      
+        }
+
+        console.log('variationID', variationID)
     }, [variationID, variationList])
 
     // const [metas, setMetas] = useState({})
@@ -60,7 +66,22 @@ const SingleProductReifen = ({product, catSlug}) => {
         return str;
     }
     
-   
+    
+    useEffect( ()=>{
+
+        const getPriceInfo = async () => {
+            const price = await getProductPrice('tires', variationID);
+            setSalePrice(price)
+        }
+        getPriceInfo();
+    }, [variationID])
+    
+    useEffect( ()=>{
+
+        console.log('salePrice', salePrice)
+       
+    }, [salePrice])
+    
 
     return (
         <div className="w-full mt-6 flex flex-col gap-y-10">
@@ -113,7 +134,7 @@ const SingleProductReifen = ({product, catSlug}) => {
                             
                             <Quantity qty={qty} setQty={setQty} />
 
-                            <Price pid={variationID} catSlug={catSlug} productData={productData} />
+                            <Price price={salePrice} />
 
                         </div>
 
@@ -123,7 +144,12 @@ const SingleProductReifen = ({product, catSlug}) => {
                         </div>
 
 
-                        {/* <AddToTempCart productData={productData} /> */}
+                        <AddToTempCart 
+                            pid={parseInt(variationID)} 
+                            salePrice={salePrice} 
+                            media={productData?.media}
+                            title={productData?.brand +' '+productData?.model}
+                        />
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>

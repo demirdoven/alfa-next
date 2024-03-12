@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react'
 const Price = ({catSlug, pid, oldPrice}) => {
 
     const [price, setPrice] = useState(null);
-    const [priceLoading, setPriceLoading] = useState(true);
+    // const [priceLoading, setPriceLoading] = useState(true);
+    const [priceLoading, setPriceLoading] = useState(false);
 
 
     /*** daha sonra deploy ederken aktif ederim simdilik cache price */

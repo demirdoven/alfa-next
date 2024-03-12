@@ -1,17 +1,64 @@
-import React from 'react'
-import { useThemeContext } from "@/components/context/theme";
+import React, { useState } from 'react'
 import { isEmpty, isNull } from 'lodash';
+import { getProductPrice } from '@/app/actions';
+import { useTempCartContext } from '../context/tempCart';
 
 
+const AddToTempCart = ({ pid, salePrice, media, title }) => {
 
-const AddToTempCart = ({ productData }) => {
+    // const [tempCart, setTempCart] = useState({urunler: [{ pid: 333, salePrice: 44.44, media: '', title: 'deneme urun', qty: 1 }], toplamPrice: 0, toplamQty: 0})
+    // const [tempCartUrunler, setTempCartUrunler] = useState( [] )
 
-    const { color, setColor} = useThemeContext();
-
+    const { tempCart, setTempCart} = useTempCartContext()
     
     function handleTempCartEkle( ekleData ){
 
-        console.log('ekleData', ekleData)
+        // console.log(tempCart)
+        // return false
+
+        const eklenecek = { pid, salePrice, media, title, qty: 1 }
+
+        let tempCartClonned = tempCart;
+
+        let seciliUrun = tempCartClonned.find( urun => urun.pid == eklenecek.pid )
+
+        console.log('seciliUrun', seciliUrun)
+
+        if( seciliUrun ){
+
+            // console.log('sepette var')
+
+            const adet = seciliUrun.qty
+
+            seciliUrun.qty = ( adet + eklenecek.qty )
+      
+            tempCartClonned = tempCartClonned.filter( urun => urun['pid'] != eklenecek.pid )
+
+
+            // console.log('yeni urun list: ', tempCartClonned )
+            // return false
+
+            tempCartClonned.push(seciliUrun)
+
+        }else{
+            // tempCartClonned.urunler.push(eklenecek)
+            // console.log('sepette yok')
+
+            tempCartClonned.push(eklenecek)
+
+        }
+
+
+
+        // tempCart.urunler.push(eklenecek)
+
+
+        setTempCart(tempCartClonned)
+        console.log('tempcart', tempCart)
+
+        return false 
+
+        
 
         // console.log('productData', productData)
 
@@ -63,7 +110,7 @@ const AddToTempCart = ({ productData }) => {
     return (
         <div
             className="p-4 bg-slate-200 cursor-pointer mt-4"
-            onClick={ ()=>{ handleTempCartEkle( { pid: productData?.post_parent, vid: productData?.post_id, qty: 1, price: productData?.price } ) } }
+            onClick={ ()=>{ handleTempCartEkle( { pid: pid } ) } }
         >
             gecici carta ekle
         </div>
