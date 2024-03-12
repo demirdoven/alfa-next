@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { isEmpty, isNull } from 'lodash';
-import { getProductPrice } from '@/app/actions';
 import { useTempCartContext } from '../context/tempCart';
 
 
@@ -20,9 +19,13 @@ const AddToTempCart = ({ pid, salePrice, media, title }) => {
 
         let tempCartClonned = tempCart;
 
-        let seciliUrun = tempCartClonned.find( urun => urun.pid == eklenecek.pid )
+        let seciliUrun = false
 
-        console.log('seciliUrun', seciliUrun)
+        if( ! isNull(tempCartClonned) ){
+            seciliUrun = tempCartClonned.find( urun => urun.pid == eklenecek.pid )
+        }else{
+            tempCartClonned = []
+        }
 
         if( seciliUrun ){
 

@@ -144,12 +144,12 @@ const SingleProductReifen = ({product, catSlug}) => {
                         </div>
 
 
-                        <AddToTempCart 
+                        {/* <AddToTempCart 
                             pid={parseInt(variationID)} 
                             salePrice={salePrice} 
                             media={productData?.media}
-                            title={productData?.brand +' '+productData?.model}
-                        />
+                            title={productData?.brand +' '+productData?.model +' '+productData?.sizeTires}
+                        /> */}
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>
