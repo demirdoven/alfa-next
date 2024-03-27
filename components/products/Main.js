@@ -47,12 +47,14 @@ const Main = ({products, catSlug, searchParams, device}) => {
                 // console.log(products)
 
 
-                let allLocal = {}
+                // gecici pasif 23 mart 24
 
-                products?.map( item => {
-                    allLocal[item.post_id] = item
-                })
-                localStorage.setItem('allLocal', JSON.stringify(allLocal))
+                // let allLocal = {}
+
+                // products?.map( item => {
+                //     allLocal[item.post_id] = item
+                // })
+                // localStorage.setItem('allLocal', JSON.stringify(allLocal))
  
             };
             getPrd();

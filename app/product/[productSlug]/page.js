@@ -1,5 +1,6 @@
 
 import { getMultiProducts, getProductPrice } from "@/app/actions";
+import SingleLid from "@/components/single-product/lids/SingleLid";
 import SingleFelgen from "@/components/single-product/rims/SingleFelgen";
 import SingleFelgenVariation from "@/components/single-product/rims/SingleFelgenVariation";
 import SingleProductReifen from "@/components/single-product/tires/SingleProductReifen";
@@ -16,6 +17,9 @@ export default async function productSlug( {params} ){
 
     if( productSlug.includes('keskin') || productSlug.includes('mam-felgen') ){
         catSlug = 'rims'
+    }
+    if( productSlug.includes('keskin-wheels') || productSlug.includes('mam-wheels') ){
+        catSlug = 'lids'
     }
    
 
@@ -35,9 +39,10 @@ export default async function productSlug( {params} ){
                 // product[0]?.post_parent > 0 ? 
                 //     <SingleFelgenVariation product={product[0]} catSlug={catSlug} /> 
                 // : 
-                    <SingleFelgen product={product[0]} />
-            
-            
+                    <SingleFelgen product={product[0]} /> :
+
+            catSlug == 'lids' ? <SingleLid  product={product[0]} />
+
             : ''
 
         

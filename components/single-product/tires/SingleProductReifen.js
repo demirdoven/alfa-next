@@ -69,6 +69,9 @@ const SingleProductReifen = ({product, catSlug}) => {
     
     useEffect( ()=>{
 
+        // bozulmus tamir et // 23 mart 24
+
+
         const getPriceInfo = async () => {
             const price = await getProductPrice('tires', variationID);
             setSalePrice(price)
@@ -144,12 +147,12 @@ const SingleProductReifen = ({product, catSlug}) => {
                         </div>
 
 
-                        {/* <AddToTempCart 
+                        <AddToTempCart 
                             pid={parseInt(variationID)} 
                             salePrice={salePrice} 
                             media={productData?.media}
                             title={productData?.brand +' '+productData?.model +' '+productData?.sizeTires}
-                        /> */}
+                        />
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>

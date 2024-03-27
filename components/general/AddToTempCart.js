@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { isEmpty, isNull } from 'lodash';
 import { useTempCartContext } from '../context/tempCart';
+import { tempCartEkle } from '@/lib/functions';
 
 
 const AddToTempCart = ({ pid, salePrice, media, title }) => {
@@ -108,12 +109,17 @@ const AddToTempCart = ({ pid, salePrice, media, title }) => {
 
     }
 
-    
+    useEffect( ()=>{
+
+        console.log('tempcart degisti', tempCart)
+
+    }, [tempCart])
 
     return (
         <div
             className="p-4 bg-slate-200 cursor-pointer mt-4"
-            onClick={ ()=>{ handleTempCartEkle( { pid: pid } ) } }
+            // onClick={ ()=>{ handleTempCartEkle( { pid: pid } ) } }
+            onClick={ ()=>{ tempCartEkle( pid, 1, salePrice, media, title, tempCart, setTempCart ) } }
         >
             gecici carta ekle
         </div>

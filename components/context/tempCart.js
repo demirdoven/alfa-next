@@ -15,6 +15,7 @@ export const TempCartContextProvider = ({ children }) => {
 			let cartData = localStorage.getItem('tcrt');
 			// cartData = null !== cartData ? JSON.parse( cartData ) : '';
 			setTempCart( JSON.parse( cartData ) );
+			
 		}
 		
 	}, [] );
@@ -32,7 +33,10 @@ export const TempCartContextProvider = ({ children }) => {
 			if( tempCart != null ){
 				localStorage.setItem('tcrt', JSON.stringify(tempCart));
 			}
+
+			console.log('context degisti');
 		}
+		
 
 	}, [ tempCart ] );
 

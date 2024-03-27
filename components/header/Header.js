@@ -11,6 +11,7 @@ import MobilSideMenu from "./MobilSideMenu";
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import { useThemeContext } from "@/components/context/theme";
+import { useTempCartContext } from "../context/tempCart";
 import { useMiniCartContext } from "@/components/context/miniCart";
 import { usePathname, useParams } from 'next/navigation';
 
@@ -22,6 +23,7 @@ export default function Header( {className} ){
 
 
     const { color, setColor} = useThemeContext();
+    const { tempCart, setTempCart} = useTempCartContext();
     const { mCart, setMcart} = useMiniCartContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -59,6 +61,7 @@ export default function Header( {className} ){
                         setMcart={setMcart}
                         color={color}
                         setColor={setColor}
+                        tempCart={tempCart}
                     />
                 </div>
             </div>
