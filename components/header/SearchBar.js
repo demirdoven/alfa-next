@@ -28,23 +28,30 @@ const SearchBar = ( {className} ) => {
 
     }
 
-    useEffect( ()=>{
 
-        // bu simdilik iptal
+    // useEffect(() => {
 
-        // if( aranacak != '' ){
+    //     if( aranacak == '' ) return;
 
-        //     const arasana = async () => {
-        //         const sonuclar = await searchTextInTires( aranacak );
-        //         setAramaSonuclari(sonuclar)
-        //         console.log('sonuclar', sonuclar)
-        //     };
-        //     arasana();
-
-        // }
-
+    //     const arasana = async () => {
+    //         const sonuclar = await searchTextInTires( aranacak );
+    //         setAramaSonuclari(sonuclar)
+    //         console.log('sonuclar', sonuclar)
+    //     };
         
-    }, [aranacak] )
+    //     const delayDebounceFn = setTimeout(() => {
+        
+    //         console.log('aranacak', aranacak)
+          
+    //         arasana();
+
+    //     }, 1000)
+    
+    //     return () => clearTimeout(delayDebounceFn)
+
+
+
+    // }, [aranacak])
 
 
     return (

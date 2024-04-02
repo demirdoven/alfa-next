@@ -82,6 +82,11 @@ export const Tags = ({ filterData, searchParams}) => {
 
         });
 
+
+        const element = cloneSearchParams + 'sel;ma' + 'ikisi de v' + '' ;
+
+
+
         const updatedUrl = `${pathname}?${new URLSearchParams(cloneSearchParams)}`;
         router.replace(updatedUrl, undefined, { shallow: true, scroll: false });
 

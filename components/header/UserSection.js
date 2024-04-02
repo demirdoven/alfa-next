@@ -8,7 +8,7 @@ import MiniCartDesktop from "./MiniCartDesktop";
 
 const UserSection = ( {className, color, setColor, mCart, setMcart, tempCart } ) => {
 
-  console.log('tempCart', tempCart)
+  // console.log('tempCart', tempCart)
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
