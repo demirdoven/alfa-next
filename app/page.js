@@ -23,8 +23,7 @@ const getDeviceType = () => {
 const HomePage = () => {
 
   const device = getDeviceType()
-
-  return '';
+  
   return (
     <div className='w-full'>
 
