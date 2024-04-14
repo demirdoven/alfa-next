@@ -1,13 +1,12 @@
 'use server'
-
 import { WOOCOMMERCE_COUNTRIES_ENDPOINT } from "@/lib/constants";
 
- 
 export async function getProducts(catSlug, queryPids) {
 
-    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_products?cat=${catSlug}&pids=${queryPids.join(",")}`;
-
-    const headers   = { 'Content-Type': 'application/json' };
+    const url       = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_products?cat=${catSlug}&pids=${queryPids.join(",")}`;
+    const headers   = { 
+        'Content-Type': 'application/json' 
+    };
     
     const res = await fetch( url, {
         headers,
@@ -25,7 +24,9 @@ export async function getProductPrice(catSlug, pid) {
     const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_product_price?cat=${catSlug}&pid=${pid}`;
     // const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_product_price?pid=2802`;
 
-    const headers   = { 'Content-Type': 'application/json' };
+    const headers = { 
+        'Content-Type': 'application/json'
+    };
     
     const res = await fetch( url, {
         headers,
@@ -40,16 +41,14 @@ export async function getProductPrice(catSlug, pid) {
 
 export async function getCampaign(catSlug) {
 
-
     let cat = catSlug
 
-    if( catSlug == 'accessories' ){
-        cat = 'lids'
-    }
+    if( catSlug == 'accessories' ) cat = 'lids'
  
-    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_campaign?catSlug=${cat}`;
-
-    const headers   = { 'Content-Type': 'application/json' };
+    const url       = `https://alfatires.com/wp-json/rl_js/v1/rl_js_campaign?catSlug=${cat}`;
+    const headers   = { 
+        'Content-Type': 'application/json' 
+    }
     
     const res = await fetch( url, {
         headers,
@@ -58,14 +57,16 @@ export async function getCampaign(catSlug) {
         // cache: 'no-store',
         
     });
+
     const resJson = await res.json();
     return resJson;
 }
 export async function getCampaigns() {
 
-    const url = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_campaigns`;
-
-    const headers   = { 'Content-Type': 'application/json' };
+    const url       = `https://alfatires.com/wp-json/rl_js/v1/rl_js_get_campaigns`;
+    const headers   = { 
+        'Content-Type': 'application/json' 
+    }
     
     const res = await fetch( url, {
         headers,
@@ -74,6 +75,7 @@ export async function getCampaigns() {
         // cache: 'no-store',
         
     });
+
     const resJson = await res.json();
     return resJson;
 }
@@ -102,7 +104,6 @@ export async function getBlogPosts(){
   
 }
 
-
 export async function postlariGetir(cat){
 
     // let url = `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed`;
@@ -126,8 +127,7 @@ export async function postlariGetir(cat){
 
 export async function postuGetir(postId){
 
-   await new Promise( resolve => setTimeout(resolve, 3000) )
-
+    await new Promise( resolve => setTimeout(resolve, 3000) )
 
     // let url = `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed`;
     let url = `https://alfatires.com/wp-json/wp/v2/posts/${postId}?_embed=1`;
@@ -325,9 +325,7 @@ export async function getDynamicFilterData( dataToGo ){
          },
     });
 
-
     const data = await res.json()
-
     return data;
 }
 
