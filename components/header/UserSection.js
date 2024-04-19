@@ -5,13 +5,21 @@ import { BiUser } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import MiniCartMobile from "./MiniCartMobile";
 import MiniCartDesktop from "./MiniCartDesktop";
+import { isEmpty, isNull } from "lodash";
 
 const UserSection = ( {className, color, setColor, mCart, setMcart, tempCart } ) => {
 
-  // console.log('tempCart', tempCart)
+  console.log('tempCart', tempCart)
+
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
+        {
+          process.env.NODE_ENV == "development" && ! isNull(tempCart) (
+            <div>{tempCart.length} farkli urun</div>
+          )
+        }
+
         <div onClick={() => setMcart(!mCart)} className="hidden lg:flex gap-x-3 items-center cursor-pointer" >
             <div className="relative ">
                 <PiHandbagBold size='1.5em' />
@@ -32,6 +40,7 @@ const UserSection = ( {className, color, setColor, mCart, setMcart, tempCart } )
         <MiniCartDesktop cart={color} mCart={mCart} setMcart={setMcart} />
 
         { color?.totalQty ? <MiniCartMobile cart={color} mCart={mCart} setMcart={setMcart} /> : null }
+
 
     </div>
   )
