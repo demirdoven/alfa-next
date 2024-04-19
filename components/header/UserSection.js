@@ -9,16 +9,27 @@ import { isEmpty, isNull } from "lodash";
 
 const UserSection = ( {className, color, setColor, mCart, setMcart, tempCart } ) => {
 
+  const [tempCartUrunSayisi, setTempCartUrunSayisi ] = useState(0)
+
+  useEffect( ()=>{
+
+    if( tempCart && ! isEmpty(tempCart) ){
+      setTempCartUrunSayisi( tempCart.length )
+    }
+
+  }, [tempCart] )
+
   console.log('tempCart', tempCart)
 
   return (
     <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
-          
-        {
-          process.env.NODE_ENV == "development" && ! isNull(tempCart) (
-            <div>{tempCart.length} farkli urun</div>
+         {
+          process.env.NODE_ENV == "development" && (
+          <div>{tempCartUrunSayisi} farkli urun</div>
           )
-        }
+         }
+            
+        
 
         <div onClick={() => setMcart(!mCart)} className="hidden lg:flex gap-x-3 items-center cursor-pointer" >
             <div className="relative ">
