@@ -146,13 +146,16 @@ const SingleProductReifen = ({product, catSlug}) => {
                             {/* <AddToCart product={ product } miniCart={miniCart} setMiniCart={setMiniCart} /> */}
                         </div>
 
-
-                        {/* <AddToTempCart 
-                            pid={parseInt(variationID)} 
-                            salePrice={salePrice} 
-                            media={productData?.media}
-                            title={productData?.brand +' '+productData?.model +' '+productData?.sizeTires}
-                        /> */}
+                        {
+                            process.env.NODE_ENV == "development" && (
+                                <AddToTempCart 
+                                    pid={parseInt(variationID)} 
+                                    salePrice={salePrice} 
+                                    media={productData?.media}
+                                    title={productData?.brand +' '+productData?.model +' '+productData?.sizeTires}
+                                />
+                            )
+                        }
 
                     </div>
                     <PaymentMethods classList="mt-6 px-8"/>
