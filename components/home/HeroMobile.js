@@ -257,7 +257,7 @@ const HeroMobile = ( {device} ) => {
 
                 </div>
                 <div className="herobanner-mobil-bg-wrapper">
-                    {/* <Image 
+                    <Image 
                         src="/hero/0224-herobanner-mobile.webp"
                         alt="bg"
                         sizes="400px"
@@ -265,7 +265,7 @@ const HeroMobile = ( {device} ) => {
                         objectFit='cover'
                         placeholder='empty'
                         priority={true}
-                    /> */}
+                    />
                 </div>  
             </div>  
         </>
