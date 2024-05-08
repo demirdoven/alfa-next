@@ -154,7 +154,7 @@ const HeroMobile = ( {device} ) => {
                                 
 
                             
-                                {/* <Image 
+                                <Image 
                                     className="hidden lg:block lg:mt-12"
                                     src={'/hero/Tires.png.webp'}
                                     alt="bb"
@@ -162,7 +162,7 @@ const HeroMobile = ( {device} ) => {
                                     height={0}
                                     sizes="100vw"
                                     style={{ width: '100%', height: 'auto' }}
-                                /> */}
+                                />
                         </div>
                         <div className="custom-filter w-full lg:w-[50%] relative lg:max-w-fit pt-2 pb-6">
                             
@@ -257,7 +257,7 @@ const HeroMobile = ( {device} ) => {
 
                 </div>
                 <div className="herobanner-mobil-bg-wrapper">
-                    <Image 
+                    {/* <Image 
                         src="/hero/0224-herobanner-mobile.webp"
                         alt="bg"
                         sizes="400px"
@@ -265,7 +265,7 @@ const HeroMobile = ( {device} ) => {
                         objectFit='cover'
                         placeholder='empty'
                         priority={true}
-                    />
+                    /> */}
                 </div>  
             </div>  
         </>
