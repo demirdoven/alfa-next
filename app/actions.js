@@ -224,8 +224,8 @@ export async function getMultiProducts(catSlug, queryPids) {
     const res = await fetch( url, {
         headers,
         method: 'GET',
-        next: { revalidate: 1800 },
-        // cache: 'no-store',
+        // next: { revalidate: 1800 },
+        cache: 'no-store',
         
     });
     const resJson = await res.json();
@@ -303,6 +303,7 @@ export async function getDynamicFilterData( dataToGo ){
         'category': dataToGo.category,
     })
 
+    // console.log('bizden giden', gidecek);
     const res = await fetch("https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php", {
         headers: {
             "accept": "application/json, text/javascript, */*; q=0.01",

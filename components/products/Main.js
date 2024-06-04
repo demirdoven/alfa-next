@@ -62,7 +62,7 @@ const Main = ({products, catSlug, searchParams, device}) => {
         }
 
 
-        // console.log('queryPids', queryPids)
+        console.log('queryPids', queryPids)
     
     }, [queryPids, catSlug]);
 
@@ -75,8 +75,8 @@ const Main = ({products, catSlug, searchParams, device}) => {
 
         let datas = {
             start : 0,
-            urlAjax : 'https://alfatires.com/wp-content/themes/alfatires/inc/ajax/filterProduct.php',
-            urlPage : 'https://alfatires.com/produkte/tires/',
+            urlAjax : 'https:\/\/alfatires.com\/wp-content\/themes\/alfatires\/inc\/ajax\/filterProduct.php',
+            urlPage : 'https:\/\/alfatires.com\/produkte\/tires\/',
             table : '_product_tires',
             cat : 'reifen',
             subCat: null,
@@ -193,6 +193,8 @@ const Main = ({products, catSlug, searchParams, device}) => {
         const getBanner = async () => {
 
             const dataToGo = prepareJsonData( catSlug )
+
+            console.log('dataToGo', dataToGo);
             const filterData = await getDynamicFilterData( dataToGo )
             setfilterData(filterData)
 
