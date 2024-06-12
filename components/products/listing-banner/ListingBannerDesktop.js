@@ -24,7 +24,7 @@ export default function ListingBannerDesktop({catSlug}){
             <Link href={'/'}>
                 <Image 
                     src={bannerDesktop} 
-                    className="rounded-lg aspect-[3/1] object-cover" 
+                    className="rounded-lg aspect-[2/1] object-cover" 
                     alt="das" 
                     width="1000" 
                     height="400" 
