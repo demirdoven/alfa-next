@@ -21,5 +21,6 @@ export default async function catSlug( {params, searchParams} ){
         <div className="w-full xs:px-4 lg:container mx-auto lg:max-w-6xl mt-6 px-4">
             <Main catSlug={catSlug} searchParams={searchParams} device={device} />
         </div>
+        
     )
 }
