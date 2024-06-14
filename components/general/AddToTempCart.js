@@ -117,7 +117,7 @@ const AddToTempCart = ({ pid, salePrice, media, title }) => {
 
     return (
         <div
-            className="p-4 bg-slate-200 cursor-pointer mt-4"
+            className="p-4 bg-slate-200 cursor-pointer my-4"
             // onClick={ ()=>{ handleTempCartEkle( { pid: pid } ) } }
             onClick={ ()=>{ tempCartEkle( pid, 1, salePrice, media, title, tempCart, setTempCart ) } }
         >

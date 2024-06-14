@@ -1,0 +1,144 @@
+import Link from 'next/link';
+import LoadingLastik from '@/components/general/LoadingLastik';
+
+import { Button } from '../../general/Button';
+import { IoClose } from "react-icons/io5";
+
+import {motion, AnimatePresence} from 'framer-motion'
+
+
+
+import CartItemNew from '../CartitemNew';
+import { makeid } from '@/lib/functions';
+import { useEffect } from 'react';
+
+
+const MiniSepetDesktop = ({ geciciSep, miniCartOpen, closeMiniCart, updateGeciciSep }) => {
+
+    // // const { cartItems, totalPrice, totalQty, totalTax } = color || {};
+    // const [updatingProduct, setUpdatingProduct] = useState( false );
+    // const [removingProduct, setRemovingProduct] = useState( false );
+
+    useEffect( ()=>{
+
+        console.log('geciciSep', geciciSep);
+
+    }, [geciciSep])
+
+    const handleParentClick = event => {
+        event.preventDefault();
+    
+        if (event.target === event.currentTarget) {
+            closeMiniCart
+        }
+    };
+
+    return (
+        <div className="hidden lg:block">
+        { /* <div className='fixed top-0 left-0 w-screen h-screen z-100'> */ }
+                
+                {
+                    miniCartOpen && (
+                        <div 
+                            onClick={ closeMiniCart } 
+                            className='fixed top-0 left-0 w-screen h-screen bg-[#0000006e] z-[999999998]'
+                        >
+                        
+                        </div>
+                    )
+                }
+               
+                <AnimatePresence>
+                    <motion.div
+                        className='fixed top-0 right-[-400px] w-64 min-w-[400px] h-screen overflow-hidden overflow-y-auto z-[999999999]'
+                        animate={{
+                            translateX: miniCartOpen ? -400 : 0
+                        }}
+                    >
+                    <aside className="h-full px-8 py-6 bg-white border-r rtl:border-r-0 rtl:border-l">               
+                        
+                    <div className="flex flex-col w-full h-full">               
+                                            
+                                <div className="flex items-center justify-between">
+                                    <h1 className="font-semibold text-xl">Cart</h1>
+                                    <button 
+                                        onClick={ closeMiniCart }
+                                        className="flex items-center justify-center w-[30px] h-[30px] bg-slate-900 text-white text-xs rounded-full">
+                                        <IoClose />
+                                    </button>
+                                </div>
+
+                                <div className="relative flex-1 flex-shrink-1 flex-grow-1 flex-basis-full mt-8">
+                                    <div className="flex flex-1 flex-col h-full">
+                                        
+                                        <div className="relative flex-1">
+                                            <div className="absolute inset-0 max-h-full overflow-hidden overflow-y-auto pr-2">
+                                            
+                                            <div className="w-full bg-white">
+                                                {
+                                                    geciciSep !== null && geciciSep?.cartItems.length && (
+                                                        geciciSep.cartItems.map( item => (
+                                                           <CartItemNew 
+                                                                key={makeid(10)}
+                                                                item={item}
+                                                                geciciSep={geciciSep}
+                                                                updateGeciciSep={updateGeciciSep}
+                                                           />
+                                                        ))
+                                                    )
+                                                }
+                                            </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div id="summary" className="w-full mt-6">
+                                            <div className="mt-6  rounded-lg border bg-white p-6 shadow-md md:mt-0 w-full">
+                                                <div className="p-4">
+                                                    <div className="mb-2 flex justify-between">
+                                                        <p className="text-gray-700">Subtotal</p>
+                                                        <p className="text-gray-700">{ parseFloat(geciciSep?.totalPrice).toFixed(2) } €</p>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <p className="text-gray-700">Shipping</p>
+                                                        <p className="text-gray-700">{'0'} €</p>
+                                                    </div>
+                                                    <hr className="my-4" />
+                                                    <div className="flex justify-between">
+                                                        <p className="text-lg font-bold">Total</p>
+                                                        <div className="">
+                                                            <p className="mb-1 text-lg text-right font-bold">{ parseFloat(geciciSep?.totalPrice).toFixed(2) } €</p>
+                                                            <p className="text-xs text-right text-gray-700">(incl. { parseFloat(geciciSep?.totalPrice).toFixed(2) } € VAT)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <Button 
+                                                href="/checkout" 
+                                                type="dark" 
+                                                classList="block w-full mt-8 text-center cursor-pointer" 
+                                                innerClassList="block w-full text-center cursor-pointer"
+                                                text="PROCEED TO CHECKOUT" 
+                                                // setMcart={setMcart}
+                                                // onClick={ switchMiniCartOpen }
+                                            />
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                    
+                    </aside>
+
+                    </motion.div>
+                </AnimatePresence>
+            
+        {/* </div> */}
+        </div>
+    )
+}
+
+export default MiniSepetDesktop

@@ -14,9 +14,15 @@ import { useThemeContext } from "@/components/context/theme";
 import { useTempCartContext } from "../context/tempCart";
 import { useMiniCartContext } from "@/components/context/miniCart";
 import { usePathname, useParams } from 'next/navigation';
+import { useStore } from "@/lib/zustandStore";
 
 export default function Header( {className} ){
     
+    const geciciSep = useStore((state) => state.geciciSep)
+    const miniCartOpen = useStore((state) => state.miniCartOpen)
+    const closeMiniCart = useStore((state) => state.closeMiniCart)
+    const updateGeciciSep = useStore((state) => state.updateGeciciSep)
+
 
     const pathname = usePathname();
     const searchParams = useParams();
@@ -30,7 +36,8 @@ export default function Header( {className} ){
     useEffect(() => {
         setMcart( false )
         setMobileMenuOpen( false )
-        
+        closeMiniCart()
+
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -62,6 +69,10 @@ export default function Header( {className} ){
                         color={color}
                         setColor={setColor}
                         tempCart={tempCart}
+                        geciciSep={geciciSep}
+                        miniCartOpen={miniCartOpen}
+                        closeMiniCart={closeMiniCart}
+                        updateGeciciSep={updateGeciciSep}
                     />
                 </div>
             </div>

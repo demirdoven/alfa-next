@@ -14,6 +14,7 @@ import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
 import AddToTempCart from "@/components/general/AddToTempCart";
+import GeciciSepeteEkle from "../GeciciSepeteEkle";
 import { getProductPrice } from "@/app/actions";
 // import AddToTempCart from "@/components/general/AddToTempCart";
 
@@ -148,7 +149,7 @@ const SingleProductReifen = ({product, catSlug}) => {
 
                         {
                             process.env.NODE_ENV == "development" && (
-                                <AddToTempCart 
+                                <GeciciSepeteEkle 
                                     pid={parseInt(variationID)} 
                                     salePrice={salePrice} 
                                     media={productData?.media}

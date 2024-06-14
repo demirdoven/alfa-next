@@ -3,15 +3,21 @@ import { getCampaigns } from '../actions';
 import { isEmpty } from 'lodash';
 import Link from 'next/link';
 import Image from 'next/image';
+import ZustandTestComp from '@/components/ZustandTestComp';
 
 export default async function Deals( {searchParams} ){
 
     const campaigns = await getCampaigns();
 
+
     return (
         <div className="w-full xs:px-4 lg:container mx-auto lg:max-w-6xl mt-6 px-4">
 
             {/* <DealsMain /> */}
+
+            
+            <ZustandTestComp />
+
 
             <ul className="mt-4 mb-24">
                 {
