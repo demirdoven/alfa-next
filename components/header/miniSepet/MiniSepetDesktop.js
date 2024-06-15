@@ -19,12 +19,6 @@ const MiniSepetDesktop = ({ geciciSep, miniCartOpen, closeMiniCart, updateGecici
     // const [updatingProduct, setUpdatingProduct] = useState( false );
     // const [removingProduct, setRemovingProduct] = useState( false );
 
-    useEffect( ()=>{
-
-        console.log('geciciSep', geciciSep);
-
-    }, [geciciSep])
-
     const handleParentClick = event => {
         event.preventDefault();
     

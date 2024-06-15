@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PiHandbagBold } from 'react-icons/pi'
 import { useStore } from '@/lib/zustandStore'
 
 
-const HeaderCartBar = () => {
+const HeaderCartBar = ( { geciciSep, openMiniCart } ) => {
 
-    const geciciSep = useStore((state) => state.geciciSep)
-    const miniCartOpen = useStore((state) => state.miniCartOpen)
-    const openMiniCart = useStore((state) => state.openMiniCart)
+
+    useEffect( ()=>{
+
+        console.log('geciciSep degisti headerbar', geciciSep);
+
+    }, [geciciSep])
+
 
     return (
         <div 

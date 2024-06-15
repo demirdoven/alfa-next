@@ -2,7 +2,7 @@
 
 import { isEmpty, isArray, isNull } from 'lodash';
 import { useThemeContext } from '../context/theme';
-import { useMiniCartContext } from "@/components/context/miniCart";
+// import { useMiniCartContext } from "@/components/context/miniCart";
 import { sepeteEkle } from '@/lib/functions';
 import { FaPlus } from "react-icons/fa6";
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ import { ImSpinner6 } from "react-icons/im";
 const AddToCart = ( { qty, pid } ) => {
 	
 	const { color, setColor} = useThemeContext();
-	const { mCart, setMcart} = useMiniCartContext();
+	// const { mCart, setMcart} = useMiniCartContext();
 
 	const [ isAddedToCart, setAddedToCart ] = useState(false);
 	
@@ -22,13 +22,14 @@ const AddToCart = ( { qty, pid } ) => {
 	// 	return null;
 	// }
 
-	useEffect( ()=>{
-		
-		if( isAddedToCart ){
-			setMcart(true)
-		}
 
-	}, [isAddedToCart, setMcart])
+	// useEffect( ()=>{
+		
+	// 	if( isAddedToCart ){
+	// 		setMcart(true)
+	// 	}
+
+	// }, [isAddedToCart, setMcart])
 	
 	return (
 		<>

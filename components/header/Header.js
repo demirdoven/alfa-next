@@ -11,8 +11,6 @@ import MobilSideMenu from "./MobilSideMenu";
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import { useThemeContext } from "@/components/context/theme";
-import { useTempCartContext } from "../context/tempCart";
-import { useMiniCartContext } from "@/components/context/miniCart";
 import { usePathname, useParams } from 'next/navigation';
 import { useStore } from "@/lib/zustandStore";
 
@@ -22,6 +20,8 @@ export default function Header( {className} ){
     const miniCartOpen = useStore((state) => state.miniCartOpen)
     const closeMiniCart = useStore((state) => state.closeMiniCart)
     const updateGeciciSep = useStore((state) => state.updateGeciciSep)
+    const openMiniCart = useStore((state) => state.openMiniCart)
+
 
 
     const pathname = usePathname();
@@ -29,12 +29,10 @@ export default function Header( {className} ){
 
 
     const { color, setColor} = useThemeContext();
-    const { tempCart, setTempCart} = useTempCartContext();
-    const { mCart, setMcart} = useMiniCartContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     useEffect(() => {
-        setMcart( false )
+        // setMcart( false )
         setMobileMenuOpen( false )
         closeMiniCart()
 
@@ -64,15 +62,13 @@ export default function Header( {className} ){
 
                     <UserSection 
                         className="client-section block lg:min-w-[200px]"
-                        mCart={mCart} 
-                        setMcart={setMcart}
                         color={color}
                         setColor={setColor}
-                        tempCart={tempCart}
                         geciciSep={geciciSep}
                         miniCartOpen={miniCartOpen}
                         closeMiniCart={closeMiniCart}
                         updateGeciciSep={updateGeciciSep}
+                        openMiniCart={openMiniCart}
                     />
                 </div>
             </div>

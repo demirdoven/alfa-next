@@ -13,10 +13,8 @@ import Meta from "@/components/single-product/tires/Meta";
 import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from 'next/navigation'
-import AddToTempCart from "@/components/general/AddToTempCart";
 import GeciciSepeteEkle from "../GeciciSepeteEkle";
 import { getProductPrice } from "@/app/actions";
-// import AddToTempCart from "@/components/general/AddToTempCart";
 
 const SingleProductReifen = ({product, catSlug}) => {
     
