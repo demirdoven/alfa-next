@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useStore } from '@/lib/zustandStore'
+import { FaPlus } from "react-icons/fa6";
 
 const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
 
@@ -126,9 +127,9 @@ const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
     return (
         <button
             onClick={ guncelleCB }
-            className='w-full uppercase flex items-center justify-center gap-x-2 bg-red-600 text-white hover:bg-red-700 border border-red-600 text-red-600 text-xl font-bold my-2 py-2 px-8 rounded-md'
+            className='w-full mt-6 uppercase flex items-center justify-center gap-x-2 bg-red-600 text-white hover:bg-red-700 border border-red-600 text-red-600 text-xl font-bold py-2 px-8 rounded-md'
         >
-            Gecici Sepete Ekle
+            <FaPlus size={20}/> <span>Add to cart</span>
         </button>
     )
 }

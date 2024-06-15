@@ -140,20 +140,19 @@ const SingleProductReifen = ({product, catSlug}) => {
 
                         </div>
 
-                        <div className="mt-6">
+                        {/* <div className="mt-6">
                             <AddToCart qty={qty} pid={variationID} />
-                            {/* <AddToCart product={ product } miniCart={miniCart} setMiniCart={setMiniCart} /> */}
-                        </div>
+                        </div> */}
 
                         {
-                            process.env.NODE_ENV == "development" && (
+                            // process.env.NODE_ENV == "development" && (
                                 <GeciciSepeteEkle 
                                     pid={parseInt(variationID)} 
                                     salePrice={salePrice} 
                                     media={productData?.media}
                                     title={productData?.brand +' '+productData?.model +' '+productData?.sizeTires}
                                 />
-                            )
+                            // )
                         }
 
                     </div>
