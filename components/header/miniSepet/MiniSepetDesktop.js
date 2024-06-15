@@ -8,16 +8,12 @@ import {motion, AnimatePresence} from 'framer-motion'
 
 
 
-import CartItemNew from '../CartitemNew';
+import CartItemNew from '../CartItemNew';
 import { makeid } from '@/lib/functions';
 import { useEffect } from 'react';
 
 
 const MiniSepetDesktop = ({ geciciSep, miniCartOpen, closeMiniCart, updateGeciciSep }) => {
-
-    // // const { cartItems, totalPrice, totalQty, totalTax } = color || {};
-    // const [updatingProduct, setUpdatingProduct] = useState( false );
-    // const [removingProduct, setRemovingProduct] = useState( false );
 
     const handleParentClick = event => {
         event.preventDefault();

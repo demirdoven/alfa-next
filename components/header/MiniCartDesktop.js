@@ -15,8 +15,6 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
 
     const { color, setColor} = useThemeContext();
     const { cartItems, totalPrice, totalQty, totalTax } = color || {};
-    const [updatingProduct, setUpdatingProduct] = useState( false );
-    const [removingProduct, setRemovingProduct] = useState( false );
 
 
     const handleParentClick = event => {
@@ -78,8 +76,6 @@ const MiniCartDesktop = ({cart, mCart, setMcart}) => {
                                                                 item={ item }
                                                                 products={ color?.cartItems }
                                                                 setColor={setColor}
-                                                                setUpdatingProduct={setUpdatingProduct}
-                                                                setRemovingProduct={setRemovingProduct}
                                                             />
                                                         ))
                                                     ) : ''

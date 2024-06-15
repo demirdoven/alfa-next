@@ -4,25 +4,97 @@ import Link from 'next/link';
 import CartItem2 from './CartItem_Old';
 import { useThemeContext } from "@/components/context/theme";
 // import LoadingLastik from '@/components/LoadingLastik';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PaymentModes from './PaymentModes';
+import CartItemNew from '../header/CartItemNew';
+import { clearCart, makeid, sepeteEkle } from '@/lib/functions';
+import VerifingCart from '../general/VerifingCart';
+import { useStore } from '@/lib/zustandStore';
 
-export default function CartDetails({input, handleOnChange, isOrderProcessing, requestError}) {
+export default function CartDetails({input, handleOnChange, isOrderProcessing, requestError, geciciSep, updateGeciciSep}) {
 
     const { color, setColor} = useThemeContext();
     const { cartItems, totalPrice, totalQty } = color || {};
-    const [updatingProduct, setUpdatingProduct] = useState( false );
-    const [removingProduct, setRemovingProduct] = useState( false );
+
+    const updateVerifyingCart = useStore((state) => state.updateVerifyingCart)
+
+
+    const [verif, setVerif] = useState(false)
+
+    
+
+    useEffect( ()=>{
+
+        updateVerifyingCart(verif)
+
+    }, [verif, updateVerifyingCart]);
+
+    
+
+    useEffect( ()=>{
+        
+        console.log( 'gec sepet degisti', geciciSep );
+
+        // clearCart( setColor )
+
+            let eklenecekler = []
+    
+            if( geciciSep.cartItems.length ){
+                geciciSep.cartItems.forEach( item => {
+                    
+                    // sepeteEkle( item.variation_id, item.quantity, setColor )
+                    
+                    eklenecekler.push({
+                        product_id: item.variation_id,
+                        quantity: item.quantity
+                    })
+    
+                
+    
+                });
+            }
+            console.log('eklenecekler', eklenecekler)
+            sepeteEkle( eklenecekler, setColor, setVerif )
+    
+        
+
+       
+        // gercekSepetiTemizle( setColor );
+        // clearCart( setColor )
+        // sepeteEkle( pid, qty = 1, setColor )
+
+        
+    }, [geciciSep, setColor])
 
 	return (
-        <>
+        geciciSep !== null && geciciSep.cartItems.length ? (
 
             <div className="container mx-auto lg:max-w-6xl mb-6 flex flex-col ">
                 <div className="flex flex-col w-full">
                         <div className="mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0 w-full">                       
-                            <h2 className="text-xl font-medium mb-4">Your Order</h2>
-
+                            <div className='flex justify-between items-center mb-4'>
+                                <h2 className="text-xl font-medium">Your Order</h2>
+                                <VerifingCart />
+                            </div>
+                            
                             <div className="w-full bg-white">
+                                {
+                                    geciciSep !== null && geciciSep.cartItems.length ? (
+                                        geciciSep.cartItems.map( item => (
+                                            <CartItemNew 
+                                                key={makeid(10)}
+                                                item={item}
+                                                geciciSep={geciciSep}
+                                                updateGeciciSep={updateGeciciSep}
+                                            />
+                                        ))
+                                    ) : ''
+                                        // <LoadingLastik classList="mt-24"/> 
+                                }
+                            </div>
+
+                            
+                            <div className="hidden w-full bg-white">
                                 {
                                     color !== null && color.cartItems.length ? (
                                         color.cartItems.map( item => (
@@ -32,8 +104,6 @@ export default function CartDetails({input, handleOnChange, isOrderProcessing, r
                                                 item={ item }
                                                 products={ cartItems }
                                                 setColor={setColor}
-                                                setUpdatingProduct={setUpdatingProduct}
-                                                setRemovingProduct={setRemovingProduct}
                                             />
                                         ))
                                     ) : ''
@@ -83,7 +153,9 @@ export default function CartDetails({input, handleOnChange, isOrderProcessing, r
 
                 </div>
             </div>
-        </>
+
+        ) : 'yok'
+        
 	);
 }
 

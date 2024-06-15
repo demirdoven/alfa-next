@@ -19,9 +19,9 @@ const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
                         product_id: 'xx',
                         variation_id: pid,
                         quantity: qty,
-                        line_subtotal: salePrice,
-                        line_total: salePrice,
-                        line_subtotal: salePrice,
+                        line_subtotal: parseFloat(salePrice).toFixed(2),
+                        line_total: parseFloat(salePrice).toFixed(2),
+                        line_subtotal: parseFloat(salePrice).toFixed(2),
                         data: {
                             price: salePrice,
                             name: title,
@@ -58,9 +58,9 @@ const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
                     product_id: 'xx',
                     variation_id: pid,
                     quantity: yeniAdet,
-                    line_subtotal: yeniAdet * salePrice,
-                    line_total: yeniAdet * salePrice,
-                    line_subtotal: yeniAdet * salePrice,
+                    line_subtotal: parseFloat(yeniAdet * salePrice).toFixed(2),
+                    line_total: parseFloat(yeniAdet * salePrice).toFixed(2),
+                    line_subtotal: parseFloat(yeniAdet * salePrice).toFixed(2),
                     data: {
                         price: salePrice,
                         name: title,
@@ -83,9 +83,9 @@ const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
                     product_id: 'xx',
                     variation_id: pid,
                     quantity: qty,
-                    line_subtotal: qty * salePrice,
-                    line_total: qty * salePrice,
-                    line_subtotal: qty * salePrice,
+                    line_subtotal: parseFloat(qty * salePrice).toFixed(2),
+                    line_total: parseFloat(qty * salePrice).toFixed(2),
+                    line_subtotal: parseFloat(qty * salePrice).toFixed(2),
                     data: {
                         price: salePrice,
                         name: title,
@@ -108,25 +108,20 @@ const GeciciSepeteEkle = ({ pid, salePrice, media, title, qty = 1 }) => {
             geciciSep.cartItems.forEach( item => {
                 
                 cartTotal += parseFloat(item?.line_total)
-                cartQuantity += parseInt(item?.quantity)
+                cartQuantity += item?.quantity
 
             });
 
-            geciciSep.totalPrice = cartTotal;
+            geciciSep.totalPrice = cartTotal.toFixed(2);
             geciciSep.totalQty = cartQuantity;
             
             console.log( 'clonnedSepet', geciciSep)
-
+            // console.log('geciciSep degisti singledan', geciciSep)
         }
 
         openMiniCart()
     }
 
-    useEffect( ()=>{
-
-        // console.log( 'geciciSep', geciciSep )
-
-    }, [geciciSep])
 
     return (
         <button

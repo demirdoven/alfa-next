@@ -19,6 +19,7 @@ import validateAndSanitizeCheckoutForm from "@/lib/validator/checkout";
 import CartDetails from "./CartDetails_Old.js";
 
 import { useRouter } from 'next/navigation'
+import { useStore } from "@/lib/zustandStore";
 
 
 // const defaultCustomerInfo = {
@@ -54,6 +55,10 @@ const defaultCustomerInfo = {
 
 const CheckoutMain = ( { countriesData } ) => {
 
+    const geciciSep = useStore((state) => state.geciciSep)
+    const updateGeciciSep = useStore((state) => state.updateGeciciSep)
+ 
+    
     const router = useRouter()
 
 
@@ -182,7 +187,8 @@ const CheckoutMain = ( { countriesData } ) => {
 
 	return (
 		<>
-			{/* { color ? ( */}
+			{ geciciSep !== null && geciciSep.cartItems.length ? (
+
 				<form onSubmit={ handleFormSubmit } className="woo-next-checkout-form">
             <div className="flex flex-col lg:flex-row gap-8">
                         
@@ -231,7 +237,14 @@ const CheckoutMain = ( { countriesData } ) => {
               <div className="your-orders lg:w-5/12">
                 
                 {/* <YourOrder cart={ color }/> */}
-                <CartDetails input={ input } handleOnChange={ handleOnChange } isOrderProcessing={isOrderProcessing} requestError={requestError}/>
+                <CartDetails 
+                  input={ input } 
+                  handleOnChange={ handleOnChange } 
+                  isOrderProcessing={isOrderProcessing} 
+                  requestError={requestError}
+                  geciciSep={geciciSep}
+                  updateGeciciSep={updateGeciciSep}
+                />
                 
                 
               </div>
@@ -239,7 +252,8 @@ const CheckoutMain = ( { countriesData } ) => {
 
             </div>
 				</form>
-			{/* ) : null } */}
+
+			) : 'sepet bos' } 
 		</>
 	);
 };

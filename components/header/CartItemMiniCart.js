@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 import Image from 'next/image';
 // import { sepetiGuncelle, sepetUrunSil } from '@/lib/foksiyonlar/cart_func';
 
-const CartItemMiniCart = ({item, products, setColor, setUpdatingProduct, setRemovingProduct }) => {
+const CartItemMiniCart = ({item, products, setColor }) => {
 
     const [productCount, setProductCount] = useState( item.quantity );
 
@@ -17,8 +17,6 @@ const CartItemMiniCart = ({item, products, setColor, setUpdatingProduct, setRemo
 		if ( process.browser ) {
 			
 			event.stopPropagation();
-
-            setUpdatingProduct(true);
 
 			let newQty;
 			
@@ -57,7 +55,7 @@ const CartItemMiniCart = ({item, products, setColor, setUpdatingProduct, setRemo
         // console.log(event);
 
         // return false;
-		sepetUrunSil( cartKey, setColor, setRemovingProduct );
+		sepetUrunSil( cartKey, setColor );
 
         
 

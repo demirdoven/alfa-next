@@ -16,8 +16,6 @@ const MiniCartMobile = ({mCart, setMcart }) => {
   const { color, setColor} = useThemeContext();
 
   const { cartItems, totalPrice, totalQty } = color || {};
-  const [updatingProduct, setUpdatingProduct] = useState( false );
-  const [removingProduct, setRemovingProduct] = useState( false );
 
   return (
     <div
@@ -83,8 +81,6 @@ const MiniCartMobile = ({mCart, setMcart }) => {
                         item={ item }
                         products={ color.cartItems }
                         setColor={setColor}
-                        setUpdatingProduct={setUpdatingProduct}
-                        setRemovingProduct={setRemovingProduct}
                     />
                 ))
             ) : ''

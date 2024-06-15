@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 import { sepetiGuncelle, sepetUrunSil } from '@/lib/functions';
 import Image from 'next/image';
 
-const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingProduct }) => {
+const CartItem2 = ({item, products, setColor }) => {
 
     const [productCount, setProductCount] = useState( item.quantity );
 
@@ -17,8 +17,6 @@ const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 		if ( process.browser ) {
 			
 			event.stopPropagation();
-
-            setUpdatingProduct(true);
 
 			let newQty;
 			
@@ -41,7 +39,7 @@ const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
 
 			if ( products.length ) {
 				// updateCart(item?.key, newQty, setCart, setUpdatingProduct);
-				sepetiGuncelle(item?.key, newQty, setColor, setUpdatingProduct );
+				sepetiGuncelle(item?.key, newQty, setColor );
 			}
 			
 		}
@@ -58,7 +56,7 @@ const CartItem2 = ({item, products, setColor, setUpdatingProduct, setRemovingPro
         // console.log(event);
 
         // return false;
-		sepetUrunSil( cartKey, setColor, setRemovingProduct );
+		sepetUrunSil( cartKey, setColor );
 
         
 

@@ -13,9 +13,16 @@ import SearchBar from "./SearchBar";
 import { useThemeContext } from "@/components/context/theme";
 import { usePathname, useParams } from 'next/navigation';
 import { useStore } from "@/lib/zustandStore";
+import { clearCart, gercekSepetiTemizle, sepetUrunSil, sepeteEkle } from "@/lib/functions";
 
 export default function Header( {className} ){
     
+    const pathname = usePathname();
+    const searchParams = useParams();
+
+    const { color, setColor} = useThemeContext();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
     const geciciSep = useStore((state) => state.geciciSep)
     const miniCartOpen = useStore((state) => state.miniCartOpen)
     const closeMiniCart = useStore((state) => state.closeMiniCart)
@@ -23,13 +30,14 @@ export default function Header( {className} ){
     const openMiniCart = useStore((state) => state.openMiniCart)
 
 
+    useEffect( ()=>{
 
-    const pathname = usePathname();
-    const searchParams = useParams();
+        console.log('color degisti', color)
+        // buradan gercek cart'i da guncelle
+    }, [color])
 
-
-    const { color, setColor} = useThemeContext();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    
+ 
 
     useEffect(() => {
         // setMcart( false )
@@ -58,6 +66,7 @@ export default function Header( {className} ){
                         onClick={ ()=>{ setMobileMenuOpen( ! mobileMenuOpen ) } } 
                     />
                      <Logo className=""/>
+                     
                     <SearchBar className="hidden lg:block w-2/4"/>
 
                     <UserSection 

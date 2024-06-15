@@ -5,9 +5,6 @@ import Link from 'next/link'
 import React from 'react'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 
-
-
-
 const CartItemNew = ({item, geciciSep, updateGeciciSep}) => {
 
     const sepettenSil = ( event, pid ) => {
@@ -32,31 +29,8 @@ const CartItemNew = ({item, geciciSep, updateGeciciSep}) => {
         clonnedCart.totalQty = cartQuantity;
 
         updateGeciciSep( clonnedCart )
-
-		// // If the component is unmounted, or still previous item update request is in process, then return.
-		// if ( !isMounted || updatingProduct ) {
-		// 	return;
-		// }
-		
-        // console.log(event);
-
-        // return false;
-
-		
-
-        // var wrapDiv = event.target.closest('.cart-itemm');
-        // if (wrapDiv) {
-        //   // Remove the parent "wrap" div if it exists
-        //   wrapDiv.parentNode.removeChild(wrapDiv);
-        // }
-
-        
-
-        
-
       
 	};
-
 
     return (
         <div 

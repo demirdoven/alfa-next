@@ -8,17 +8,20 @@ import MiniCartDesktop from "./MiniCartDesktop";
 import { isEmpty, isNull } from "lodash";
 import HeaderCartBar from "./HeaderCartBar";
 import MiniSepetDesktop from "./miniSepet/MiniSepetDesktop";
+import VerifingCart from "../general/VerifingCart";
 
 
-const UserSection = ( {className, color, setColor, geciciSep, miniCartOpen, closeMiniCart, updateGeciciSep, openMiniCart } ) => {
-
-    
+const UserSection = ( {
+    className, color, setColor, geciciSep, miniCartOpen, closeMiniCart, updateGeciciSep, openMiniCart 
+  } ) => {
 
     return (
       <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
-          {/* 
-            <div onClick={() => setMcart(!mCart)} className="hidden lg:flex gap-x-3 items-center cursor-pointer" >
+            <div 
+              // onClick={() => setMcart(!mCart)} 
+              className="hidden lg:flex gap-x-3 items-center cursor-pointer" 
+            >
                 <div className="relative ">
                     <PiHandbagBold size='1.5em' />
                     { 
@@ -29,15 +32,15 @@ const UserSection = ( {className, color, setColor, geciciSep, miniCartOpen, clos
                 </div>
                 { color?.totalPrice && <span className="text-sm"> {color?.totalPrice.toFixed(2)} €</span> } 
             </div> 
-          */}
+         
+            {/* <VerifingCart /> */}
 
-        
           <div>
               <BiUser size='1.5em' />
           </div>
           
           {/* <MiniCartDesktop cart={color} mCart={mCart} setMcart={setMcart} /> */}
-                  
+
           <MiniSepetDesktop 
             geciciSep={geciciSep}
             miniCartOpen={miniCartOpen}

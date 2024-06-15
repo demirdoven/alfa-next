@@ -6,13 +6,6 @@ import { useStore } from '@/lib/zustandStore'
 const HeaderCartBar = ( { geciciSep, openMiniCart } ) => {
 
 
-    useEffect( ()=>{
-
-        console.log('geciciSep degisti headerbar', geciciSep);
-
-    }, [geciciSep])
-
-
     return (
         <div 
             onClick={ openMiniCart } 
