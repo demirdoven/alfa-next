@@ -22,6 +22,7 @@ export default async function Checkout(){
 		<div className="container mx-auto lg:max-w-6xl mt-6 flex flex-col ">
             <h1 className="text-center text-3xl mb-4">Checkout</h1>
             <CheckoutMain countriesData={countries} />
+            zamazingo
         </div>
 
 	);
