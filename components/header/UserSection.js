@@ -18,7 +18,7 @@ const UserSection = ( {
     return (
       <div className={`${className} flex gap-x-4 items-center flex-row-reverse lg:flex-row`}>
           
-            <div 
+            {/* <div 
               // onClick={() => setMcart(!mCart)} 
               className="hidden lg:flex gap-x-3 items-center cursor-pointer" 
             >
@@ -31,7 +31,12 @@ const UserSection = ( {
                     }
                 </div>
                 { color?.totalPrice && <span className="text-sm"> {color?.totalPrice.toFixed(2)} €</span> } 
-            </div> 
+            </div>  */}
+
+            <HeaderCartBar 
+              geciciSep={geciciSep}
+              openMiniCart={openMiniCart}
+            />
          
             {/* <VerifingCart /> */}
 
@@ -52,10 +57,7 @@ const UserSection = ( {
 
 
 
-          <HeaderCartBar 
-            geciciSep={geciciSep}
-            openMiniCart={openMiniCart}
-          />
+          
 
       </div>
     )
