@@ -13,7 +13,6 @@ import SearchBar from "./SearchBar";
 import { useThemeContext } from "@/components/context/theme";
 import { usePathname, useParams } from 'next/navigation';
 import { useStore } from "@/lib/zustandStore";
-import { clearCart, gercekSepetiTemizle, sepetUrunSil, sepeteEkle } from "@/lib/functions";
 
 export default function Header( {className} ){
     
