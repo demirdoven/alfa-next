@@ -37,6 +37,16 @@ const nextConfig = {
             hostname: 'cdn.alfatires.eu',
             pathname: '**',
           },
+          {
+            protocol: 'https',
+            hostname: 'media.gq.com',
+            pathname: '**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'uxwing.com',
+            pathname: '**',
+          },
         ],
     },
     // productionBrowserSourceMaps: false,

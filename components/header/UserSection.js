@@ -9,6 +9,7 @@ import { isEmpty, isNull } from "lodash";
 import HeaderCartBar from "./HeaderCartBar";
 import MiniSepetDesktop from "./miniSepet/MiniSepetDesktop";
 import VerifingCart from "../general/VerifingCart";
+import Link from "next/link";
 
 
 const UserSection = ( {
@@ -41,7 +42,7 @@ const UserSection = ( {
             {/* <VerifingCart /> */}
 
           <div>
-              <BiUser size='1.5em' />
+              <Link href="/login"><BiUser size='1.5em' /></Link>
           </div>
           
           {/* <MiniCartDesktop cart={color} mCart={mCart} setMcart={setMcart} /> */}

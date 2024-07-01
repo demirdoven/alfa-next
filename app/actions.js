@@ -345,3 +345,21 @@ export async function searchTextInTires( ara ){
     return resJson;
 
 }
+
+export async function loginOl(  ){
+
+    const headers   = { 'Content-Type': 'application/json' };
+    
+    const res = await fetch( `https://alfatires.com/wp-json/rl_js/v1/rl_js_login`, {
+        headers,
+        method: 'POST',
+        // body: {username: 'selmand', password: 'btLaqshndIRKK7M8NYdkO%ho'},
+        body: {'aa':'sds'},
+        // next: { revalidate: 1800 },
+        cache: 'no-store',
+        
+    });
+    // const resJson = await res.json();
+    return res;
+
+}

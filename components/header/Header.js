@@ -38,6 +38,35 @@ export default function Header( {className} ){
 
     
  
+    useEffect( ()=>{
+
+        const lastSetSession = localStorage.getItem( 'x-wc-session_last-set' );
+
+        const exists = lastSetSession !== null;
+
+        if( exists ) {
+
+            const now = new Date().getTime();
+            const expiryTime = 1 * 24 * 60 * 60 * 1000;
+
+            if(now - lastSetSession > expiryTime) {
+                localStorage.removeItem('x-wc-session');
+                localStorage.removeItem('next-cart');
+                localStorage.removeItem('x-wc-session_last-set');
+            }
+
+        }else{
+
+            localStorage.removeItem('x-wc-session');
+            localStorage.removeItem('next-cart');
+            localStorage.removeItem('x-wc-session_last-set');
+
+        }
+
+    } )
+
+    
+ 
 
     useEffect(() => {
         // setMcart( false )
@@ -66,7 +95,7 @@ export default function Header( {className} ){
                         onClick={ ()=>{ setMobileMenuOpen( ! mobileMenuOpen ) } } 
                     />
                      <Logo className=""/>
-                     
+
                     <SearchBar className="hidden lg:block w-2/4"/>
 
                     <UserSection 
